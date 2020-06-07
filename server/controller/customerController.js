@@ -12,9 +12,7 @@ router.get('/get', (req, res) => {
     const data = req.query;
     Customer.findOne(data, function(err,doc) { 
         if (!err) {
-            if(doc !== null) {
-                res.send(doc);
-            } else res.send(null);
+           res.send(doc);
         }
         else {
             console.log('Error during record insertion : ' + err);

@@ -6,7 +6,7 @@ let path = require("path");
 const sgMail = require('@sendgrid/mail');
 const fs = require("fs");
 
-const createInvoicePdf = () => {
+const createInvoicePdf = (orderid) => {
     ejs.renderFile(path.join(__dirname, '../../emailTemplates/invoiceHTML', "index.ejs"), { students: "" }, (err, data) => {
         if (err) {
             console.log(err);
@@ -21,12 +21,12 @@ const createInvoicePdf = () => {
                     "height": "20mm",
                 },
             };
-            pdf.create(data, options).toFile("report.pdf", function (err, data) {
+            pdf.create(data, options).toFile(`${__dirname}/../../invoices/${orderid}.pdf`, function (err, data) {
                 if (err) {
                     console.log("Error creating PDF");
                 } else {
                     console.log("File created successfully");
-                    pathToAttachment = `${__dirname}/../../report.pdf`;
+                    pathToAttachment = `${__dirname}/../../invoices/${orderid}.pdf`;
                     var attachment = fs.readFileSync(pathToAttachment).toString("base64");
                     sendMail(attachment);
                 }

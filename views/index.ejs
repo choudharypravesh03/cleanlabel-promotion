@@ -6,16 +6,12 @@
     <title>Home | Cleanlabel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
     <%- include('components/navbar.ejs'); -%>
-    <h1>Main Page</h1>
-    <br/>
-    <button id="get-yearly-membership">Yearly Membership | Rs. 999</button>
-    <button id="get-halfyearly-membership">Half Yearly Membership | Rs. 350</button>
-
-    <div id="firebase-auth-data" style="visibility: hidden"><%= JSON.stringify(authData) %></div>
-    <%- include('components/firebaseScripts.ejs'); -%>
+    <br/><br/><br/><br/>
+    <%- include('login.ejs'); -%>
     <script src="index.js"></script>
 </body>
 </html>

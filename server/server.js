@@ -45,11 +45,6 @@ app.get("/paywithpaytm", (req, res) => {
     );
 });
 
-app.get("/login", (req, res) => {
-    // createInvoicePdf();
-    res.render("login.ejs", { authData: process.env});
-});
-
 app.get("/membership", (req, res) => {
     res.render("membership.ejs", { authData: process.env});
 });
@@ -68,9 +63,22 @@ app.get("/account", (req, res) => {
 
 app.post("/paywithpaytmresponse", (req, res) => {
     responsePayment(req.body).then(
-        success => {
-            // createInvoicePdf();
-            res.status(200).render("response.ejs", {resultData: "true", responseData: success});
+        response => {
+            console.log(JSON.stringify(response));
+            if(response.STATUS === 'TXN_SUCCESS') {
+                createInvoicePdf(response.ORDERID);
+                res
+                .status(200)
+                .render("response.ejs", {
+                    resultData: "true", 
+                    responseData: response, 
+                    baseUrl: process.env.BASE_URL,
+                });
+            } else {
+                res
+                .status(200)
+                .render('paymentFailure.ejs', {resultData: "true", responseData: response});
+            }
         },
         error => {
             res.send(error);
@@ -83,7 +91,7 @@ app.get('/sendmails', (req, res) => {
     var emailArray = emails.split(",").map(function(item) {
         let obj = {
             toEmail: item.trim(),
-            referralLink: 'http://localhost:5000/referrals?mwr=pravesh-9a99'
+            referralLink: 'http://localhost:5000?mwr=pravesh-9a99'
         }
         return obj;
       });

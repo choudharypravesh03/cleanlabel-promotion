@@ -1,5 +1,6 @@
 window.onload = function() {
     var responseData = JSON.parse(document.getElementById('response-data').innerHTML);
+    var baseUrl = JSON.parse(document.getElementById('base-url').innerHTML);
     var userData = JSON.parse(sessionStorage.getItem('userData'));
     var userName = userData.name;
     var userEmail = userData.email;
@@ -10,19 +11,25 @@ window.onload = function() {
       orderId: responseData.ORDERID,
       transactionAmount: responseData.TXNAMOUNT,
       status: responseData.STATUS,
-      referral: userData.referrerCode || null
+      referral: userData.referrerCode || null,
+      baseUrl: baseUrl
     }
     console.log(responseData);
     if(responseData.STATUS === "TXN_SUCCESS") {
         saveSubscriber(dataObj);
     }
+
+    document.getElementById('pay-again').addEventListener('click', function() {
+      window.location.href = "/paywithpaytm?amount="+responseData.TXNAMOUNT;
+    });
 }
+
 
 function saveSubscriber(obj) {
     var subscribersObj = {
         email: obj.email,
         name: obj.name,
-        hosting_url: 'http://localhost:5000/referrals',
+        hosting_url: obj.baseUrl,
         double_optin: false,
         api_token: '9dd07fa2dc19443a73526ad6caa6a65f0e630797',
         referral: obj.referral

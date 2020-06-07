@@ -118,14 +118,11 @@ var firebaseApp;
           console.log(response);
           if(response.status === 200) {
             if(response.data.isUpdated && response.data.membership === 'none') {
-
-              debugger;
               // User in database. Send directly to payment page.
               window.location.href = "/paywithpaytm?amount="+selectedPackage;
             } else if(response.data.isUpdated && response.data.membership !== 'none') {
               window.location.href = "/referrals";
             } else {
-              debugger;
               // User not there. Enter phone number
               document.querySelector('.oauth-container').style.display = 'none';
               document.querySelector('.referral-container').style.display = 'none';
@@ -163,14 +160,11 @@ var firebaseApp;
           console.log(response);
           if(response.status === 200) {
             if(response.data.isUpdated && response.data.membership === 'none') {
-
-              debugger;
               // User in database. Send directly to payment page.
               window.location.href = "/paywithpaytm?amount="+selectedPackage;
             } else if(response.data.isUpdated && response.data.membership !== 'none') {
               window.location.href = "/referrals";
             } else {
-              debugger;
               // User not there. Enter phone number
               document.querySelector('.oauth-container').style.display = 'none';
               document.querySelector('.referral-container').style.display = 'none';
@@ -397,7 +391,6 @@ var firebaseApp;
     axios.get('/customer/get?phone=' + phoneNumber)
       .then(response => {
         console.log(response);
-        debugger;
         var isoAuthFlow = (localStorage.getItem('signinType') === 'oauth');
         if (response.data === "" && !isoAuthFlow) {
           // Login by phone

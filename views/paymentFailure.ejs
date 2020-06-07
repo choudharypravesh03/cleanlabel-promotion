@@ -7,10 +7,6 @@
             font-family: Helvetica;
         }
 
-        #pay-again {
-            display: none;
-        }
-
         #response-data {
             display: none;
         }
@@ -35,7 +31,7 @@
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             width: 100%;
-            background-color: #3a903e;
+            background-color: red;
             color: white;
             padding: 24px;
             font-size: 24px;
@@ -79,7 +75,7 @@
         <thead>
         <tr>
             <th class="th-header"
-                colspan="2">PAYMENT RECEIPT
+                colspan="2">Oops!
             </th>
         </tr>
         </thead>
@@ -95,14 +91,16 @@
         <% } %>
         <tr>
             <td class="td-bottom"
-                colspan="2">Thank you!.
+                colspan="2">Looks like <%= responseData.RESPMSG %>
             </td>
         </tr>
         </tbody>
     </table>
-    <button id="pay-again">Pay again</button>
+    <div>
+        <h4>Make the payment again below</h4>
+        <button id="pay-again">Pay again</button>
+    </div>
     <div id="response-data"><%= JSON.stringify(responseData) %></div>
-    <div id="base-url"><%= JSON.stringify(baseUrl) %></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 <script src="response.js"></script>
