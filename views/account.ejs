@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Account | Cleanlabel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <%- include('components/navbar.ejs'); -%>
+    <h1>Account Page</h1>
+    <br/>
+    
+    <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button" onclick="openCity('Membership')">Membership</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('YourRewards')">Your Rewards</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Profile')">Profile</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Settings</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Help</button>
+      </div>
+      
+      <div id="Membership" class="w3-container city">
+        <h2>If you are from Bengaluru</h2>
+        <p>Yearly membership at ₹ 999</p>
+        <p>Welcome Kit - 5 Most Popular Products (worth Rs.1000)</p>
+        <br/><br/>
+
+        <p>Half Yearly membership at ₹ 350</p>
+        <p>Surprise gift</p>
+        <br/><br/>
+
+        <h2>If you are from Mumbai, Pune, Chennai, Hyderabad, Gurugram</h2>
+        <p>Yearly membership at ₹ 999</p>
+        <p>Welcome Kit - 5 Most Popular Products (worth Rs.1000)</p>
+      </div>
+      
+      <div id="YourRewards" class="w3-container city" style="display:none">
+        <h2>Number of friends joined: 0</h2>
+        <p>You haven't invited anybody</p> 
+        <br/><br/>
+        <button>Track you invites</button>
+        <br/><br/><br/><br/>
+
+        <h2>Products Earned</h2>
+        <h1>Welcome Kit</h1>
+      </div>
+      
+      <div id="Profile" class="w3-container city" style="display:none">
+        
+      </div>
+
+    <div id="firebase-auth-data" style="visibility: hidden"><%= JSON.stringify(authData) %></div>
+    <%- include('components/firebaseScripts.ejs'); -%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="account.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Referrals | Cleanlabel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/utils/tagger.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/referrals.css">
+    
+</head>
+<body>
+    <%- include('components/navbar.ejs'); -%>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=667667524076389&autoLogAppEvents=1"></script>
+
+
+    <h1>Invite Friends. Earn Products.</h1>
+    <p>Enter as many email address as you would like.</p>
+    <input placeholder="Enter your friends email addresses" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" type="text" name="tags" />
+    <button id="send-invites">Send Invites</button>
+
+    <br/><br/><br/>
+
+    <p>Contact your address book</p>
+    <!-- <a href="#" class="cloudsponge-launch">Add From Address Book</a> -->
+    <a class="cloudsponge-launch" data-cloudsponge-source="gmail">
+        <img width="50" class="contacts-icon" src="https://app.acadium.com/images/page-referral/icon-gmail.svg"> 
+    </a>
+    <a href="#" class="cloudsponge-launch" data-cloudsponge-source="yahoo">
+        <img width="50" class="contacts-icon" src="https://icons-for-free.com/iconfiles/png/512/logo+search+engine+website+yahoo+icon-1320168602217718066.png">
+    </a>
+    <a href="#" class="cloudsponge-launch" data-cloudsponge-source="windowslive">
+        <img width="50" class="contacts-icon" src="https://i1.pngguru.com/preview/573/986/455/clay-os-6-a-macos-icon-microsoft-outlook-white-message-icon-png-clipart.jpg">
+    </a>
+
+    <br/><br/><br/><br/><br/><br/>
+
+    <button id="track-invites">Track your invites</button>
+    <div id="show-invites"></div>
+
+    <br/><br/><br/><br/><br/><br/>
+
+    <input type="textarea" class="cloudsponge-contacts"/>
+
+    <h3>Share your unique invite link:</h3>
+    <h2 id="my-referral-link">http://localhost:5000/referrals?mwr=pravesh-5bb0</h2>
+    <button id="copy-text">Copy</button>
+    <a href="whatsapp://send?text=Hey there! 
+    I have found this amazing grocery store and I would like you to check it out! please click here: 
+    http://localhost:5000/referrals?mwr=pravesh-5bb0" class="">
+        <img width="50" class="" src="https://seeklogo.com/images/W/whatsapp-icon-logo-6E793ACECD-seeklogo.com.png">
+    </a>
+    <div class="fb-share-button" data-href="https://cleanlabel-42b88.web.app/earn_rewards.html" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcleanlabel-42b88.web.app%2Fearn_rewards.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+    <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Hey there! 
+  I have found this amazing grocery store and I would like you to check it out! please click here: 
+  http://localhost:5000/referrals?mwr=pravesh-5bb0">
+<img src="https://app.acadium.com/images/page-referral/icon-twitter.svg" /></a>
+    
+<script src="https://api.cloudsponge.com/widget/-nNA1mSHS9vlJy97qBiKxg.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="utils/tagger.js"></script>
+<div id="firebase-auth-data" style="visibility: hidden"><%= JSON.stringify(authData) %></div>
+<%- include('components/firebaseScripts.ejs'); -%>
+<script src="referrals.js"></script>
+</body>
+</html>

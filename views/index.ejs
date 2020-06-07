@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home | Cleanlabel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+</head>
+<body>
+    <%- include('components/navbar.ejs'); -%>
+    <h1>Main Page</h1>
+    <br/>
+    <button id="get-yearly-membership">Yearly Membership | Rs. 999</button>
+    <button id="get-halfyearly-membership">Half Yearly Membership | Rs. 350</button>
+
+    <div id="firebase-auth-data" style="visibility: hidden"><%= JSON.stringify(authData) %></div>
+    <%- include('components/firebaseScripts.ejs'); -%>
+    <script src="index.js"></script>
+</body>
+</html>

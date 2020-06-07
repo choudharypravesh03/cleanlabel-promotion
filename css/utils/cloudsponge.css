@@ -1,0 +1,13 @@
+#cloudsponge-address-book .cloudsponge-topbar {
+    background-color: #a94442;
+}
+
+/* Change the colors of the .cloudsponge-export-button */
+#cloudsponge-address-book .cloudsponge-button.cloudsponge-export-button {
+    background-color: #4caf50;
+    color: #FFFFFF;
+}
+
+#cloudsponge-address-book .cloudsponge-button.cloudsponge-export-button:hover {
+    background-color: #389b3c;
+}
