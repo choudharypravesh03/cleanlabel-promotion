@@ -12,10 +12,8 @@ const initPayment = function(amount) {
       TXN_AMOUNT: amount.toString(),
       MID: config.MID,
       WEBSITE: config.WEBSITE,
-      CALLBACK_URL: config.CALLBACK_URL
+      CALLBACK_URL: config.CALLBACK_URL,
     };
-
-    console.log(config.MID);
 
     checksum.genchecksum(
       paymentObj,

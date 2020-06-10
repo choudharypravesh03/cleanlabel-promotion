@@ -9,8 +9,10 @@ const Customer = mongoose.model('Customer');
 
 //Router Controller for READ request
 router.get('/get', (req, res) => {
-    const data = req.query;
-    Customer.findOne(data, function(err,doc) { 
+    const phone = req.query.phone;
+    const email = req.query.email;
+    console.log(phone, email);
+    Customer.findOne({ $or:[ {'phone':phone}, {'email':email} ]}, function(err,doc) { 
         if (!err) {
            res.send(doc);
         }

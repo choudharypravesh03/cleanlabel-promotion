@@ -10,8 +10,13 @@
 </head>
 <body>
     <%- include('components/navbar.ejs'); -%>
-    <br/><br/><br/><br/>
-    <%- include('login.ejs'); -%>
-    <script src="index.js"></script>
+    <br><br><br><br>
+
+    <button onclick="joinMembership()" id="join-membership">Join Membership</button>
+  
+  <%- include('components/firebaseScripts.ejs'); -%>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script src="login.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

@@ -1,28 +1,10 @@
-<!-- <!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset=utf-8 />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login/SignUp | Cleanlabel</title>
-
-  <link rel="stylesheet" href="/css/login.css">
-
-
-
-</head>
-
-<body> -->
-  <div class="">
-
-    <!-- Header section containing title -->
-    <header class=""></header>
-
-    <main class="">
+  
       <div class="">
-        <button id="myBtn">Join Membership</button>
+        <!-- <button id="join-membership">Join Membership</button> -->
+        <button id="login">Login/Register</button>
         <!-- Button that handles sign-out -->
-        <button class="" id="sign-out-button">Sign-out</button>
+        <button class="" id="sign-out-button">Logout</button>
 
 
         <!-- The Modal -->
@@ -105,27 +87,8 @@
                 </div>
                 <button class="" id="apply-referral">Apply</button>
               </div>
-
-
-
             </div>
           </div>
-
         </div>
-
-
-
-
-
-
       </div>
-    </main>
-  </div>
-  <div id="firebase-auth-data" style="visibility: hidden"><%= JSON.stringify(authData) %></div>
-  <%- include('components/firebaseScripts.ejs'); -%>
-  <!-- <script>!function(m,a,i,t,r,e){if(m.RH)return;r=m.RH={},r.uuid=t,r.loaded=0,r.base_url=i,r.queue=[],m.rht=function(){r.queue.push(arguments)};e=a.getElementsByTagName('script')[0],c=a.createElement('script');c.async=!0,c.src=i+'/widget/'+t+'.js',e.parentNode.insertBefore(c,e)}(window,document,'https://app.referralhero.com','MF51efecef56');</script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-  <script src="login.js"></script>
-<!-- </body>
-
-</html> -->
+  <div id="firebase-auth-data" style="display: none"><%= JSON.stringify(authData) %></div>

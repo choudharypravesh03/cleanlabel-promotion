@@ -5,6 +5,9 @@ var firebaseApp;
 
   var selectedCity = "Bangalore";
   var selectedPackage = "999";
+  var isLoginFlow = false;
+  var userEmail = "";
+  var phoneNumber = "";
   
   // Check for referral cookie
   getReferralFromUrl();
@@ -56,11 +59,21 @@ var firebaseApp;
   };
 
 
-  // MODAL JS
+
+
+  /* -------------------------------------------------------------------
+                                MODAL START
+  ----------------------------------------------------------------------*/ 
   var modal = document.getElementById("myModal");
-  var btn = document.getElementById("myBtn");
+  var btn = document.getElementById("join-membership");
+  var login = document.getElementById('login');
   var span = document.getElementsByClassName("close")[0];
   btn.onclick = function () {
+    isLoginFlow = false;
+    modal.style.display = "block";
+  }
+  login.onclick = function () {
+    isLoginFlow = true;
     modal.style.display = "block";
   }
   span.onclick = function () {
@@ -71,6 +84,9 @@ var firebaseApp;
       modal.style.display = "none";
     }
   }
+  /* -------------------------------------------------------------------
+                                MODAL END
+  ----------------------------------------------------------------------*/ 
 
 
 
@@ -93,8 +109,6 @@ var firebaseApp;
     document.getElementById('apply-referral').addEventListener('click', checkRetrieveSaveReferral);
   }
 
-
-
   function toggleGoogleSignIn() {
     if (!firebase.auth().currentUser) {
       var provider = new firebase.auth.GoogleAuthProvider();
@@ -113,16 +127,15 @@ var firebaseApp;
           email: result.user.email,
           referrerCode: referralCode || null
         };
+        userEmail = userObj.email;
         sessionStorage.setItem('userData', JSON.stringify(userObj));
         saveUserData(userObj, (response) => {
           console.log(response);
           if(response.status === 200) {
             if(response.data.isUpdated && response.data.membership === 'none') {
               // User in database. Send directly to payment page.
-              window.location.href = "/paywithpaytm?amount="+selectedPackage;
-            } else if(response.data.isUpdated && response.data.membership !== 'none') {
-              window.location.href = "/referrals";
-            } else {
+              window.location.href =  (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
+            }  else {
               // User not there. Enter phone number
               document.querySelector('.oauth-container').style.display = 'none';
               document.querySelector('.referral-container').style.display = 'none';
@@ -155,13 +168,14 @@ var firebaseApp;
           email: result.user.email,
           referrerCode: referralCode || null
         };
+        userEmail = userObj.email;
         sessionStorage.setItem('userData', JSON.stringify(userObj));
         saveUserData(userObj, (response) => {
           console.log(response);
           if(response.status === 200) {
             if(response.data.isUpdated && response.data.membership === 'none') {
               // User in database. Send directly to payment page.
-              window.location.href = "/paywithpaytm?amount="+selectedPackage;
+              window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
             } else if(response.data.isUpdated && response.data.membership !== 'none') {
               window.location.href = "/referrals";
             } else {
@@ -180,15 +194,23 @@ var firebaseApp;
     document.getElementById('quickstart-sign-in-facebook').disabled = true;
   }
 
+  function onSignOutClick() {
+    firebase.auth().signOut();
+  }
 
+
+  /* --------------------------------------------------------------------------------------------------------------
+  -------------------------------------------PHONE NUMBER FLOW START---------------------------------------------------- 
+  -----------------------------------------------------------------------------------------------------------------*/
 
   function onSignInSubmit() {
     if (isPhoneNumberValid()) {
       window.signingIn = true;
       updateSignInButtonUI();
-      var phoneNumber = '+91' + getPhoneNumberFromUserInput();
+      phoneNumber = getPhoneNumberFromUserInput();
+      var phoneWithCode = '+91' + phoneNumber;
       var appVerifier = window.recaptchaVerifier;
-      firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+      firebase.auth().signInWithPhoneNumber(phoneWithCode, appVerifier)
         .then(function (confirmationResult) {
           // SMS sent. Prompt user to type the code from the message, then sign the
           // user in with confirmationResult.confirm(code).
@@ -225,7 +247,9 @@ var firebaseApp;
         window.verifyingCode = false;
         window.confirmationResult = null;
         updateVerificationCodeFormUI();
-        verifyWithPhoneIfUserExist();
+        saveUserData({phone: phoneNumber, email: userEmail}, (response) => {
+          verifyWithPhoneIfUserExist();
+        })
       }).catch(function (error) {
         // User couldn't sign in (bad verification code?)
         console.error('Error while checking the verification code', error);
@@ -237,10 +261,7 @@ var firebaseApp;
       });
     }
   }
-
-  /**
-   * Cancels the verification code input.
-   */
+  
   function cancelVerification(e) {
     e.preventDefault();
     window.confirmationResult = null;
@@ -248,39 +269,20 @@ var firebaseApp;
     updateSignInFormUI();
   }
 
-  /**
-   * Signs out the user when the sign-out button is clicked.
-   */
-  function onSignOutClick() {
-    firebase.auth().signOut();
-  }
-
-  /**
-   * Reads the verification code from the user input.
-   */
   function getCodeFromUserInput() {
     return document.getElementById('verification-code').value;
   }
 
-  /**
-   * Reads the phone number from the user input.
-   */
   function getPhoneNumberFromUserInput() {
     return document.getElementById('phone-number').value;
   }
 
-  /**
-   * Returns true if the phone number is valid.
-   */
   function isPhoneNumberValid() {
     var pattern = /^[789]\d{9}$/;
     var phoneNumber = getPhoneNumberFromUserInput();
     return phoneNumber.search(pattern) !== -1;
   }
 
-  /**
-   * Re-initializes the ReCaptacha widget.
-   */
   function resetReCaptcha() {
     if (typeof grecaptcha !== 'undefined'
       && typeof window.recaptchaWidgetId !== 'undefined') {
@@ -288,27 +290,18 @@ var firebaseApp;
     }
   }
 
-  /**
-   * Updates the Sign-in button state depending on ReCAptcha and form values state.
-   */
   function updateSignInButtonUI() {
     document.getElementById('sign-in-button').disabled =
       !isPhoneNumberValid()
       || !!window.signingIn;
   }
 
-  /**
-   * Updates the Verify-code button state depending on form values state.
-   */
   function updateVerifyCodeButtonUI() {
     document.getElementById('verify-code-button').disabled =
       !!window.verifyingCode
       || !getCodeFromUserInput();
   }
 
-  /**
-   * Updates the state of the Sign-in form.
-   */
   function updateSignInFormUI() {
     if (firebase.auth().currentUser || window.confirmationResult) {
       document.getElementById('sign-in-form').style.display = 'none';
@@ -318,9 +311,6 @@ var firebaseApp;
     }
   }
 
-  /**
-   * Updates the state of the Verify code form.
-   */
   function updateVerificationCodeFormUI() {
     if (!firebase.auth().currentUser && window.confirmationResult) {
       document.getElementById('verification-code-form').style.display = 'block';
@@ -329,20 +319,16 @@ var firebaseApp;
     }
   }
 
-  /**
-   * Updates the state of the Sign out button.
-   */
   function updateSignOutButtonUI() {
     if (firebase.auth().currentUser) {
       document.getElementById('sign-out-button').style.display = 'block';
+      document.getElementById('login').style.display = 'none';
     } else {
       document.getElementById('sign-out-button').style.display = 'none';
+      document.getElementById('login').style.display = 'block';
     }
   }
 
-  /**
-   * Updates the Signed in user status panel.
-   */
   function updateSignedInUserStatusUI() {
     var user = firebase.auth().currentUser;
     if (user) {
@@ -351,6 +337,10 @@ var firebaseApp;
 
     }
   }
+
+   /* --------------------------------------------------------------------------------------------------------------
+  -------------------------------------------PHONE NUMBER FLOW END---------------------------------------------------- 
+  -----------------------------------------------------------------------------------------------------------------*/
 
   function saveUserData(obj, callback) {
     axios.post('/customer/save', obj)
@@ -366,7 +356,7 @@ var firebaseApp;
   function getNameAndEmailThenSaveAndRedirect() {
     var user = firebase.auth().currentUser;
     console.log(user);
-    var phoneNumber = user.phoneNumber;
+    var phoneNumber = getPhoneNumberFromUserInput();
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     if (name && email) {
@@ -379,7 +369,7 @@ var firebaseApp;
       };
       saveUserData(userObj, (response) => {
         sessionStorage.setItem('userData', JSON.stringify(userObj));
-        window.location.href = "/paywithpaytm?amount="+selectedPackage;
+        window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
       });
     } else {
       alert('Please enter your name and email to proceed');
@@ -388,7 +378,9 @@ var firebaseApp;
 
   function verifyWithPhoneIfUserExist() {
     var phoneNumber = getPhoneNumberFromUserInput();
-    axios.get('/customer/get?phone=' + phoneNumber)
+    var email = userEmail || '';
+    var url = `/customer/get?phone=${phoneNumber}&&email=${email}`;
+    axios.get(url)
       .then(response => {
         console.log(response);
         var isoAuthFlow = (localStorage.getItem('signinType') === 'oauth');
@@ -399,13 +391,9 @@ var firebaseApp;
           window.location.href = '/referrals';
         } else {
           // Non registered social login
-          var userData = {
-            email: response.data.email,
-            name: response.data.name
-          }
-          sessionStorage.setItem('userData', JSON.stringify(userData));
+          // sessionStorage.setItem('userData', JSON.stringify(userData));
           localStorage.removeItem('signinType');
-          window.location.href = "/paywithpaytm?amount="+selectedPackage;
+          window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
 
         }
       })
