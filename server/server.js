@@ -6,6 +6,8 @@ const cors = require("cors");
 const ejs = require("ejs");
 const app = express();
 const path = require('path');
+const Logger = require('./config/winston');
+const logger = new Logger('app');
 
 const prodEnv = {path: path.resolve(process.cwd(), '.env.production')};
 const devEnv = { path: path.resolve(process.cwd(), '.env.development') };
@@ -34,12 +36,14 @@ app.set("view engine", "ejs");
 app.get("/paywithpaytm", (req, res) => {
     initPayment(req.query.amount).then(
         success => {
+            logger.info('Initiated payment gateway for amount '+req.query.amount);
             res.render("paytmRedirect.ejs", {
                 resultData: success,
                 paytmFinalUrl: process.env.PAYTM_FINAL_URL
             });
         },
         error => {
+            logger.error('Initiated payment gateway for amount '+req.query.amount+ ' failed!');
             res.send(error);
         }
     );
@@ -64,8 +68,8 @@ app.get("/account", (req, res) => {
 app.post("/paywithpaytmresponse", (req, res) => {
     responsePayment(req.body).then(
         response => {
-            console.log(JSON.stringify(response));
             if(response.STATUS === 'TXN_SUCCESS') {
+                logger.info('Transaction successful! Order ID: '+response.ORDERID)
                 createInvoicePdf(response.ORDERID);
                 res
                 .status(200)
@@ -88,6 +92,7 @@ app.post("/paywithpaytmresponse", (req, res) => {
 
 app.get('/sendmails', (req, res) => {
     var emails = req.query.emails;
+    var sentCount = 0;
     var emailArray = emails.split(",").map(function(item) {
         let obj = {
             toEmail: item.trim(),
@@ -95,15 +100,21 @@ app.get('/sendmails', (req, res) => {
         }
         return obj;
       });
+    logger.info("Sending emails...");
     for(let i=0; i<emailArray.length; i++) {
-        sendEmails(emailArray[i]);
+        sendEmails(emailArray[i], (response) => {
+            sentCount++;
+            if(i === emailArray.length-1) {
+                logger.info("Total emails: "+emailArray.length+" and sent emails "+sentCount);
+                res.status(200).send("Successfully sent emails");
+            }
+        });
     }
-    res.status(200).send("Successfully send emails");
 })
 
 
 app.listen(PORT, () => {
-    console.log("Running on " + PORT);
+    console.log("App started at port "+PORT);
 });
 
 //Set the Controller path which will be responding the user actions

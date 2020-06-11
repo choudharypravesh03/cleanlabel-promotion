@@ -1,0 +1,6 @@
+Thu, 11 Jun 2020 15:36:55 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:38:21 GMT | INFO | app.log | Request recieved at /test | data:{"gender":"Male","age":10,"name":"Andy"} | log_data:{"gender":"Male","age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:38:21 GMT | INFO | app.log | Retun sucess response | data:{"sucess":true} | log_data:{"gender":"Male","age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:39:01 GMT | INFO | app.log | Request recieved at /test | data:{"age":10,"name":"Andy"} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:39:01 GMT | ERROR | app.log | Gender field is empty | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:39:01 GMT | ERROR | app.log | Retun error response | data:{"sucess":false} | log_data:{"age":10,"name":"Andy"} | 

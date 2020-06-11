@@ -1,0 +1,323 @@
+Thu, 11 Jun 2020 15:42:39 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:42:42 GMT | INFO | app.log | Request recieved at /test | data:{"age":10,"name":"Andy"} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:42:42 GMT | ERROR | app.log | Gender field is empty | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:42:42 GMT | ERROR | app.log | Retun error response | data:{"sucess":false} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:43:06 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:43:11 GMT | INFO | app.log | Request recieved at /test | data:{"age":10,"name":"Andy"} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:43:11 GMT | ERROR | app.log | Gender field is empty | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:43:11 GMT | ERROR | app.log | Retun error response | data:{"sucess":false} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:44:08 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:44:18 GMT | INFO | app.log | Request recieved at /test | data:{"age":10,"name":"Andy"} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:44:18 GMT | ERROR | app.log | Gender field is empty | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:44:18 GMT | ERROR | app.log | Retun error response | data:{"sucess":false} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:44:42 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:45:59 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:46:02 GMT | INFO | app.log | Request recieved at /test | data:{"age":10,"name":"Andy"} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:46:02 GMT | ERROR | app.log | Gender field is empty | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:46:02 GMT | ERROR | app.log | Retun error response | data:{"sucess":false} | log_data:{"age":10,"name":"Andy"} | 
+Thu, 11 Jun 2020 15:49:20 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:49:20 GMT | ERROR | app.log | uncaughtException: logger.silly is not a function
+TypeError: logger.silly is not a function
+    at Server.app.listen (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/app.js:44:12)
+    at Object.onceWrapper (events.js:277:13)
+    at Server.emit (events.js:189:13)
+    at emitListeningNT (net.js:1304:10)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:757:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Thu, 11 Jun 2020 15:49:42 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:49:42 GMT | ERROR | app.log | uncaughtException: logger.verbose is not a function
+TypeError: logger.verbose is not a function
+    at Server.app.listen (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/app.js:46:12)
+    at Object.onceWrapper (events.js:277:13)
+    at Server.emit (events.js:189:13)
+    at emitListeningNT (net.js:1304:10)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:757:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Thu, 11 Jun 2020 15:49:53 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:49:53 GMT | INFO | app.log | Hello, Winston! | 
+Thu, 11 Jun 2020 15:49:53 GMT | ERROR | app.log | uncaughtException: logger.warn is not a function
+TypeError: logger.warn is not a function
+    at Server.app.listen (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/app.js:48:12)
+    at Object.onceWrapper (events.js:277:13)
+    at Server.emit (events.js:189:13)
+    at emitListeningNT (net.js:1304:10)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:757:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Thu, 11 Jun 2020 15:50:03 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 15:50:03 GMT | INFO | app.log | Hello, Winston! | 
+Thu, 11 Jun 2020 15:50:03 GMT | ERROR | app.log | Danger, Winston! | 
+{"level":"\u001b[32minfo\u001b[39m","message":"APP LAUNCHED IN PORT 4000"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Hello, Winston!"}
+{"level":"\u001b[31merror\u001b[39m","message":"Danger, Winston!"}
+Thu, 11 Jun 2020 16:08:48 GMT | INFO | app.log | APP LAUNCHED IN PORT 4000 | 
+Thu, 11 Jun 2020 16:08:48 GMT | INFO | app.log | Hello, Winston! | 
+Thu, 11 Jun 2020 16:08:48 GMT | ERROR | app.log | Danger, Winston! | 
+Thu, 11 Jun 2020 16:12:22 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:12:58 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 |
+Thu, 11 Jun 2020 16:17:30 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:20:16 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:20:24 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+[32minfo[39m: APP LAUNCHED IN PORT 5000
+[32minfo[39m: APP LAUNCHED IN PORT 5000
+[32minfo[39m: [32mAPP LAUNCHED IN PORT 5000[39m
+[32minfo[39m: APP LAUNCHED IN PORT 5000
+2020-06-11 21:54:49 [[32MINFO[39M]: 	APP LAUNCHED IN PORT 5000 {}
+Thu, 11 Jun 2020 16:25:58 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:26:16 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:28:35 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:29:16 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:30:02 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:30:33 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:34:33 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:34:52 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:35:06 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:35:14 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:41:13 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:44:58 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:45:56 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:48:52 GMT | [31MERROR[39M | app.log | uncaughtException: Invalid transport, must be an object with a log method.
+Error: Invalid transport, must be an object with a log method.
+    at new LegacyTransportStream (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/winston-transport/legacy.js:18:11)
+    at DerivedLogger.add (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/winston/lib/winston/logger.js:345:11)
+    at new LoggerService (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/config/winston.js:75:21)
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:10:16)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12) | 
+Thu, 11 Jun 2020 16:49:03 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:49:12 GMT | [32MINFO[39M | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:49:17 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:53:42 GMT | ERROR | app.log | uncaughtException: winston is not defined
+ReferenceError: winston is not defined
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:12:12)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Thu, 11 Jun 2020 16:54:16 GMT | ERROR | app.log | uncaughtException: logger.add is not a function
+TypeError: logger.add is not a function
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:13:8)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Thu, 11 Jun 2020 16:54:31 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:55:09 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:55:27 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:56:01 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 16:59:38 GMT | ERROR | app.log | uncaughtException: Cannot find module './config/winston'
+Error: Cannot find module './config/winston'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:582:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:508:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/controller/customerController.js:3:16)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:21:28)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32) | 
+Thu, 11 Jun 2020 17:03:24 GMT | ERROR | app.log | uncaughtException: Cannot find module './config/winston'
+Error: Cannot find module './config/winston'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:582:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:508:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/controller/customerController.js:3:16)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:21:28)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32) | 
+Thu, 11 Jun 2020 17:03:33 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 17:05:27 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 17:07:12 GMT | INFO | app.log | Successfully fetched the customer { membership: 'yearly',
+  _id: 5ee1413dfdc2436302b83792,
+  email: 'tiger@gmail.com',
+  __v: 0,
+  city: 'Bangalore',
+  name: 'tiger',
+  phone: '8989803020',
+  referrerCode: null,
+  amount: '999.00',
+  created_at: '2020-06-11 01:53:27.0',
+  order_id: 'hkNwo2XPi',
+  referral: 'tiger-4f99',
+  referred_by: '',
+  transactionStatus: 'TXN_SUCCESS' } | 
+Thu, 11 Jun 2020 17:10:09 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 17:10:11 GMT | INFO | app.log | Successfully fetched the customer { membership: 'yearly',
+  _id: 5ee1413dfdc2436302b83792,
+  email: 'tiger@gmail.com',
+  __v: 0,
+  city: 'Bangalore',
+  name: 'tiger',
+  phone: '8989803020',
+  referrerCode: null,
+  amount: '999.00',
+  created_at: '2020-06-11 01:53:27.0',
+  order_id: 'hkNwo2XPi',
+  referral: 'tiger-4f99',
+  referred_by: '',
+  transactionStatus: 'TXN_SUCCESS' } | 
+Thu, 11 Jun 2020 18:09:50 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:10:40 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:11:25 GMT | INFO | app.log | Successfully fetched the customer null | 
+Thu, 11 Jun 2020 18:15:01 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:15:03 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:15:04 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:15:18 GMT | ERROR | app.log | uncaughtException: logger.warn is not a function
+TypeError: logger.warn is not a function
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/controller/customerController.js:18:24
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/model.js:4915:16
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/model.js:4915:16
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/helpers/promiseOrCallback.js:24:16
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/model.js:4938:21
+    at _hooks.execPost (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/query.js:4380:11)
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/kareem/index.js:135:16
+    at process._tickCallback (internal/process/next_tick.js:61:11) | 
+Thu, 11 Jun 2020 18:15:18 GMT | ERROR | app.log | uncaughtException: logger.warn is not a function
+TypeError: logger.warn is not a function
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/controller/customerController.js:18:24
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/model.js:4915:16
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/model.js:4915:16
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/helpers/promiseOrCallback.js:24:16
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/model.js:4938:21
+    at _hooks.execPost (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/mongoose/lib/query.js:4380:11)
+    at /Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/node_modules/kareem/index.js:135:16
+    at process._tickCallback (internal/process/next_tick.js:61:11) | 
+Thu, 11 Jun 2020 18:16:33 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:16:38 GMT | WARN | app.log | Customer not found undefined | 
+Thu, 11 Jun 2020 18:17:37 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:17:40 GMT | WARN | app.log | Customer not found with email undefined and/or phone 9108253214 | 
+Thu, 11 Jun 2020 18:18:55 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Thu, 11 Jun 2020 18:22:32 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:24:32 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:24:48 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:24:55 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 18:26:03 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:33:59 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:34:26 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Thu, 11 Jun 2020 19:36:01 GMT | INFO | app.log | Added new customer ramesh@gmail.com | 
+Thu, 11 Jun 2020 19:38:14 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:38:55 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:39:05 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:40:33 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:44:00 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:45:11 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:45:55 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:47:37 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:47:46 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:49:53 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:51:05 GMT | INFO | app.log | Sennding emails... | 
+Thu, 11 Jun 2020 19:51:07 GMT | INFO | app.log | Message not sent to pravesh03choudhary@gmail.com | 
+Thu, 11 Jun 2020 19:51:07 GMT | INFO | app.log | Message not sent to praveshmaxoutchoudhary@gmail.com | 
+Thu, 11 Jun 2020 19:51:36 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:53:16 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:53:23 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:53:30 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:53:34 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 19:53:34 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: Cannot read property 'statusCode' of undefined | 
+Thu, 11 Jun 2020 19:53:34 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: Cannot read property 'statusCode' of undefined | 
+Thu, 11 Jun 2020 19:55:28 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:55:31 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 19:55:32 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: Cannot read property 'statusCode' of undefined | 
+Thu, 11 Jun 2020 19:55:32 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: Cannot read property 'statusCode' of undefined | 
+Thu, 11 Jun 2020 19:55:50 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:55:51 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 19:55:59 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 19:55:59 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: Cannot read property 'statusCode' of undefined | 
+Thu, 11 Jun 2020 19:55:59 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: Cannot read property 'statusCode' of undefined | 
+Thu, 11 Jun 2020 19:56:42 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:03:28 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:03:32 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:03:33 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: response.json is not a function | 
+Thu, 11 Jun 2020 20:03:33 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: response.json is not a function | 
+Thu, 11 Jun 2020 20:05:58 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:06:01 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:06:01 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: response[0].json is not a function | 
+Thu, 11 Jun 2020 20:06:01 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: response[0].json is not a function | 
+Thu, 11 Jun 2020 20:06:31 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:06:35 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:06:36 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: response[0].json is not a function | 
+Thu, 11 Jun 2020 20:06:36 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: response[0].json is not a function | 
+Thu, 11 Jun 2020 20:12:24 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:12:30 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:12:31 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: r.json is not a function | 
+Thu, 11 Jun 2020 20:12:31 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: r.json is not a function | 
+Thu, 11 Jun 2020 20:12:46 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:12:50 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:12:51 GMT | ERROR | app.log | Error sending email to pravesh03choudhary@gmail.com -> ERROR: TypeError: r[0].json is not a function | 
+Thu, 11 Jun 2020 20:12:51 GMT | ERROR | app.log | Error sending email to praveshmaxoutchoudhary@gmail.com -> ERROR: TypeError: r[0].json is not a function | 
+Thu, 11 Jun 2020 20:13:54 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:14:40 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:16:00 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:17:10 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:18:53 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:19:03 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:19:03 GMT | INFO | app.log | Total emails: 2 and sent emails (obj, callback) => {
+    console.log(obj);
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+        to: obj.toEmail,
+        from: 'pravesh.choudhary@publicissapient.com',
+        subject: 'Invitation to Cleanlabel',
+        text: 'Come join us with this link:',
+        html: `<a href='${obj.referralLink}'>Click here</a>`
+        };
+    sgMail.send(msg).then((response) => {
+        logger.info('Message sent to '+obj.toEmail);
+        callback(response);
+    }).catch((error) => {
+        logger.error("Error sending email to "+obj.toEmail+ " -> ERROR: "+error);
+        callback(error);
+    })
+} | 
+Thu, 11 Jun 2020 20:19:04 GMT | INFO | app.log | Message sent to praveshmaxoutchoudhary@gmail.com | 
+Thu, 11 Jun 2020 20:19:05 GMT | INFO | app.log | Message sent to pravesh03choudhary@gmail.com | 
+Thu, 11 Jun 2020 20:20:01 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:20:02 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:20:04 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:20:10 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:20:10 GMT | INFO | app.log | Total emails: 2 and sent emails 0 | 
+Thu, 11 Jun 2020 20:20:11 GMT | INFO | app.log | Message sent to pravesh03choudhary@gmail.com | 
+Thu, 11 Jun 2020 20:20:11 GMT | INFO | app.log | Message sent to praveshmaxoutchoudhary@gmail.com | 
+Thu, 11 Jun 2020 20:22:46 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:22:51 GMT | INFO | app.log | Sending emails... | 
+Thu, 11 Jun 2020 20:22:52 GMT | INFO | app.log | Message sent to pravesh03choudhary@gmail.com | 
+Thu, 11 Jun 2020 20:22:52 GMT | INFO | app.log | Message sent to praveshmaxoutchoudhary@gmail.com | 
+Thu, 11 Jun 2020 20:22:52 GMT | INFO | app.log | Total emails: 2 and sent emails 2 | 
+Thu, 11 Jun 2020 20:28:03 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:28:28 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:32:23 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:33:30 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Thu, 11 Jun 2020 20:33:49 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 

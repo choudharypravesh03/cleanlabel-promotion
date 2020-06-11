@@ -48,8 +48,7 @@ var customerSchema = new mongoose.Schema({
         type: String
     },
     sentEmails : {
-        type: String,
-        default: ""
+        type: String
     },
     subscriber_id: {
         type: String,

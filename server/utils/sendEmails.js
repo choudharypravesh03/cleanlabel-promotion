@@ -1,11 +1,13 @@
 const ejs = require('ejs');
 let path = require("path");
+const Logger = require('../config/winston');
+const logger = new Logger('app');
 // using Twilio SendGrid's v3 Node.js Library
 // https://github.com/sendgrid/sendgrid-nodejs
 const sgMail = require('@sendgrid/mail');
 const fs = require("fs");
 
-const sendEmails = (obj) => {
+const sendEmails = (obj, callback) => {
     console.log(obj);
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
@@ -16,13 +18,11 @@ const sendEmails = (obj) => {
         html: `<a href='${obj.referralLink}'>Click here</a>`
         };
     sgMail.send(msg).then((response) => {
-        if(response[0].statusCode === '202') {
-            console.log('Message sent');
-        } else {
-            console.log("Message not sent");
-        }
+        logger.info('Message sent to '+obj.toEmail);
+        callback(response);
     }).catch((error) => {
-        console.log(error)
+        logger.error("Error sending email to "+obj.toEmail+ " -> ERROR: "+error);
+        callback(error);
     })
 }
 

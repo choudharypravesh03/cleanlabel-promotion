@@ -3,8 +3,8 @@ var firebaseApp;
 
 (function () {
 
-  var selectedCity = "Bangalore";
-  var selectedPackage = "999";
+  var selectedCity = "";
+  var selectedPackage = "";
   var isLoginFlow = false;
   var userEmail = "";
   var phoneNumber = "";
@@ -70,10 +70,14 @@ var firebaseApp;
   var span = document.getElementsByClassName("close")[0];
   btn.onclick = function () {
     isLoginFlow = false;
+    selectedCity = "Bangalore";
+    selectedPackage="999";
     modal.style.display = "block";
   }
   login.onclick = function () {
     isLoginFlow = true;
+    selectedCity = "";
+    selectedPackage="";
     modal.style.display = "block";
   }
   span.onclick = function () {
@@ -95,19 +99,19 @@ var firebaseApp;
 
 
 
-  function attachEventListeners() {
-    document.getElementById('quickstart-sign-in-google').addEventListener('click', toggleGoogleSignIn, false);
-    document.getElementById('quickstart-sign-in-facebook').addEventListener('click', toggleFacebookSignIn, false);
-    document.getElementById('sign-out-button').addEventListener('click', onSignOutClick);
-    document.getElementById('phone-number').addEventListener('keyup', updateSignInButtonUI);
-    document.getElementById('phone-number').addEventListener('change', updateSignInButtonUI);
-    document.getElementById('verification-code').addEventListener('keyup', updateVerifyCodeButtonUI);
-    document.getElementById('verification-code').addEventListener('change', updateVerifyCodeButtonUI);
-    document.getElementById('verification-code-form').addEventListener('submit', onVerifyCodeSubmit);
-    document.getElementById('cancel-verify-code-button').addEventListener('click', cancelVerification);
-    document.getElementById('continue-successful').addEventListener('click', getNameAndEmailThenSaveAndRedirect);
-    document.getElementById('apply-referral').addEventListener('click', checkRetrieveSaveReferral);
-  }
+function attachEventListeners() {
+  document.getElementById('quickstart-sign-in-google').addEventListener('click', toggleGoogleSignIn, false);
+  document.getElementById('quickstart-sign-in-facebook').addEventListener('click', toggleFacebookSignIn, false);
+  document.getElementById('sign-out-button').addEventListener('click', onSignOutClick);
+  document.getElementById('phone-number').addEventListener('keyup', updateSignInButtonUI);
+  document.getElementById('phone-number').addEventListener('change', updateSignInButtonUI);
+  document.getElementById('verification-code').addEventListener('keyup', updateVerifyCodeButtonUI);
+  document.getElementById('verification-code').addEventListener('change', updateVerifyCodeButtonUI);
+  document.getElementById('verification-code-form').addEventListener('submit', onVerifyCodeSubmit);
+  document.getElementById('cancel-verify-code-button').addEventListener('click', cancelVerification);
+  document.getElementById('continue-successful').addEventListener('click', getNameAndEmailThenSaveAndRedirect);
+  document.getElementById('apply-referral').addEventListener('click', checkRetrieveSaveReferral);
+}
 
   function toggleGoogleSignIn() {
     if (!firebase.auth().currentUser) {
@@ -115,35 +119,7 @@ var firebaseApp;
       provider.addScope('https://www.googleapis.com/auth/plus.login');
       // firebase.auth().signInWithRedirect(provider);
       firebase.auth().signInWithPopup(provider).then(function (result) {
-        var token = result.credential.accessToken;
-        var user = result.user;
-        localStorage.setItem("signinType", "oauth");
-
-        // trick to use phone verification code after social login
-        firebase.auth().signOut();
-
-        var userObj = {
-          name: result.user.displayName,
-          email: result.user.email,
-          referrerCode: referralCode || null
-        };
-        userEmail = userObj.email;
-        sessionStorage.setItem('userData', JSON.stringify(userObj));
-        saveUserData(userObj, (response) => {
-          console.log(response);
-          if(response.status === 200) {
-            if(response.data.isUpdated && response.data.membership === 'none') {
-              // User in database. Send directly to payment page.
-              window.location.href =  (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
-            }  else {
-              // User not there. Enter phone number
-              document.querySelector('.oauth-container').style.display = 'none';
-              document.querySelector('.referral-container').style.display = 'none';
-            }
-          } else {
-            alert("There was an error saving your data. Please try again! Error: "+error);
-          }
-        });
+        oAuthSuccess(result);
       });
     } else {
       firebase.auth().signOut();
@@ -156,37 +132,7 @@ var firebaseApp;
       provider.addScope('user_likes');
       // firebase.auth().signInWithRedirect(provider);
       firebase.auth().signInWithPopup(provider).then(function (result) {
-        var token = result.credential.accessToken;
-        var user = result.user;
-        localStorage.setItem("signinType", "oauth");
-
-        // trick to use phone verification code after social login
-        firebase.auth().signOut();
-
-        var userObj = {
-          name: result.user.displayName,
-          email: result.user.email,
-          referrerCode: referralCode || null
-        };
-        userEmail = userObj.email;
-        sessionStorage.setItem('userData', JSON.stringify(userObj));
-        saveUserData(userObj, (response) => {
-          console.log(response);
-          if(response.status === 200) {
-            if(response.data.isUpdated && response.data.membership === 'none') {
-              // User in database. Send directly to payment page.
-              window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
-            } else if(response.data.isUpdated && response.data.membership !== 'none') {
-              window.location.href = "/referrals";
-            } else {
-              // User not there. Enter phone number
-              document.querySelector('.oauth-container').style.display = 'none';
-              document.querySelector('.referral-container').style.display = 'none';
-            }
-          } else {
-            alert("There was an error saving your data. Please try again! Error: "+error);
-          }
-        });
+        oAuthSuccess(result);
       });
     } else {
       firebase.auth().signOut();
@@ -194,7 +140,44 @@ var firebaseApp;
     document.getElementById('quickstart-sign-in-facebook').disabled = true;
   }
 
+  function oAuthSuccess(result) {
+    var token = result.credential.accessToken;
+    var user = result.user;
+    localStorage.setItem("signinType", "oauth");
+
+   
+
+    var userObj = {
+      name: result.user.displayName,
+      email: result.user.email,
+      referrerCode: referralCode || null
+    };
+    userEmail = userObj.email;
+    sessionStorage.setItem('userData', JSON.stringify(userObj));
+    saveUserData(userObj, (response) => {
+      console.log(response);
+      if(response.status === 200) {
+        if(response.data.isUpdated && response.data.membership === 'none') {
+          // User in database. Send directly to payment page.
+          window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
+        } else if(response.data.isUpdated && response.data.membership !== 'none') {
+          window.location.href = "/referrals";
+        } else {
+          // User not there. Enter phone number
+          // trick to use phone verification code after social login
+          firebase.auth().signOut();
+          document.querySelector('.oauth-container').style.display = 'none';
+          document.querySelector('.referral-container').style.display = 'none';
+        }
+      } else {
+        alert("There was an error saving your data. Please try again! Error: "+error);
+      }
+    });
+  }
+
   function onSignOutClick() {
+    sessionStorage.removeItem('userData');
+    localStorage.clear();
     firebase.auth().signOut();
   }
 
@@ -247,9 +230,13 @@ var firebaseApp;
         window.verifyingCode = false;
         window.confirmationResult = null;
         updateVerificationCodeFormUI();
-        saveUserData({phone: phoneNumber, email: userEmail}, (response) => {
-          verifyWithPhoneIfUserExist();
-        })
+        var isoAuthFlow = (localStorage.getItem('signinType') === 'oauth');
+        if(isoAuthFlow) {
+          saveUserData({phone: phoneNumber, email: userEmail}, (response) => {
+            verifyWithPhoneIfUserExist();
+          })
+        }
+        verifyWithPhoneIfUserExist();
       }).catch(function (error) {
         // User couldn't sign in (bad verification code?)
         console.error('Error while checking the verification code', error);
@@ -379,7 +366,7 @@ var firebaseApp;
   function verifyWithPhoneIfUserExist() {
     var phoneNumber = getPhoneNumberFromUserInput();
     var email = userEmail || '';
-    var url = `/customer/get?phone=${phoneNumber}&&email=${email}`;
+    var url = `/customer/get?phone=${phoneNumber}&email=${email}`;
     axios.get(url)
       .then(response => {
         console.log(response);

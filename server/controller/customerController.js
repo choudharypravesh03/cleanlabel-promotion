@@ -1,23 +1,26 @@
-//Import the dependencies
 const express = require('express');
 const mongoose = require('mongoose');
+const Logger = require('../config/winston');
+const logger = new Logger('app');
 const axios = require('axios');
-//Creating a Router
 var router = express.Router();
-//Link
 const Customer = mongoose.model('Customer');
 
 //Router Controller for READ request
 router.get('/get', (req, res) => {
     const phone = req.query.phone;
     const email = req.query.email;
-    console.log(phone, email);
     Customer.findOne({ $or:[ {'phone':phone}, {'email':email} ]}, function(err,doc) { 
         if (!err) {
-           res.send(doc);
+            if(doc !== null) {
+                logger.info('Successfully fetched the customer '+doc.email);
+            } else {
+                logger.warn('Customer not found with email '+email+' and/or phone '+phone);
+            }
+            res.send(doc);
         }
         else {
-            console.log('Error during record insertion : ' + err);
+            logger.error('Error during record fetch : ' + err);
             res.send(err);
         }
     });
@@ -35,10 +38,15 @@ router.post('/save', (req, res) => {
                 isUpdated: doc.lastErrorObject.updatedExisting,
                 membership: doc.value.membership
             }
-            res.status(200).send(response); 
+            if(response.isUpdated) {
+                logger.info('Successfully updated the customer '+doc.value.email);
+            } else {
+                logger.info('Added new customer '+doc.value.email);
+            }
+            res.status(200).send(doc); 
         }
         else {
-            console.log('Error during updating the record: ' + err);
+            logger.error('Error during updating the record: ' + err);
         }
     });
 });
@@ -75,18 +83,21 @@ router.get('/trackinvites', (req, res) => {
             if(doc !== null) {
                 var subscriber_id = doc.subscriber_id;
                 var invitedEmails;
-                doc.sentEmails.length > 0 ? invitedEmails = doc.sentEmails.split(',').map(item => item.trim()) : invitedEmails = "";
+                if(doc.sentEmails.length > 0) {
+                    invitedEmails = doc.sentEmails.split(',').map(item => item.trim())
+                }
                 getReferrals(subscriber_id, invitedEmails, function(earned, pending) {
                     var obj = {
                         earned: earned,
                         pending: pending
                     }
+                    logger.info('Track invites data fetched for'+doc.email);
                     res.send(obj);
                 });
             } else res.send(null);
         }
         else {
-            console.log('Error during record insertion : ' + err);
+            console.error('Error during tracking invites : ' + err);
             res.send(err);
         }
     });
@@ -105,14 +116,14 @@ router.get('/:id', (req, res) => {
 });
 
 //Router Controller for DELETE request
-router.get('/delete/:id', (req, res) => {
-    Customer.findByIdAndRemove(req.params.id, (err, doc) => {
-        if (!err) {
-            res.redirect('/customer/list');
-        }
-        else { console.log('Failed to Delete Customer Details: ' + err); }
-    });
-});
+// router.get('/delete/:id', (req, res) => {
+//     Customer.findByIdAndRemove(req.params.id, (err, doc) => {
+//         if (!err) {
+//             res.redirect('/customer/list');
+//         }
+//         else { console.log('Failed to Delete Customer Details: ' + err); }
+//     });
+// });
 
 
 
