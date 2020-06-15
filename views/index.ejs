@@ -12,7 +12,19 @@
     <%- include('components/navbar.ejs'); -%>
     <br><br><br><br>
 
-    <button onclick="joinMembership()" id="join-membership">Join Membership</button>
+    <button id="join-membership">Join Membership</button>
+
+    <div id="pay-now-modal" class="modal">
+      <div class="modal-content">
+        <div class="close-paynow">&times;</div>
+        <div class="modal-body">
+          <div class="payment-container">
+            <h2>Information about Membership</h2><br /><br />
+            <button id="pay-now">Pay now</button>
+          </div>
+        </div>
+      </div>
+    </div>
   
   <%- include('components/firebaseScripts.ejs'); -%>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>

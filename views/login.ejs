@@ -7,85 +7,73 @@
         <button class="" id="sign-out-button">Logout</button>
 
 
-        <!-- The Modal -->
         <div id="myModal" class="modal">
-
-          <!-- Modal content -->
           <div class="modal-content">
             <div class="close">&times;</div>
             <div class="modal-body">
-
-
-
-              <!-- Input to enter Email and Password -->
-              <div id="email-name-container" class="">
-                <input class="" style="display:inline;width:auto;" type="text" id="name" name="name"
-                  placeholder="Name" />
-                <br />
-                <input class="" style="display:inline;width:auto;" type="text" id="email"
-                  name="email" placeholder="Email" />
-                <br />
-
-
-                <button class="" id="continue-successful">Continue</button>
-              </div>
-              <br /><br />
-
-
-
-
-
-              <div class="phone-container">
-                <form id="sign-in-form" action="#">
-                  <div class="">
-                    <input placeholder="Enter your phone number" class="" type="text" id="phone-number">
-                  </div>
-
-                  <button disabled class=""
-                    id="sign-in-button">Continue</button>
-                </form>
-
-                <form id="verification-code-form" action="#">
-                  <!-- Input to enter the verification code -->
-                  <div class="">
-                    <input placeholder="Enter the verification code..." class="" type="text" id="verification-code">
-                  </div>
-
-                  <!-- Button that triggers code verification -->
-                  <input type="submit" class="" id="verify-code-button"
-                    value="Verify Code" />
-                  <!-- Button to cancel code verification -->
-                  <button class=""
-                    id="cancel-verify-code-button">Cancel</button>
-                </form>
-              </div>
-              <br /><br />
-
-
-              <div class="oauth-container">
-                <!-- GOOGLE -->
-                <button style="background: none; border:0; cursor: pointer;" class=""
-                  id="quickstart-sign-in-google">
-                  <img width="50" class="" src="https://app.acadium.com/images/page-referral/icon-gmail.svg">
-                </button>
-
-                <!-- FACEBOOK -->
-                <button style="background: none; border:0; cursor: pointer;" class=""
-                  id="quickstart-sign-in-facebook">
-                  <img width="50" class=""
-                    src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png">
-                </button>
-              </div>
-              <br /><br />
-
-              <div class="referral-container">
-                <!-- Input to enter the verification code -->
-                <h4>Have a referral link?</h4>
-                <div class="">
-                  <input class="" type="text" id="referral-link">
-                  <label class="" for="referral-link">Enter your referral link</label>
+              <div class="login-container">
+                <div id="email-name-container" class="">
+                  <input class="" style="display:inline;width:auto;" type="text" id="name" name="name"
+                    placeholder="Name" />
+                  <br />
+                  <input class="" style="display:inline;width:auto;" type="text" id="email"
+                    name="email" placeholder="Email" />
+                  <br />
+                  <button class="" id="continue-successful">Continue</button>
                 </div>
-                <button class="" id="apply-referral">Apply</button>
+                <br /><br />
+  
+                <div class="phone-container">
+                  <form id="sign-in-form" action="#">
+                    <div class="">
+                      <input placeholder="Enter your phone number" class="" type="text" id="phone-number">
+                    </div>
+  
+                    <button disabled class=""
+                      id="sign-in-button">Continue</button>
+                  </form>
+  
+                  <form id="verification-code-form" action="#">
+                    <!-- Input to enter the verification code -->
+                    <div class="">
+                      <input placeholder="Enter the verification code..." class="" type="text" id="verification-code">
+                    </div>
+  
+                    <!-- Button that triggers code verification -->
+                    <input type="submit" class="" id="verify-code-button"
+                      value="Verify Code" />
+                    <!-- Button to cancel code verification -->
+                    <button class=""
+                      id="cancel-verify-code-button">Cancel</button>
+                  </form>
+                </div>
+                <br /><br />
+  
+                <div class="oauth-container">
+                  <!-- GOOGLE -->
+                  <button style="background: none; border:0; cursor: pointer;" class=""
+                    id="quickstart-sign-in-google">
+                    <img width="50" class="" src="https://app.acadium.com/images/page-referral/icon-gmail.svg">
+                  </button>
+  
+                  <!-- FACEBOOK -->
+                  <button style="background: none; border:0; cursor: pointer;" class=""
+                    id="quickstart-sign-in-facebook">
+                    <img width="50" class=""
+                      src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png">
+                  </button>
+                </div>
+                <br /><br />
+  
+                <div class="referral-container">
+                  <!-- Input to enter the verification code -->
+                  <h4>Have a referral link?</h4>
+                  <div class="">
+                    <input class="" type="text" id="referral-link">
+                    <label class="" for="referral-link">Enter your referral link</label>
+                  </div>
+                  <button class="" id="apply-referral">Apply</button>
+                </div>
               </div>
             </div>
           </div>

@@ -6,6 +6,10 @@ const cors = require("cors");
 const ejs = require("ejs");
 const app = express();
 const path = require('path');
+const jwt = require('jsonwebtoken');
+const helmet = require('helmet')
+const xss = require('xss-clean');
+const mongoSanitize = require('express-mongo-sanitize'); 
 const Logger = require('./config/winston');
 const logger = new Logger('app');
 
@@ -28,6 +32,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/../views/"));
 app.use(express.static(__dirname + "/../js/"));
+app.use(helmet());
+app.use(xss());
+app.use(mongoSanitize());
 app.use("/assets", express.static(__dirname + "/../assets"));
 app.use("/css", express.static(__dirname + "/../css"));
 app.set("view engine", "ejs");
@@ -111,6 +118,49 @@ app.get('/sendmails', (req, res) => {
         });
     }
 })
+
+
+app.post('/api/posts', verifyToken, (req, res) => {
+    jwt.verify(req.token, process.env.API_TOKEN, (err, authData) => {
+        if(err) {
+            res.sendStatus(403);
+        } else {
+            res.json({
+                message: 'Post created...',
+                authData
+            })
+        }
+    })
+})
+
+app.post('/login', (req, res) => {
+    jwt.sign({id: "AIzaSyAJaIluEqkPDwKJQW-PsUHzXR98oJlfuPU"}, process.env.API_TOKEN, { expiresIn: '1d' }, (err, token) => {
+        res.json({
+            token: token
+        });
+        // save this token in the localstorage on client
+    });
+})
+
+// Verify token
+function verifyToken(req, res, next) {
+    // Get auth header value
+    const bearerHeader = req.headers['authorization'];
+    // Check if bearer is  undefined
+    if(typeof bearerHeader !== 'undefined') {
+        // Split at the space coz Authorization: Bearer <access token>
+        const bearer = bearerHeader.split(' ');
+        const bearerToken = bearer[1];
+        // set the token
+        req.token = bearerToken;
+        // Next middleware
+        console.log(req.token);
+        next();
+    } else {
+        // Forbidden
+        res.sendStatus(403);
+    }
+}
 
 
 app.listen(PORT, () => {

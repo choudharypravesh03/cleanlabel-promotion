@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 //Attributes of the Course object
 var customerSchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        type: String
     },
     id: {
         type: String

@@ -18,14 +18,14 @@ var firebaseApp;
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         // User is signed in.
-        var displayName = user.displayName;
-        var email = user.email;
-        var emailVerified = user.emailVerified;
-        var photoURL = user.photoURL;
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        var providerData = user.providerData;
-        var phoneNumber = user.phoneNumber;
+        // var displayName = user.displayName;
+        // var email = user.email;
+        // var emailVerified = user.emailVerified;
+        // var photoURL = user.photoURL;
+        // var isAnonymous = user.isAnonymous;
+        // var uid = user.uid;
+        // var providerData = user.providerData;
+        // var phoneNumber = user.phoneNumber;
 
       } else {
 
@@ -62,39 +62,49 @@ var firebaseApp;
 
 
   /* -------------------------------------------------------------------
-                                MODAL START
+                               LOGIN MODAL START
   ----------------------------------------------------------------------*/ 
   var modal = document.getElementById("myModal");
+  var payModal = document.getElementById("pay-now-modal");
   var btn = document.getElementById("join-membership");
   var login = document.getElementById('login');
   var span = document.getElementsByClassName("close")[0];
+  var closePaynow = document.getElementsByClassName("close-paynow")[0];
   btn.onclick = function () {
     isLoginFlow = false;
     selectedCity = "Bangalore";
     selectedPackage="999";
-    modal.style.display = "block";
+    var user = firebase.auth().currentUser;
+    if(user) {
+      payModal.style.display = "block";
+    } else {
+      secureLogin();
+      modal.style.display = "block";
+    }
   }
   login.onclick = function () {
     isLoginFlow = true;
     selectedCity = "";
     selectedPackage="";
+    secureLogin();
     modal.style.display = "block";
   }
   span.onclick = function () {
     modal.style.display = "none";
   }
+  closePaynow.onclick = function () {
+    payModal.style.display = "none";
+  }
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
+    } else if(event.target == payModal) {
+      payModal.style.display = "none";
     }
   }
   /* -------------------------------------------------------------------
-                                MODAL END
-  ----------------------------------------------------------------------*/ 
-
-
-
-
+                               LOGIN MODAL END
+  ----------------------------------------------------------------------*/
 
 
 
@@ -111,6 +121,7 @@ function attachEventListeners() {
   document.getElementById('cancel-verify-code-button').addEventListener('click', cancelVerification);
   document.getElementById('continue-successful').addEventListener('click', getNameAndEmailThenSaveAndRedirect);
   document.getElementById('apply-referral').addEventListener('click', checkRetrieveSaveReferral);
+  document.getElementById('pay-now').addEventListener('click', payNowForLoggedInUser);
 }
 
   function toggleGoogleSignIn() {
@@ -133,7 +144,11 @@ function attachEventListeners() {
       // firebase.auth().signInWithRedirect(provider);
       firebase.auth().signInWithPopup(provider).then(function (result) {
         oAuthSuccess(result);
-      });
+      })
+      .catch(err => {
+        alert(err+" Please check your network connection and try login/signup again");
+        location.reload();
+      })
     } else {
       firebase.auth().signOut();
     }
@@ -153,7 +168,7 @@ function attachEventListeners() {
       referrerCode: referralCode || null
     };
     userEmail = userObj.email;
-    sessionStorage.setItem('userData', JSON.stringify(userObj));
+    localStorage.setItem('userData', JSON.stringify(userObj));
     saveUserData(userObj, (response) => {
       console.log(response);
       if(response.status === 200) {
@@ -179,6 +194,27 @@ function attachEventListeners() {
     sessionStorage.removeItem('userData');
     localStorage.clear();
     firebase.auth().signOut();
+  }
+
+  function payNowForLoggedInUser() {
+    console.log(selectedCity,
+    selectedPackage,
+    isLoginFlow,
+    userEmail,
+    phoneNumber);
+    var localData = JSON.parse(localStorage.getItem('userData'));
+
+    var userObj = {
+      email: localData.email,
+      city: selectedCity,
+    }
+    saveUserData(userObj, (res) => {
+      if(res.status === 200) {
+        window.location.href = "/paywithpaytm?amount="+selectedPackage;
+      } else {
+        alert("There was an error saving your data. Please try again! Error: "+error);
+      }
+    })
   }
 
 
@@ -355,7 +391,7 @@ function attachEventListeners() {
         referrerCode: referralCode || null
       };
       saveUserData(userObj, (response) => {
-        sessionStorage.setItem('userData', JSON.stringify(userObj));
+        localStorage.setItem('userData', JSON.stringify(userObj));
         window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
       });
     } else {
@@ -380,6 +416,7 @@ function attachEventListeners() {
           // Non registered social login
           // sessionStorage.setItem('userData', JSON.stringify(userData));
           localStorage.removeItem('signinType');
+          localStorage.setItem("userData", JSON.stringify(response.data));
           window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
 
         }
@@ -414,6 +451,19 @@ function attachEventListeners() {
     }
   }
 
+  // function isEmailInLocalStorage() {
+  //   var local = localStorage.getItem('userData');
+  //   var userData;
+  //   if(local) {
+  //     userData = JSON.parse(local);
+  //   } 
+  //   if(userData.email) {
+  //     return userData.email
+  //   } else {
+  //     return null
+  //   }
+  // }
+
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -435,5 +485,16 @@ function attachEventListeners() {
       }
     }
     return "";
+  }
+
+  function secureLogin() {
+    axios.post('/login')
+    .then(response => {
+      console.log(response);
+      localStorage.setItem('api_token', response.data.token);
+    })
+    .catch(error => {
+      alert(err+ " Please try again!");
+    })
   }
 })()

@@ -1,7 +1,7 @@
 window.onload = function() {
     var responseData = JSON.parse(document.getElementById('response-data').innerHTML);
     var baseUrl = JSON.parse(document.getElementById('base-url').innerHTML);
-    var userData = JSON.parse(sessionStorage.getItem('userData'));
+    var userData = JSON.parse(localStorage.getItem('userData'));
     var userName = userData.name;
     var userEmail = userData.email;
     var dataObj = {
@@ -14,7 +14,6 @@ window.onload = function() {
       referral: userData.referrerCode || null,
       baseUrl: baseUrl
     }
-    console.log(responseData);
     if(responseData.STATUS === "TXN_SUCCESS") {
         saveSubscriber(dataObj);
     }
@@ -37,7 +36,6 @@ function saveSubscriber(obj) {
    
     axios.post('https://app.referralhero.com/api/v2/lists/MF51efecef56/subscribers', subscribersObj)
       .then(response => {
-        console.log(response);
         const subResponse = response.data.data;
         if(response.status === 200) {
           var userObj = {
@@ -63,7 +61,7 @@ function saveSubscriber(obj) {
 function saveUserData(obj) {
   axios.post('/customer/save', obj)
     .then(response => {
-      console.log("SUCCESS RESPONSE", JSON.stringify(response));
+      console.log("User Data saved");
     })
     .catch(error => {
       console.log("Failed to store data", JSON.stringify(error));

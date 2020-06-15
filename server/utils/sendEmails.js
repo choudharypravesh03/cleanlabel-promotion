@@ -12,7 +12,7 @@ const sendEmails = (obj, callback) => {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
         to: obj.toEmail,
-        from: 'pravesh.choudhary@publicissapient.com',
+        from: 'info@cleanlabel.net',
         subject: 'Invitation to Cleanlabel',
         text: 'Come join us with this link:',
         html: `<a href='${obj.referralLink}'>Click here</a>`

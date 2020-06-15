@@ -321,3 +321,136 @@ Thu, 11 Jun 2020 20:28:28 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 |
 Thu, 11 Jun 2020 20:32:23 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
 Thu, 11 Jun 2020 20:33:30 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
 Thu, 11 Jun 2020 20:33:49 GMT | INFO | app.log | APP LAUNCHED IN PORT 5000 | 
+Sat, 13 Jun 2020 10:06:05 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Sat, 13 Jun 2020 10:07:37 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Sat, 13 Jun 2020 16:50:11 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sat, 13 Jun 2020 16:53:46 GMT | INFO | app.log | Added new customer  | 
+Sat, 13 Jun 2020 16:54:05 GMT | INFO | app.log | Successfully updated the customer  | 
+Sat, 13 Jun 2020 16:54:05 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sat, 13 Jun 2020 17:01:17 GMT | INFO | app.log | Successfully updated the customer  | 
+Sat, 13 Jun 2020 17:01:17 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sat, 13 Jun 2020 17:01:41 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sat, 13 Jun 2020 17:02:26 GMT | INFO | app.log | Successfully updated the customer  | 
+Sat, 13 Jun 2020 17:02:26 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sat, 13 Jun 2020 17:02:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sat, 13 Jun 2020 17:07:20 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sat, 13 Jun 2020 17:08:34 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sat, 13 Jun 2020 17:09:04 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sat, 13 Jun 2020 17:09:04 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sat, 13 Jun 2020 17:09:34 GMT | INFO | app.log | Transaction successful! Order ID: n3OQ716Sl | 
+Sat, 13 Jun 2020 17:09:35 GMT | INFO | app.log | PDF created successfully! n3OQ716Sl.pdf | 
+Sat, 13 Jun 2020 17:09:38 GMT | INFO | app.log | Invoice sent to... | 
+Sun, 14 Jun 2020 06:56:14 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 06:56:22 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 06:56:22 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sun, 14 Jun 2020 06:56:34 GMT | INFO | app.log | Transaction successful! Order ID: cTOEta0_9 | 
+Sun, 14 Jun 2020 06:56:35 GMT | INFO | app.log | PDF created successfully! cTOEta0_9.pdf | 
+Sun, 14 Jun 2020 06:56:38 GMT | INFO | app.log | Invoice sent to... | 
+Sun, 14 Jun 2020 06:59:28 GMT | INFO | app.log | Transaction successful! Order ID: cTOEta0_9 | 
+Sun, 14 Jun 2020 06:59:29 GMT | INFO | app.log | PDF created successfully! cTOEta0_9.pdf | 
+Sun, 14 Jun 2020 06:59:32 GMT | INFO | app.log | Invoice sent to... | 
+Sun, 14 Jun 2020 07:16:58 GMT | INFO | app.log | Transaction successful! Order ID: cTOEta0_9 | 
+Sun, 14 Jun 2020 07:16:59 GMT | INFO | app.log | PDF created successfully! cTOEta0_9.pdf | 
+Sun, 14 Jun 2020 07:17:02 GMT | INFO | app.log | Invoice sent to... | 
+Sun, 14 Jun 2020 07:17:16 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 07:27:35 GMT | WARN | app.log | Customer not found with email  and/or phone 8989803020 | 
+Sun, 14 Jun 2020 07:27:48 GMT | INFO | app.log | Added new customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 07:31:07 GMT | WARN | app.log | Customer not found with email  and/or phone 8989803020 | 
+Sun, 14 Jun 2020 07:31:28 GMT | INFO | app.log | Added new customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 07:31:55 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 07:31:55 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sun, 14 Jun 2020 07:32:15 GMT | INFO | app.log | Transaction successful! Order ID: GJqpSc9bw | 
+Sun, 14 Jun 2020 07:32:16 GMT | INFO | app.log | PDF created successfully! GJqpSc9bw.pdf | 
+Sun, 14 Jun 2020 07:32:19 GMT | INFO | app.log | Invoice sent to... | 
+Sun, 14 Jun 2020 07:32:38 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 07:41:06 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 07:41:35 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 07:41:35 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 07:41:35 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 07:42:06 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 07:42:06 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sun, 14 Jun 2020 07:42:19 GMT | INFO | app.log | Transaction successful! Order ID: P2RmJIzfO | 
+Sun, 14 Jun 2020 07:42:20 GMT | INFO | app.log | PDF created successfully! P2RmJIzfO.pdf | 
+Sun, 14 Jun 2020 07:42:22 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 07:42:24 GMT | INFO | app.log | Invoice sent to... | 
+Sun, 14 Jun 2020 08:02:37 GMT | WARN | app.log | Customer not found with email  and/or phone 8989803020 | 
+Sun, 14 Jun 2020 08:03:32 GMT | INFO | app.log | Added new customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 09:47:41 GMT | WARN | app.log | Customer not found with email  and/or phone 8989803020 | 
+Sun, 14 Jun 2020 09:47:58 GMT | INFO | app.log | Added new customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 09:48:07 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 09:48:07 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sun, 14 Jun 2020 09:48:25 GMT | INFO | app.log | Transaction successful! Order ID: VB2DpBv_D | 
+Sun, 14 Jun 2020 09:48:27 GMT | INFO | app.log | PDF created successfully! VB2DpBv_D.pdf | 
+Sun, 14 Jun 2020 09:48:29 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 09:50:43 GMT | INFO | app.log | Transaction successful! Order ID: VB2DpBv_D | 
+Sun, 14 Jun 2020 09:50:44 GMT | INFO | app.log | PDF created successfully! VB2DpBv_D.pdf | 
+Sun, 14 Jun 2020 09:50:46 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 09:57:00 GMT | INFO | app.log | Transaction successful! Order ID: VB2DpBv_D | 
+Sun, 14 Jun 2020 09:57:01 GMT | INFO | app.log | PDF created successfully! VB2DpBv_D.pdf | 
+Sun, 14 Jun 2020 09:57:02 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 10:04:09 GMT | INFO | app.log | Transaction successful! Order ID: VB2DpBv_D | 
+Sun, 14 Jun 2020 10:04:10 GMT | INFO | app.log | PDF created successfully! VB2DpBv_D.pdf | 
+Sun, 14 Jun 2020 10:04:12 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 14:04:41 GMT | INFO | app.log | Transaction successful! Order ID: VB2DpBv_D | 
+Sun, 14 Jun 2020 14:04:43 GMT | INFO | app.log | PDF created successfully! VB2DpBv_D.pdf | 
+Sun, 14 Jun 2020 14:04:45 GMT | INFO | app.log | Successfully updated the customer rakesh@gmail.com | 
+Sun, 14 Jun 2020 14:22:30 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 14:22:45 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 14:22:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 14:22:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 14:22:50 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sun, 14 Jun 2020 14:23:15 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 14:23:15 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sun, 14 Jun 2020 14:23:28 GMT | INFO | app.log | Transaction successful! Order ID: 7i110z1Bc | 
+Sun, 14 Jun 2020 14:23:29 GMT | INFO | app.log | PDF created successfully! 7i110z1Bc.pdf | 
+Sun, 14 Jun 2020 14:23:30 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Sun, 14 Jun 2020 14:32:07 GMT | WARN | app.log | Customer not found with email  and/or phone 8989803020 | 
+Sun, 14 Jun 2020 14:32:21 GMT | INFO | app.log | Added new customer johntest@gmail.com | 
+Sun, 14 Jun 2020 14:32:21 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Sun, 14 Jun 2020 14:32:31 GMT | INFO | app.log | Transaction successful! Order ID: 8SOHhZfEt | 
+Sun, 14 Jun 2020 14:32:32 GMT | INFO | app.log | PDF created successfully! 8SOHhZfEt.pdf | 
+Sun, 14 Jun 2020 14:32:34 GMT | INFO | app.log | Successfully updated the customer johntest@gmail.com | 
+Sun, 14 Jun 2020 16:30:15 GMT | ERROR | app.log | uncaughtException: xss is not defined
+ReferenceError: xss is not defined
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:33:5)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Sun, 14 Jun 2020 16:30:15 GMT | ERROR | app.log | uncaughtException: xss is not defined
+ReferenceError: xss is not defined
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:33:5)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Sun, 14 Jun 2020 16:30:15 GMT | ERROR | app.log | uncaughtException: xss is not defined
+ReferenceError: xss is not defined
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:33:5)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Sun, 14 Jun 2020 16:30:15 GMT | ERROR | app.log | uncaughtException: xss is not defined
+ReferenceError: xss is not defined
+    at Object.<anonymous> (/Users/prachoud0/Documents/projects/Cleanlabel-Projects/cleanlabel-node/server/server.js:33:5)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
