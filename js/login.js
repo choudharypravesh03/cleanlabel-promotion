@@ -5,7 +5,7 @@ var firebaseApp;
 
   var selectedCity = "";
   var selectedPackage = "";
-  var isLoginFlow = false;
+  var isLoginFlow = true;
   var userEmail = "";
   var phoneNumber = "";
   
@@ -19,15 +19,29 @@ var firebaseApp;
       if (user) {
         // User is signed in.
         // var displayName = user.displayName;
-        // var email = user.email;
+        var email = user.email;
         // var emailVerified = user.emailVerified;
         // var photoURL = user.photoURL;
         // var isAnonymous = user.isAnonymous;
         // var uid = user.uid;
         // var providerData = user.providerData;
-        // var phoneNumber = user.phoneNumber;
+        var phoneNumber = user.phoneNumber && user.phoneNumber.substr(3, 10);
 
+        $('.login-button-container').hide();
+        $('.account-button-container').show();
+        $('#myAccounts').show();
+        getUserData({phone: phoneNumber, email: email}, (response) => {
+          var user = response.data;
+          $('#username').html(user.name);
+          if(response.data && response.data.membership !== 'none') {
+            $('.prod-Membership').hide();
+            $('.getmembership-button-container').hide();
+          }
+        })
       } else {
+        $('.login-button-container').show();
+        $('.account-button-container').hide();
+        $('#myAccounts').hide();
 
       }
       updateSignInButtonUI();
@@ -52,6 +66,8 @@ var firebaseApp;
       window.recaptchaWidgetId = widgetId;
       updateSignInButtonUI();
     });
+  
+
   }
 
   window.onload = function () {
@@ -61,50 +77,38 @@ var firebaseApp;
 
 
 
-  /* -------------------------------------------------------------------
-                               LOGIN MODAL START
-  ----------------------------------------------------------------------*/ 
-  var modal = document.getElementById("myModal");
-  var payModal = document.getElementById("pay-now-modal");
-  var btn = document.getElementById("join-membership");
-  var login = document.getElementById('login');
-  var span = document.getElementsByClassName("close")[0];
-  var closePaynow = document.getElementsByClassName("close-paynow")[0];
-  btn.onclick = function () {
+  $('.joinMemberShip').on('click', (e) => {
+    console.log(e);
     isLoginFlow = false;
-    selectedCity = "Bangalore";
-    selectedPackage="999";
+    let locationType = e.target.classList[1]
+    if(locationType === 'blr') {
+      selectedCity = 'bangalore';
+      selectedPackage = $('#bangalore-section .selected > p').attr('value');
+    } else {
+      selectedCity = 'others';
+      selectedPackage = $('#others-section .selected > p').attr('value');
+    }
     var user = firebase.auth().currentUser;
     if(user) {
-      payModal.style.display = "block";
+      $('#join-members').click();
     } else {
       secureLogin();
-      modal.style.display = "block";
+      $('#elegantModalForm').addClass('show').css('display', 'block');
+      // $('#login-button').click();
     }
-  }
-  login.onclick = function () {
+  })
+
+  $('#login-button').on('click', (e) => {
     isLoginFlow = true;
-    selectedCity = "";
-    selectedPackage="";
-    secureLogin();
-    modal.style.display = "block";
-  }
-  span.onclick = function () {
-    modal.style.display = "none";
-  }
-  closePaynow.onclick = function () {
-    payModal.style.display = "none";
-  }
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    } else if(event.target == payModal) {
-      payModal.style.display = "none";
-    }
-  }
-  /* -------------------------------------------------------------------
-                               LOGIN MODAL END
-  ----------------------------------------------------------------------*/
+  });
+
+  $('.close').on('click', () => {
+    $('.modal').removeClass('show').css('display', 'none');
+  })
+
+  $('.logout').on('click', () => {
+    onSignOutClick();
+  })
 
 
 
@@ -113,10 +117,10 @@ function attachEventListeners() {
   document.getElementById('quickstart-sign-in-google').addEventListener('click', toggleGoogleSignIn, false);
   document.getElementById('quickstart-sign-in-facebook').addEventListener('click', toggleFacebookSignIn, false);
   document.getElementById('sign-out-button').addEventListener('click', onSignOutClick);
-  document.getElementById('phone-number').addEventListener('keyup', updateSignInButtonUI);
-  document.getElementById('phone-number').addEventListener('change', updateSignInButtonUI);
-  document.getElementById('verification-code').addEventListener('keyup', updateVerifyCodeButtonUI);
-  document.getElementById('verification-code').addEventListener('change', updateVerifyCodeButtonUI);
+  document.getElementById('phoneNumber').addEventListener('keyup', updateSignInButtonUI);
+  document.getElementById('phoneNumber').addEventListener('change', updateSignInButtonUI);
+  document.getElementById('codeBox6').addEventListener('keyup', updateVerifyCodeButtonUI);
+  document.getElementById('codeBox6').addEventListener('change', updateVerifyCodeButtonUI);
   document.getElementById('verification-code-form').addEventListener('submit', onVerifyCodeSubmit);
   document.getElementById('cancel-verify-code-button').addEventListener('click', cancelVerification);
   document.getElementById('continue-successful').addEventListener('click', getNameAndEmailThenSaveAndRedirect);
@@ -293,11 +297,16 @@ function attachEventListeners() {
   }
 
   function getCodeFromUserInput() {
-    return document.getElementById('verification-code').value;
+    var code = "";
+    for(let i=1; i<7; i++) {
+      code+=document.getElementById('codeBox' + i).value;
+    }
+    console.log(code);
+    return code;
   }
 
   function getPhoneNumberFromUserInput() {
-    return document.getElementById('phone-number').value;
+    return document.getElementById('phoneNumber').value;
   }
 
   function isPhoneNumberValid() {
@@ -336,9 +345,14 @@ function attachEventListeners() {
 
   function updateVerificationCodeFormUI() {
     if (!firebase.auth().currentUser && window.confirmationResult) {
-      document.getElementById('verification-code-form').style.display = 'block';
+      // document.getElementById('verification-code-form').style.display = 'block';
+      $('.phone-number-title').html(getPhoneNumberFromUserInput());
+      $('#otpConfirm').show();
+      $('#loginRegister').hide();
     } else {
-      document.getElementById('verification-code-form').style.display = 'none';
+      // document.getElementById('verification-code-form').style.display = 'none';
+      $('#otpConfirm').hide();
+      // $('#loginRegister').show();
     }
   }
 
@@ -376,6 +390,19 @@ function attachEventListeners() {
       })
   }
 
+  function getUserData(obj, callback) {
+    var url = `/customer/get?phone=${obj.phone}&email=${obj.email}`;
+    axios.get(url)
+      .then(response => {
+        callback(response);
+      })
+      .catch(error => {
+        console.log("Cannot get customer: ", JSON.stringify(error));
+        callback(error);
+      })
+  }
+
+
   function getNameAndEmailThenSaveAndRedirect() {
     var user = firebase.auth().currentUser;
     console.log(user);
@@ -402,14 +429,18 @@ function attachEventListeners() {
   function verifyWithPhoneIfUserExist() {
     var phoneNumber = getPhoneNumberFromUserInput();
     var email = userEmail || '';
-    var url = `/customer/get?phone=${phoneNumber}&email=${email}`;
-    axios.get(url)
-      .then(response => {
+    var obj = {
+      phone: phoneNumber,
+      email: email
+    };
+    getUserData(obj, (response) => {
         console.log(response);
         var isoAuthFlow = (localStorage.getItem('signinType') === 'oauth');
         if (response.data === "" && !isoAuthFlow) {
           // Login by phone
-          document.getElementById('email-name-container').style.display = 'block';
+          // document.getElementById('email-name-container').style.display = 'block';
+          // $('#otpConfirm').hide();
+          $('#otpverified').show();
         } else if(response.data && response.data.membership !== 'none') {
           window.location.href = '/referrals';
         } else {
@@ -420,10 +451,7 @@ function attachEventListeners() {
           window.location.href = (isLoginFlow ? "/" : "/paywithpaytm?amount="+selectedPackage);
 
         }
-      })
-      .catch(error => {
-        console.log("FALIURE RESPONSE", JSON.stringify(error));
-      })
+    })
   }
 
   function checkRetrieveSaveReferral() {
@@ -488,13 +516,16 @@ function attachEventListeners() {
   }
 
   function secureLogin() {
-    axios.post('/login')
-    .then(response => {
-      console.log(response);
-      localStorage.setItem('api_token', response.data.token);
-    })
-    .catch(error => {
-      alert(err+ " Please try again!");
-    })
+    var local = localStorage.getItem('api_token');
+    if(!local) {
+      axios.post('/login')
+      .then(response => {
+        console.log(response);
+        localStorage.setItem('api_token', response.data.token);
+      })
+      .catch(error => {
+        alert(err+ " Please try again!");
+      })
+    }
   }
 })()

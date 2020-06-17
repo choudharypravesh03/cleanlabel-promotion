@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/2699/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+	<link REL="icon" href="../img/smallLogo1.png" type="img/x-icon"/>
+    <title>Cleanlabel</title>
+	
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/utils/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="/css/utils/font-awesome.min.css" type="text/css" />
+	<link href="/css/utils/untitiledSans_regular.css" rel="stylesheet">
+	<link href="/css/utils/slideNew.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<style>
+		
+		body{
+			font-family: Conv_Untitled Sans Regular;
+			width: 100%;
+			line-height: 1.6 !important;
+		}
+		::placeholder {
+		  color: red;
+		  opacity: 1; /* Firefox */
+		}
+		.paymentCont{
+			max-width: 500px;
+			min-width: 300px;
+			margin: auto;
+			background: #fff;
+			padding: 25px 15px;
+			box-shadow: 1px 2px 1px 1px #b5bfb7;
+			border-radius: 8px;
+		}
+		.Payments{
+			height: 100vh;
+			padding-top: 4rem;
+			background: #f9f9f9;
+        }
+        #pay-again {
+            display: none;
+        }
+        #response-data {
+            display: none;
+        }
+        #base-url {
+            display: none;
+        }
+		p{
+			font-size: 17px;
+		}
+		@media(max-width: 647px) {
+			.Payments{
+				padding-top: 2rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="Payments">
+		<div class="paymentCont">
+			<h3 class="modal-title w-100 dark-grey-text font-weight-bold text-center" id="myModalLabel">
+				<strong style="color: #63ca79">Payment Successfull!</strong>
+			</h3>
+			</br>
+			<div class="row text-center mt-2 ml-0 mr-0">
+				<img src="../img/success.png" style="margin: auto;"/>
+			</div>
+			</br>
+			<div class="row ml-0 mr-0">
+				<div class="pay_ment col-md-6 col-xs-6" style="width: 50%">
+					<p class="mb-2">Payment type</p>							
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6 text-right" style="width: 50%">
+					<p class="mb-2"><b><%= responseData.PAYMENTMODE %></b></p>						
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6" style="width: 50%">
+					<p class="mb-2">Bank</p>									
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6 text-right" style="width: 50%">
+					<p class="mb-2"><b><%= responseData.BANKNAME %></b></p>						
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6" style="width: 50%">
+					<p class="mb-2">Mobile</p>									
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6 text-right" style="width: 50%">
+					<p class="mb-2 phone"></p>						
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6" style="width: 50%">
+					<p class="mb-2">Email</p>									
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6 text-right" style="width: 50%">
+					<p class="mb-2 email">test@gmail.com</p>						
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6" style="width: 50%">
+					<p class="mb-2">Amount paid</p>									
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6 text-right" style="width: 50%">
+					<p class="mb-2"><b><%= responseData.TXNAMOUNT %></b></p>						
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6" style="width: 50%">
+					<p>Order Id</p>									
+				</div>
+				<div class="pay_ment col-md-6 col-xs-6 text-right" style="width: 50%">
+					<p><b><%= responseData.ORDERID %></b></p>						
+				</div>							
+            </div>
+        </tbody>
+    </table>
+    <div id="response-data"><%= JSON.stringify(responseData) %></div>
+    <div id="base-url"><%= JSON.stringify(baseUrl) %></div>
+			<div class="text-center">
+				<button class="btn regis-btn mt-3" ><a href="9.html">Close</a></button>
+			</div>
+		</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="response.js"></script>
+</body>
+</html>

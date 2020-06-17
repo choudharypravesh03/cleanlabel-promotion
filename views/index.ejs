@@ -1,14 +1,2106 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home | Cleanlabel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <%- include('components/header.ejs'); -%>
+    <title>Cleanlabel</title>
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
+
+
+
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light  bg_white">
+          <a class="navbar-brand" href="http://cleanlabel.net/home/26/html/">
+            <img class="img-on-head" src="img/logo.png" />
+            <img class="img-on-scroll" style="display:none;" src="img/CL_LOGO_v2.2.png" />
+          </a>
+          <button class="navbar-toggler navbar-on-togle collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" onclick="on_click_toggle()">
+            <i class="iclose fa fa-bars" aria-hidden="true"></i>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarText" data-aos="zoom-in-left">	
+            <div class="register-btn nav-on-head desktopViewOnly">
+              <span class="form_inputs dektopviews getmembership-button-container"><a onclick="onscrollMembership(event)">Get membership</a></span>
+              <span class="form_inputs dektopviews account-button-container" style="padding: 10px; display: none;">
+                <!--<button class="btn header-btn my-2 my-sm-0" data-toggle="modal" data-target="#elegantModalRegister" type="button">Login - Register<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>-->
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="img/avatar.jpg" style="width: 40px !important;" />  
+                  <span id="username">My Account</span> 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Membership</a>
+                  <a class="dropdown-item" href="#">Your Rewards</a>
+                  <a class="dropdown-item" href="app/19.html">Profile</a>
+                  <a class="dropdown-item" href="#">Help</a>
+                  <a class="logout" class="dropdown-item" href="#">Logout</a>
+                </div>
+              </span>
+              <p class="splitViewbtn mb-0 login-button-container">
+                <span class="form_inputs dektopviewsbtn">
+                  <!--<button class="btn header-btn my-2 my-sm-0" data-toggle="modal" data-target="#elegantModalRegister" type="button">Login - Register<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>-->
+                  <button id="login-button" data-toggle="modal" data-target="#elegantModalForm" data-backdrop="static" data-keyboard="false">Login <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                  <button style="display: none" id="join-members" data-toggle="modal" data-target="#joinMembers" data-backdrop="static" data-keyboard="false">join members</button>
+                </span>
+              </p>
+              
+            </div>	
+              
+          </div>
+          <span class="form_inputs dektopviews" style="color: #fff;">Menu
+            <div class="outer-menu">
+                <input class="checkbox-toggle" id="hamburgerMenu" type="checkbox" />
+                <div class="hamburger">
+                  <div></div>
+                </div>
+                  <div class="menu">
+                  <div>
+                    <div class="pt-3 pb-3 text-center"><img style="width: 80px !important;" src="img/smallLogo.png" /></div>
+                    <div class="head_menu">
+                      <p class="pl-4 mt-0 mb-0 join-community brdr-btm desktopViews"><a href="#" data-toggle="modal" data-target="#elegantModalForm">Join Community</a></p>
+                      <p class="pl-4 mt-0 mb-0 join-community brdr-btm mobileViews"><a href="#" data-toggle="modal" data-target="#elegantModalForm">Login</a></p>
+                      <p class="pl-4 mt-0 mb-0 join-community brdr-btm" style="display: none;"><a href="app/8.html">Get membership</a></p>
+                      
+                      <div class="pl-4 mt-0 mb-0 join-community brdr-btm" id="myAccounts">
+                        <a href="#f26" role="button" data-toggle="collapse" data-target="#f26" aria-expanded="false" id="grp26" aria-controls="f26">My Account 
+                        <i class="fa fa-plus rotate2" aria-hidden="true"></i></a>
+                        
+                        <div id="f26" class="collapse pt-3" aria-labelledby="faq26" data-parent="#myAccounts">
+                          <ul id="f27">
+                            <li><a href="app/8.html">Membership</a></li>
+                            <li><a href="app/8.html">Rewards</a></li>
+                            <li><a href="app/19.html">Profile</a></li>
+                            <li><a class="logout" href="#">Logout</a></li>
+                          </ul>
+                        </div>
+                        
+                      </div>
+                      
+                      
+                      <div class="brdr-btm">
+                        <ul class="menu-ul">
+                          <li><button class="menu-btn" type="button" onclick="onscrollZero()">Zero waste delivery system</button></li>
+                          <li><button class="menu-btn" type="button" onclick="onscrollEarnProducts()">Earn Products</button></li>
+                          <li><button class="menu-btn" type="button" onclick="onscrollMembership()">Membership & fee</button></li>
+                        </ul>
+                      </div>
+                      <div class="becomeMember brdr-btm pl-4">
+                        <a href="app/8.html">Become a Member</a>
+                      </div>
+                      <div class="brdr-btm footer-content">
+                        <ul class="menu-ul">
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="faq.html">FAQs</a></li>
+                          <li><a href="contact.html">Contacts us</a></li>
+                        </ul>
+                      </div>
+                      <div class="becomeMember brdr-btm pl-4">
+                        <a href="https://www.instagram.com/cleanlabellife/" target="_blank"><img alt="Instagram" src="img/instagram.png" style="width:30px !important;"/></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </span>
+        </nav>
+        
+    </header>
+      
+      <!-- Begin page content -->
+      <main role="main">
+        <a id="button" class="scrolTop " onclick="onScrollTops()"></a>
+        <div class="popover__wrapper" id="accordian-modal">
+          <button type="button" id="buttonGift" class="btn btn-secondary buttonGift popover__title" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><i class="fa fa-gift" aria-hidden="true" style="width: 35px; font-size: 20px; height: 35px; padding: 8px;"></i></button>
+          <div class="popover__content">
+            <p class="popover__message">Earn a chance to win ‘lifetime organic groceries’ for free. Become member & invite friends. <button type="button" onclick="scrollMembershipView()" style="color: #333570;"> Know more </button></p>				
+          </div>
+        </div>
+        <div class="desktopRes">
+          <div class="row no-margin bgsclr">
+            <div class="col-lg-6 col-md-12 col-sm-12 no-padding BgMargin">
+              <div class="main-contant-1">
+                <h1 class="packaging-h1">the future of grocery shopping just got better.</h1>
+                <table>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">100% organic essentials</td>
+                  </tr>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">0% plastic packaging</td>
+                  </tr>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">delivered to your home</td>
+                  </tr>
+                </table>
+                <p class="form_inputs"><button class="btn hero-btn my-2 my-sm-0" onclick="scrollMembershipView()">Get Membership <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button></p>					
+              </div>
+              
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 no-padding">
+              <div class="bg_imgss landing-slide" style="width: 100%; background: #c5c3bf; height: 100%">
+                <img class="bg_imgss" src="img/hero.jpg" alt="IMG" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobileRes">
+          <div class="row no-margin bgsclr">
+            <div class="col-lg-6 col-md-12 col-sm-12 no-padding">
+              <div class="bg_imgss landing-slide" style="width: 100%; background: #c5c3bf; height: 100%">
+                <img class="bg_imgss" src="img/hero.jpg" alt="IMG" />
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 no-padding BgMargin">
+              <div class="main-contant-1">
+                <h1 class="packaging-h1">the future of grocery shopping just got better.</h1>
+                <table>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">100% organic essentials</td>
+                  </tr>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">0% plastic packaging</td>
+                  </tr>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">delivered to your home</td>
+                  </tr>
+                </table>
+                <p class="form_inputs"><button class="btn hero-btn my-2 my-sm-0" onclick="scrollMembershipView()">Get Membership <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <section class="block block__scroll-slider main_cont-hiw zerowastge" style="height: 100vh;min-height: 400px;position: relative; margin: auto; top: 0px; left: 0px; bottom: auto; right: auto; box-sizing: border-box; width: 100%;">
+          <div class="slider-panel">
+            <div class="slider-panel__inner">
+              <div class="block__content slider-dots__container">
+                <ul class="slider-dots slider-dots--lg slider-dots--v">
+                  <li class="slider-active">
+                    <button type="button"></button>
+                  </li>
+                  <li class="">
+                    <button type="button"></button>
+                  </li>
+                  <li class="">
+                    <button type="button"></button>
+                  </li>
+                  <li class="">
+                    <button type="button"></button>
+                  </li>
+                  <li class="">
+                    <button type="button"></button>
+                  </li>
+                </ul>
+              </div>
+              <div class="slider">
+                <h1 class="titles_hiw">our zero-waste delivery system</h1>
+                <div class="item active itemBG1">
+                  <div class="block__bg" style=""></div>
+                  <div class="block__content row item-content">
+                    <div class="item__image col-xs-12 col-sm-6 item_img-1">
+                      <div data-bg="url(img/OrderN.png)" class="image rocket-lazyload" style="background-image: url(img/OrderN.png);" data-was-processed="true"></div>
+                    </div>
+                    <div class="item__copy col-xs-12 col-sm-6">
+                      <div class="counter">
+                        <span class="current">01</span><span class="total">/05</span>
+                      </div>
+                      <div class="block__title title">shop from our website</div>
+                      <div class="text">You shop from our evolving 100 plus organic products</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item itemBG2">
+                  <div class="block__bg" style=""></div>
+                  <div class="block__content row item-content">
+                    <div class="item__image col-xs-12 col-sm-6">
+                      <div data-bg="url(img/ReceiveN.png)" class="image rocket-lazyload" style="background-image: url(img/ReceiveN.png);" data-was-processed="true"></div>
+                    </div>
+                    <div class="item__copy col-xs-12 col-sm-6">
+                      <div class="counter">
+                        <span class="current">02</span><span class="total">/05</span>
+                      </div>
+                      <div class="block__title title">receive at your doorstep</div>
+                      <div class="text">Your order will  be delivered at your doorstep in reusable and returnable packaging for a small refundable deposit</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item itemBG3">
+                  <div class="block__bg" style=""></div>
+                  <div class="block__content row item-content">
+                    <div class="item__image col-xs-12 col-sm-6">
+                      <div data-bg="url(img/LeaveN.png)" class="image rocket-lazyload" style="background-image: url(img/LeaveN.png);" data-was-processed="true"></div>
+                    </div>
+                    <div class="item__copy col-xs-12 col-sm-6">
+                      <div class="counter">
+                        <span class="current">03</span><span class="total">/05</span>
+                      </div>
+                      <div class="block__title title">leave containers in bag</div>
+                      <div class="text">Once finished, leave the containers and bags in the tote bag. No hassle of washing or sorting.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item itemBG4">
+                  <div class="block__bg" style=""></div>
+                  <div class="block__content row item-content">
+                    <div class="item__image col-xs-12 col-sm-6">
+                      <div data-bg="url(img/ReturnN.png)" class="image rocket-lazyload" style="background-image: url(img/ReturnN.png);" data-was-processed="true"></div>
+                    </div>
+                    <div class="item__copy col-xs-12 col-sm-6">
+                      <div class="counter">
+                        <span class="current">04</span><span class="total">/05</span>
+                      </div>
+                      <div class="block__title title">return during next order</div>
+                      <div class="text">When we hand over the next order, we take back empty containers and credit your deposit back.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item itemBG5">
+                  <div class="block__bg" style=""></div>
+                  <div class="block__content row item-content">
+                    <div class="item__image col-xs-12 col-sm-6">
+                      <div data-bg="url(img/CleanN.png)" class="image rocket-lazyload" style="background-image: url(img/CleanN.png);" data-was-processed="true"></div>
+                    </div>
+                    <div class="item__copy col-xs-12 col-sm-6">
+                      <div class="counter">
+                        <span class="current">05</span><span class="total">/05</span>
+                      </div>
+                      <div class="block__title title">clean, sterilize and reuse</div>
+                      <div class="text">We hygienically clean the empties, sterilize it and send it back for reuse. Simple, convenient, 100% waste-free shopping.</div>									
+                    </div>
+                  </div>
+                </div>
+                <div class="downArrow">
+                  <button type="button" onclick="onScrollDown()" id="scrollDown"><img src="img/downarrow.png" /></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block__ornaments">
+            <div class="block__ornament block__ornament--flower"></div>
+          </div>
+        </section>
+        
+        <div class="videoContainer">
+          <div class="context">
+            <h1 style="text-align: center; padding: 4rem 4%; color: #fff;">healthy and wholesome groceries that don’t burden the earth by each one of us, every year</h1>
+          </div>
+          <video autoplay="true" loop="true" muted="" playsinline="" src="img/NatureVideo.mp4" webkit-playsinline="" class="is-playing"></video>
+        </div>
+        
+        <div class="row no-margin" id="goodMadeCont">
+          <div class="col-lg-6 col-md-12 col-sm-12 no-padding">
+            <div class="landing-slide" style="width: 100%; background: #e4ebcc; height: 100%">
+              <img class="bg_imgss" src="img/better.jpg" alt="IMG" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 main-4-cont">
+            <div class="main-contant-4">
+              <h1 class="packaging-h1 head-2">good made even better</h1>
+              <table>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">100% organic certified products</td>
+                </tr>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">Premium quality standards</td>
+                </tr>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">No middle men</td>
+                </tr>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">Honest pricing</td>
+                </tr>
+              </table>
+            </div>
+            <!--<button class="btn btn_links" type="button" data-toggle="modal" data-target="#elegantModalRegister">Register <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>-->
+          </div>
+        </div>
+        
+        <!--<div class="main-contant-2 mains_content2 bg_imgss" style="border-top: 0px solid #ccc;">
+          <div class="pl-3 pr-3">
+            <div class="row paddConte">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pl-1 pr-1">
+                <img class="waterBatl" alt="IMAGE" src="img/crushed-water-bottle.png"/>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pl-1 pr-1" style="margin: auto;">
+                <h1 class="pb-4">15 kgs of single-use plastic waste is generated by each one of us, every year</h1>
+                <h1 class="pt-5" style="color: #fff;">you can change that now</h1>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        <div class="videoContainer">
+          <div class="context">
+            <h1 style="text-align: center; padding: 4rem 4%; color: #fff;">15 kgs of single-use plastic waste is generated </br> by each one of us, every year</h1>
+          </div>
+          <video autoplay="true" loop="true" muted="" playsinline="" src="img/Beach.mp4" webkit-playsinline="" class="is-playing coverVideo"></video>
+        </div>
+        
+        <div class="main-contant-6 desktopRes">
+          <div class="plastic_packages row" style="margin:0">					
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wls float_left br-right">
+              <div style="height: 100%">
+              <h1 class="packaging-h1 head-2">buy food not packaging</h1>
+              <table>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">No use & throw packaging</td>
+                </tr>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">Returnable bags & bottles</td>
+                </tr>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">Never pay for waste</td>
+                </tr>
+              </table>
+              </div>
+              <!--<button class="btn btn_links desktopRes" type="button" data-toggle="modal" data-target="#elegantModalRegister">Register <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>-->
+            </div>	
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 padd float_right landing-slide" style="padding: 0; margin-bottom: 0; margin-top: 0;">
+              <img class="bg_imgss" src="img/ourdeserve.jpg" alt="IMG" />
+            </div>
+          </div>
+        </div>
+        <div class="main-contant-6 mobileRes">
+          <div class="plastic_packages">
+            <div class="row">					
+              <div class="col-lg-6 col-md-12 col-sm-12 bg_imgss padd">
+                <img src="img/ourdeserve.jpg" alt="IMG" />
+              </div>
+              <div class="col-lg-6 col-md-12 col-sm-12 wls">
+                <h1 class="packaging-h1 head-2">buy food not packaging</h1>
+                <table>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">No use & throw packaging</td>
+                </tr>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">Returnable bags & bottles</td>
+                </tr>
+                <tr>
+                  <td><img class="numbers" src="img/tick.png" /></td>
+                  <td class="listItems">Never pay for waste</td>
+                </tr>
+              </table>
+              <!--<button class="btn btn_links mobileRes" type="button" data-toggle="modal" data-target="#elegantModalRegister">Register <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>-->
+              </div>	
+            </div>
+          </div>
+        </div>
+        
+        <!--<div class="main-contant-2" style="border-top: 0px solid #ccc">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-2 pr-2">
+                <h1>A single-use plastics</h1>
+              </div>
+            </div>
+          </div>
+        </div>-->		
+        
+        <div class="main-contant-2 mains_cntent" style="border-bottom: 0px solid #ccc">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-2 pr-2">
+                <h1 style="font-size: 28px !important;line-height: 1.5;">we spent 1.5 years going around the country and meeting farmers and manufacturers in the search for the best. As a result, every product is produced by suppliers who makes it the best</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--<div class="main-contant-2 mains_cntent" style="border-bottom: 0px solid #ccc">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-2 pr-2">
+                <h1>clean standard products that work for you</h1>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        
+        <div class="categories">
+          <div class="row ml-0 mr-0">				  
+            <div class="col-lg-12 col-md-12 col-xs-12 pl-0 pr-0">
+              <div class="row ml-0 mr-0">
+                <div class="col-md-6 col-sm-6 col-xs-12 text-center">
+                  <img class="gifSlide" src="img/gifSlider.gif" />
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 categ-Cont">
+                  <div class="categoriesCont" style="height: 100%">
+                    <h1 class="packaging-h1 head-2 pr-0" >clean standard products that work for you</h1>
+                    <table>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">100 plus groceries</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">20 categories</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">1 brand</td>
+                      </tr>
+                    </table>
+                    <p class="sPPrice">Find the list of <a class="seeProductsPrice" href="#" data-toggle="modal" data-target="#productPrice">products and price </a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-contant-6 desktopRes">
+          <div class="premium-prod-sec plastic_packages row" style="margin:0">					
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wls float_left br-right">
+              <div style="height: 100%">
+              <h1 class="packaging-h1 head-2">premium products without premium price</h1>
+              <table class="priceCompare">
+                  <thead>
+                    <tr>
+                      <td></td>
+                      <td><b>Others</b></td>
+                      <td><b>Cleanlabel</b></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Organic Avocado Oil</td>
+                      <td>&#8377; 850</td>
+                      <td>&#8377; 650</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Rice Bran Oil</td>
+                      <td>&#8377; 550</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Virgin Coconut Oil </td>
+                      <td>&#8377; 350</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic First Flush Green Tea </td>
+                      <td>&#8377; 300</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Matcha</td>
+                      <td>&#8377; 650</td>
+                      <td>&#8377; 500</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Coconut Sugar</td>
+                      <td>&#8377; 450</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Goan Cashews</td>
+                      <td>&#8377; 300</td>
+                      <td>&#8377; 210</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Almond Butter</td>
+                      <td>&#8377; 450</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Himalayan Honey</td>
+                      <td>&#8377; 350</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>	
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 padd float_right landing-slide text-center" style="padding: 0; margin-bottom: 0; margin-top: 0;">
+              <img class="bg_imgss" src="img/gifSlider2.gif" alt="IMG" />
+            </div>
+          </div>
+        </div>
+        <div class="main-contant-6 mobileRes">
+          <div class="plastic_packages">
+            <div class="row">					
+              <div class="col-lg-6 col-md-12 col-sm-12 bg_imgss padd">
+                <img class="bg_imgss" src="img/gifSlider2.gif" alt="IMG" />
+              </div>
+              <div class="col-lg-6 col-md-12 col-sm-12 wls">
+                <h1 class="packaging-h1 head-2">premium products without premium price</h1>
+                <table class="priceCompare">
+                  <thead>
+                    <tr>
+                      <td></td>
+                      <td><b>Others</b></td>
+                      <td><b>Cleanlabel</b></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Organic Avocado Oil</td>
+                      <td>&#8377; 850</td>
+                      <td>&#8377; 650</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Rice Bran Oil</td>
+                      <td>&#8377; 550</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Virgin Coconut Oil </td>
+                      <td>&#8377; 350</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic First Flush Green Tea </td>
+                      <td>&#8377; 300</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Matcha</td>
+                      <td>&#8377; 650</td>
+                      <td>&#8377; 500</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Coconut Sugar</td>
+                      <td>&#8377; 450</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Goan Cashews</td>
+                      <td>&#8377; 300</td>
+                      <td>&#8377; 210</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Almond Butter</td>
+                      <td>&#8377; 450</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                    <tr>
+                      <td>Organic Himalayan Honey</td>
+                      <td>&#8377; 350</td>
+                      <td>&#8377; 250</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!--<table>
+                  <tr>							
+                    <td class="listItems">Organic Avocado Oil - <span style="color: gray">&#8377; 450; (B&G, &#8377; 850)</span></td>
+                  </tr>
+                  <tr>
+                    <td class="listItems">Organic Virgin Coconut Oil - <span style="color: gray">&#8377; 250</span></td>
+                  </tr>
+                  <tr>
+                    <td class="listItems">Organic First Flush Green Tea - <span style="color: gray">&#8377; 250 (Teabox, &#8377; 690)</span></td>
+                  </tr>
+                  <tr>
+                    <td class="listItems">Organic Matcha</td>
+                  </tr>
+                  <tr>
+                    <td class="listItems">Organic Coconut Sugar</td>
+                  </tr>
+                  <tr>
+                    <td class="listItems">Organic Goan Cashews</td>
+                  </tr>
+                  <tr>
+                    <td class="listItems">Organic Almond Butter</td>
+                  </tr>
+                  <tr>
+                    <td class="listItems">Organic Himalayan Honey - <span style="color: gray">&#8377; 250 (Others, &#8377; 400)</span></td>
+                  </tr>
+                </table>-->
+              </div>	
+            </div>
+          </div>
+        </div>
+        
+        <div id="carouselExampleControls" class="carousel slide main-contant-5" >
+          <ul class="carousel-indicators ulCarosal">
+            <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+          </ul>
+        
+          <h1>from our members</h1>
+          <div class="container conts">
+            <div class="carousel-inner">
+              <div class="carousel-item active">	
+                <div class="sponcer_imgs">
+                  <img class="img_zoom-hover" src="img/Meenal.jpeg" style="margin-bottom: 15px;width: 128px;border-radius: 100%;margin-top: 2rem;" />
+                </div>
+                <p>"Cold-pressed oils were authentic. It’s thicker than the market counterparts, so I ended up using less. The colour and smell are natural that reminded me of my childhood days"</p>
+                </br>
+                <h5>- Meenal, Bengaluru</h5>
+              </div>
+              <div class="carousel-item">
+                <div class="sponcer_imgs">
+                  <img class="img_zoom-hover" src="img/Garima.jpeg" style="margin-bottom: 15px;width: 128px;border-radius: 100%;margin-top: 2rem;" />
+                </div>
+                <p>"I also made phulkas out of the wheat flour it and it’s amazingly soft. Packaging is very thoughtful so I don’t have to pay for plastics anymore"</p>
+                </br>
+                <h5>- Garima, Ather energy</h5>
+              </div>
+              <div class="carousel-item">
+                <div class="sponcer_imgs">	
+                  <img class="img_zoom-hover" src="img/veta.jpeg" style="margin-bottom: 15px;width: 128px;border-radius: 100%;margin-top: 2rem;" />
+                </div>
+                <p>"We look for quality, cost and timely deliver. Cleanlabel impressed us with all of the parameters and now we get all our products from them. I am also happy that I am part of the circular economy movement by going waste-free"</p>
+                </br>
+                <h5>- Veda,  Homemaker </h5>
+              </div>
+              <div class="carousel-item">
+                <div class="sponcer_imgs">	
+                  <img class="img_zoom-hover" src="img/karthick.png" style="margin-bottom: 15px;width: 128px;border-radius: 100%;margin-top: 2rem;" />
+                </div>
+                <p>"Love their masala chai and jaggery. Bought some for my friend too"</p>
+                </br>
+                <h5>- Karthik,  Consulting </h5>
+              </div>
+            </div>
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+        <!---Sliede desktop only -->
+        <div class="categorie desktopOnly earnProduct">			
+          <div class="containerss">
+            <h1 class="text-center mt-3 mb-1" style="color: #333570;">earn a chance to win life-time free groceries, by inviting friends</h1>
+            <p class="pb-4 pt-4">If you are a member, you can get products for free by inviting your friends, families & neighbours. More friends the merrier, because you could also stand a chance to win <b>"lifetime grocery free"</b>.</p>
+          </div>
+          <div class="row ml-0 mr-0">
+                
+            <div class="col-lg-12 col-md-12 col-xs-12 pl-0 pr-0">
+              <!-- <p class="text-center pt-1 mb-0">number of friends join</p> -->
+              <div>
+                <div>
+                  <div class="milestone-itm d-flex flex-column align-items-center">
+                    <div class="has-img" style="background-image: url('img/slides/premium-1.png');"></div>
+                    <div class="padd-slide" id="slide-1"></div>
+                    <div class="padd-slide" id="slide-2">
+                      <div class="name d-flex justify-content-center primary-font">
+                        <span>Shopping Kit (4 organic cotton bags)</span>
+                      </div>
+                      <div class="name d-flex justify-content-center primary-font txt-clr-green">
+                        <span>4 products worth ₹ 1500</span>
+                      </div>
+                    </div>
+                    <div class="padd-slide" id="slide-3">
+                      <div class="name d-flex justify-content-center primary-font">
+                        <span>Previous reward + Honey + Dry fruits kit</span>
+                      </div>
+                      <div class="name d-flex justify-content-center primary-font txt-clr-green">
+                        <span>9 product worth ₹ 2500</span>
+                      </div>
+                    </div>
+                    <div class="padd-slide" id="slide-4">
+                      <div class="name d-flex justify-content-center primary-font">
+                        <span>Previous reward + Cold-press Oil Kit + Beverage Kit + Sweetener Kit</span>
+                      </div>
+                      <div class="name d-flex justify-content-center primary-font txt-clr-green">
+                        <span>15 product worth ₹ 5000</span>
+                      </div>
+                    </div>
+                    <div class="padd-slide" id="slide-5">
+                      <div class="name d-flex justify-content-center primary-font">
+                        <span>1 year groceries free* </span>
+                      </div>
+                      <div class="name d-flex justify-content-center primary-font txt-clr-green">
+                        <span>products worth ₹ 18,000</span>
+                      </div>
+                    </div>
+                    <div class="padd-slide" id="slide-6">
+                      <div class="name d-flex justify-content-center primary-font">
+                        <span>Lifetime groceries free based on lucky draw </span>
+                      </div>
+                      <div class="name d-flex justify-content-center primary-font txt-clr-green">
+                        <span>products worth ₹ 5,00,000</span>
+                      </div>
+                    </div>
+                    <div class="slider-container">
+                      <div class="slider-desc">
+                        <div><div>Member</div>Welcome Kit</div>
+                        <div><div>Win Life-time</div>Free Groceries</div>
+                      </div>
+                      <input type='range' min='1' max='6' step='1' class="step-slider" onchange="changeSlide(this.value)" oninput="changeSlide(this.value)" />
+                      <div class="slider-step-background-container">
+                        <div class="slider-step-background">
+                          <img src="img/slider-step-lock.png" width="100%" height="100%" />
+                          <div></div>
+                        </div>
+                        <div class="slider-step-background">
+                          <img src="img/slider-step-lock.png" width="100%" height="100%" />
+                          <div class="padd-slide" id="slideDesc-2">5 friends</div>
+                        </div>
+                        <div class="slider-step-background">
+                          <img src="img/slider-step-lock.png" width="100%" height="100%" />
+                          <div class="padd-slide" id="slideDesc-3">10 friends</div>
+                        </div>
+                        <div class="slider-step-background">
+                          <img src="img/slider-step-lock.png" width="100%" height="100%" />
+                          <div class="padd-slide" id="slideDesc-4">25 friends</div>
+                        </div>
+                        <div class="slider-step-background">
+                          <img src="img/slider-step-lock.png" width="100%" height="100%" />
+                          <div class="padd-slide" id="slideDesc-5">50 friends</div>
+                        </div>
+                        <div class="slider-step-background">
+                          <div class="padd-slide" id="slideDesc-5">50 friends</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timer">
+          <h1 class="timerHead">program ends in</h1>
+          <div class="timer-cont">
+            <div id="timer" class="container pt-4 pb-3">
+              <div id="days"></div>
+              <div id="hours"></div>
+              <div id="minutes"></div>
+              <div id="seconds"></div>
+              
+              <div class="col-md-12 pt-4 pb-4">
+                <p class="timerCont">Note: This is a limited program  and we may close before the timeline ends</p>
+              </div>
+            </div>
+          </div>
+        </div>
+            <!--<div class="timerSection ml-4 mr-4">
+              <div class="row">
+                <div class="col-md-4 col-xs-12 c-2">
+                  <div class="counts">
+                    <img src="img/count1.png" alt="img" />
+                    <p class="pt-4">choose your membership, use referral link & activate your account</p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12 c-2">
+                  <div class="counts">
+                    <img src="img/count2.png" alt="img" />
+                    <p class="pt-4">share your unique referral link to friends, families & neighbours</p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12 c-2">
+                  <div class="counts">
+                    <img src="img/count3.png" alt="img" />
+                    <p class="pt-4">earn products for every friend who joins</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        
+        <div class="main-contant-6 simple-steps">
+          <div class="plastic_packages row" style="margin:0">					
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wls float_left br-right">
+              <div style="height: 100%">
+              <h1 class="packaging-h1 head-2">simple steps to get started</h1>
+                <div class="content-steps-simple">
+                  <div class="pt-1 pb-1">
+                    <div class="headstxt"><div class="rounder">1</div><b> Become a member</b></div>
+                    <p>Choose your membership, apply referral link (if any) and activate your account</p>
+                  </div>
+                  <div class="pt-1 pb-1">
+                    <div class="headstxt"><div class="rounder">2</div><b> Get your referral link</b></div>
+                    <p>Login to get your referral link or we will email you</p>
+                  </div>
+                  <div class="pt-1 pb-1">
+                    <div class="headstxt"><div class="rounder">3</div><b> Share it</b></div>
+                    <p>Share your unique referral link to friends, families & neighbours</p>
+                  </div>
+                  <div class="pt-1 pb-1">
+                    <div class="headstxt"><div class="rounder">4</div><b> Earn products</b></div>
+                    <p>Earn products for friends who join based on the milestone and stand a chance to win life time free groceries</p>
+                  </div>
+                </div>
+              </div>
+            </div>	
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 padd middleAlign landing-slide text-center" style="padding: 0;">
+              <h1>want to learn more?</h1>
+              </br></br>
+              <p>Read the <a data-toggle="modal" data-target="#aboutus" style="color: #1e2de7; font-size: 16px; cursor: pointer;">terms & conditions.</a></p>
+              <p>Refer <a data-toggle="modal" data-target="#faqPopup" style="color: #1e2de7; font-size: 16px; cursor: pointer;">FAQs</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="prod-Membership">
+          <div class="container">
+            <h1 class="text-center">get your membership now & pay less for life</h1>
+            <div class="row">
+              <div class="col-md-6 col-xs-12 prod-sec">
+                <div id="bangalore-section" class="section-prod brwne">
+                  <h2>Early Bird Membership</h2>
+                  <p class="addres mb-0">Only in Bengaluru</p>
+                  
+                  <div class="row">
+                    <!--<div class="radio-btn" style="width: 150px; margin: auto;">
+                      <label>
+                        <input name="group1" type="radio" onclick="onClickYearly()" checked/>
+                        <span>Yearly</span>
+                      </label>
+                    </div>
+                    <div class="radio-btn" style="width: 150px; margin: auto;">
+                      <label>
+                        <input name="group1" type="radio" onclick="onClickMonthly()" />
+                        <span>Monthly</span>
+                      </label>
+                    </div>-->
+                    <div style="width: 100%; text-align: center;">
+                      <input id="toggle-on" class="toggles toggle-left" name="toggles" onclick="onClickMonthly()" value="false" type="radio" />
+                      <label for="toggle-on" class="btnsToggle btnLeftTog">Half Yearly</label>
+                      <input id="toggle-off" class="toggles toggle-right" name="toggles" onclick="onClickYearly()" value="true" type="radio" checked/>
+                      <label for="toggle-off" class="btnsToggle btnRightTog">Annual</label>
+                    </div>
+                  </div>
+                  <div class="join-memb mb-3 yearly selected">
+                    <p value="999">₹ 999 <span><b>(₹ 1400)</b></span></p>
+                    <p class="saves">(save 29%)</p>
+                  </div>
+                  <div class="join-memb mb-3 monthly" style="display: none;">
+                    <p value="350">₹ 350 <span><b>(₹ 750)</b></span></p>
+                    <p class="saves">(save 54%)</p>
+                  </div>
+                  <div class="tabls secHeight">
+                    <table class="yearly">									
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">welcome Kit - 5 most popular </br>products (worth ₹ 1000)</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">price locked in for life</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">one delivery is free every month</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">no cleaning fee (non-members ₹ 5/ container)</td>
+                      </tr>
+                    </table>
+                    <table class="monthly" style="display: none;">
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">surprise gift (worth ₹ 200)</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">one delivery is free</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">no cleaning fee (non-members ₹ 5/ container)</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="estimation mt-2 pl-3 pr-3">
+                    <p style="margin-bottom: 40px;">Estimated order delivery is July 31st</p>
+                    <a class="joinMemberShip blr clr-yellow">Join Membership</a>
+                  </div>
+                </div>	
+              </div>
+              
+              <div class="col-md-6 col-xs-12 prod-sec">
+                <div id="others-section" class="section-prod whilight">
+                  <h2>Super Early Bird Membership</h2>
+                  <p class="addres mb-0">Mumbai, Pune, Chennai, Hyderabad, Gurugram</p>
+                  
+                  <div class="row">
+                    <div style="width: 100%; text-align: center;">
+                      <!--<label>
+                        <input name="group2" type="radio" />
+                        <span>Yearly</span>
+                      </label>-->
+                      <input id="toggle-on1" class="toggles2 toggle-left" name="toggle" value="false" onclick="onClickMonthly2()" type="radio" />
+                      <label for="toggle-on1" class="btnsToggles btnLeftTog">Half Yearly</label>
+                      <input id="toggle-off1" class="toggles2 toggle-right" name="toggle" value="true" onclick="onClickYearly2()" type="radio" checked>
+                      <label for="toggle-off1" class="btnsToggles btnRightTog">Annual</label>
+                    </div>
+                  </div>
+                  <div class="join-memb mb-3 yearly2 selected">
+                    <p value="750">₹ 750 <span><b>(₹ 1400)</b></span></p>
+                    <p class="saves">(save 47%)</p>
+                  </div>
+                  <div class="join-memb mb-3 monthly2" style="display: none;">
+                    <p value="350">₹ 350 <span><b>(₹ 750)</b></span></p>
+                    <p class="saves">(save 54%)</p>
+                  </div>
+                  <div class="tabls secHeight">
+                    <table class="yearly2">
+                      
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">welcome kit - 5 most popular </br> products (worth ₹ 1000) + tote bag (₹ 200)</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">priced locked in for life</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">one delivery is free every month</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">no cleaning fee (non-members ₹ 5/ container)</td>
+                      </tr>
+                    </table>
+                    <table class="monthly2" style="display: none;">
+                      
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">surprise gift (worth ₹ 200)</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">one delivery is free</td>
+                      </tr>
+                      <tr>
+                        <td><img class="numbers" src="img/tick.png" /></td>
+                        <td class="listItems">no cleaning fee (non-members ₹ 5/ container)</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="estimation mt-0 pl-3 pr-3">
+                    <p style="margin-bottom: 25px;">Tote Bag delivery July 31st </br>Estimated Order delivery Jan - Mar, 2021</p>
+                    <a class="joinMemberShip other clr-grenYlo">Join Membership</a>
+                  </div>
+                </div>	
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="membership-entil">
+          <h1>membership entitles you for</h1>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-xs-12">
+              <div class="row pl-2 pr-2">
+                <table>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">exclusive access to premium quality products</td>
+                  </tr>
+                </table>										
+              </div>					
+            </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+              <div class="row pl-2 pr-2">
+                <table>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">free delivery for orders above Rs.800</td>
+                  </tr>
+                </table>										
+              </div>					
+            </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+              <div class="row pl-2 pr-2">
+                <table>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">member only subscriptions & discounts</td>
+                  </tr>
+                </table>										
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+              <div class="row pl-2 pr-2">
+                <table>
+                  <tr>
+                    <td><img class="numbers" src="img/tick.png" /></td>
+                    <td class="listItems">get free products through referrals</td>
+                  </tr>
+                </table>										
+              </div>					
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="main-contant-6">
+          <div class="plastic_packages row" style="margin:0">					
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 float_left br-right" style="padding: 1% 3%;">
+              <div style="height: 100%">
+                <h1 class="packaging-h1-cont head-2">Launch timeline</h1>					
+              </div>
+            </div>	
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 middleAlign landing-slide">
+              <table>
+                <tr>							
+                  <td class="listItems"><b>June 15</b>: Close pre-launch</td>
+                </tr>
+                <tr>
+                  <td class="listItems"><b>July 15 - July 30</b>: Products arrive, QA & pack</td>
+                </tr>
+                <tr>
+                  <td class="listItems"><b>July 31</b>: Ship welcome kit for Bengaluru and tote bags for members from other states</td>
+                </tr>
+                <tr>
+                  <td class="listItems"><b>August</b>: Member only access to Cleanlabel’s online store (for Bengaluru)</td>
+                </tr>
+                <tr>
+                  <td class="listItems"><b>August</b>: Ship referral kit with the first order (for Bengaluru)</td>
+                </tr>
+                <tr>
+                  <td class="listItems"><b>Nov</b>: Non-member access to Cleanlabel’s online store (for Bengaluru)</td>
+                </tr>
+                <tr>
+                  <td class="listItems"><b>Jan - Mar 2021</b>: Ship welcome kit for members in Mumbai/ Hyd/ Chennai</td>
+                </tr>
+                <tr>
+                  <td class="listItems"><b>Jan - Mar 2021</b>: Launch in Mumbai/ Hyd/ Delhi/ Chennai</td>
+                </tr>
+              </table>
+              <p style="color: #777;" class="pt-3">
+              Our products comes from all parts of the country. Given the existing COVID 19 situation, the supply chain for inter-state transportation  still remains an issue for. As a result, we may experience some delay
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="videoContainer">
+          <div class="context">
+            
+            <h1 style="text-align: center; padding: 4rem 4%; height: 100%;">we are becoming better, so the climate doesn’t get worse
+            </br></br>
+            <div class="context-2">
+              <p>We neutralise the carbon from the atmosphere. <span class="plant-btn">
+                <a class="btn-read" href="readmore.html">Read more</a>
+              </span>
+              </p>
+              
+            </div>
+            </h1>
+          </div>
+          
+          <video autoplay="true" loop="true" muted="" playsinline="" src="img/nature.mp4" webkit-playsinline="" class="is-playing"></video>
+        </div>
+        
+        <!--<div class="row no-margin" id="goodMadeConts">
+          <div class="col-lg-6 col-md-12 col-sm-12 no-padding br-right">
+            <div class="landing-slide" style="width: 100%; background: #e4ebcc; height: 100%">
+              <img class="bg_imgss" src="img/nature.jpg" alt="IMG" style="width: 100% !important;" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 main-4-cont main-4-cont-new" style="background: #6aa84f;">
+            <div class="main-contant-4">
+              <h1 class="packaging-h1 head-2">we plant 1 tree for every 50 products you buy</h1>
+              <div class="plant-cont">
+                <p>Per capita carbon emission is 1.8 tCO2e in India and it takes 340 trees/ person to absorb all of them. </p>
+              </div>
+              <div class="plant-cont">
+                <p>Our products generate 300-500 gms of carbon before it reaches your home. By planting a tree on your behalf, we cancel out the carbon from the atmosphere.  </p>
+              </div>
+              <div class="plant-btn">
+                <button class="btn-read" type="button">Read more</button>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        
+        <!-- Terms Us open -->
+        <div class="modal modalsOP" id="aboutus">
+          <div class="modal-dialog modal_opens" style="max-width: 100%">
+          <div class="modal-content modlOpen">
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><img src="img/close.png" /></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+            <div class="about-container container">
+              <div class="left-section section">
+                <div class="content">
+                  <p><b>Please read these Program Terms carefully before participating in the Program:</b></p>
+                  <p>1.  Earn Products by Inviting Friends’ is only for members.</p>
+                  <p>2.  Your reward will be based on the milestone you achieved. </p>
+                  <p>3.  When you reach the 50 friends milestone, you are guaranteed a one-year grocery free. Each month you will receive a credit worth 1500 a month, and an order value higher than 1500 will be payable additionally. This includes the deposits for the containers. </p>
+                  <p>4.  When you reach 75 friends milestone, you will be eligible to participate in a lucky draw to win a life-time free grocery. There will be 1 (one) winner chosen from each state. If you don't win the lucky draw, you are still guaranteed a one-year grocery free. For lifetime free groceries, you will receive credit worth 1500 a month for 20 years or until the account ceases to exist, whichever is earlier. Order value higher than 1500, will be payable additionally. </p>
+                  <p>5.  The rewards that may be earned will be specified on the referrals page (for Referring Members) and/or the referral invitation (for the Referred Contact). A referral is deemed successful when the Referred Contact becomes a member with Cleanlabel using the referral link sent to them by the Referring Member.</p>
+                  <p>6.  Your rewards and credits cannot be redeemed for cash and are non transferable and not refundable. Your credits cannot be carried forwarded to the next month. </p>
+                  <p>7.  Cleanlabel expressly reserves the right to disqualify any referrals it believes in fraudulent means (e.g., using fake accounts) or violation of these program terms. </p>
+                  <p>8.  Cleanlabel may modify, update or discontinue the Program, in whole or in part, with or without notice, and will not be liable to you or your Friends in the event of any modification, suspension or discontinuance of the Program.  </p>
+                  <p>9.  The Cleanlabel Referral Program allows existing Cleanlabel members (‘Referring Members’) to refer to a personal contact who has not previously had a Cleanlabel membership (‘Referred Contact’).</p>
+                  <p>10. For all questions, contact info@cleanlabel.net</p>
+                </div>
+              </div>					
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <!-- Terms Us close -->
+        
+        <!-- FAQ Us open -->
+        <div class="modal modalsOP" id="faqPopup">
+          <div class="modal-dialog modal_opens" style="max-width: 100%">
+          <div class="modal-content modlOpen">
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><img src="img/close.png" /></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+            <div class="about-container container">
+              <div class="left-section section">
+                <div class="content">
+                  <h2><b>FAQs</b></h2>
+                  <h3><b>‘Earn Products’ </b></h3>
+                  <div class="pl-2 pr-2">
+                    
+                    <p><b>1.  Why do we give free products to invite friends?</b></p>
+                    <p>Cleanlabel was founded with the belief that ‘we deserve better’ - better products, better planet and better pricing. Instead of spending money on celebrity marketing, which is a hidden cost added to the products, we want to work with our community to reach out to more people.</p>
+                    <p>When you recommend your friends, family, and neighbors to join us, we are cutting the marketing cost and passing the benefits to you directly through free products. </p>
+                    
+                    <p><b>2.  Is there eligibility to free products?</b></p>
+                    <p>Yes. You must be a member. Two, you must be over 18 years of age. </p>
+                    
+                    <p><b>3.  How do I earn products by inviting friends?</b></p>
+                    <p>If you are a member, you will have access to your unique referral link on your dashboard. Share your unique link with your friends and families and urge them to join.</p>
+                    <p>Based on the number of friends who join, you will earn products. </p>
+                    
+                    <p><b>4.  What product can I earn?</b></p>
+                    <p>When 5 of your friends join, you unlock the ‘Grocery kit’ (worth Rs. 1500)</p>
+                    <p>When 15 of your friends join, you unlock the Grocery kit + Dry fruits kit  + Honey (worth Rs. 2500)</p>
+                    <p>When 25 of your friends join, you unlock the Grocery kit + Dry fruits kit  + Honey + Cold-press oil Kit+ beverage Kit + Sweetener kit (worth Rs. 5000)</p>
+                    <p>When 50 of your friends join, you one year organic groceries free (worth Rs. 18000). </p>
+                    <p>When 75 of your friends join, you unlock the opportunity to win grocery for a lifetime (worth Rs. 5,00,000). If you don't win the lucky draw, you are still guaranteed a one-year grocery free. Lifetime is either 20 years or until the account ceases to exist. </p>
+                    
+                    <p><b>5.  How do I share my referral link?</b></p>
+                    <p>Step 1: Log into Cleanlabel’s account</br>
+                    Step 2: Click on the ‘My Referral’ to find your unique referral link</br>
+                    Step 3: Share your invite link! You can easily do this by copying the link, or entering the email, or sharing through any of your social media accounts. 
+                    </p>
+                    <p>Also, include a personal note expressing what you like about the Cleanlabel and how they can be a part of the movement.</p>
+                    <p>Some more ways that you can share:</p>
+                    <p>
+                    <ul>
+                      <li>Share your referral link in a social media post. </li>
+                      <li>Include your link in your next email newsletter. </li>
+                      <li>If you blog, write about us and include your referral link. </li>
+                      <li>Add your link to your email subject line.</li>
+                      <li>Share it Slack, Telegram</li>
+                    </ul>
+                    </p>
+                    
+                    <p><b>6.  Can I track my invitees? </b></p>
+                    <p>Yes, you can track your invitees if you have emailed from the Cleanlabel’s platform. </p>
+                    <p>You can also send them easy reminders. It's estimated that 80% of conversions happen after 3 follow up emails. Remember to respect your contacts’ time, and send the reminders in intervals. </p>
+                    <p>Give them a call if needed and it works like magic.</p>
+                    
+                    <p><b>7.  What is considered a successful referral? </b></p>
+                    <p>A referral is considered successful when a friend becomes a member using your unique referral link. A word of mouth will not be considered as a successful referral.</p>
+                    
+                    <p><b>8.  My contact forgot to use my referral link. Is there a way to track it back to my account? </b></p>
+                    <p>We're unable to track referrals back to your account if they didn't use your referral link at the time they signed up.</p>
+                    
+                    <p><b>9.  Can my friend use my referral link after she/he becomes a member? </b></p>
+                    <p>We are afraid no. A friend who becomes a paid member without using the referral link can’t apply the offer retroactively.</p>
+                    
+                    <p><b>10. When will I get my reward? </b></p>
+                    <p>You will get your reward along with the first purchase after the launch. </p>
+                    <p>If you are from Bengaluru, the launch is scheduled for September. If you are from Mumbai, Pune, Chennai, Hyderabad, Gurugram, launch is scheduled between Jan to March 2021.</p>
+                    
+                    <p><b>11. How long is the reward valid? </b></p>
+                    <p>Rewards/ credits are valid for a year. </p>
+                    
+                    <p><b>12. Can I redeem or transfer my rewards? </b></p>
+                    <p>Your rewards and credits cannot be redeemed for cash and are non-transferable and not refundable. Your credits cannot be carried forwarded to the next month. </p>
+                    
+                    <p><b>13. Where do I find my referral link?</b></p>
+                    <p>If you are already a member or once you become a member, you will have access to your unique referral link in your referral dashboard. </p>
+                    
+                    <p><b>14. How does the person I refer to use my referral link?</b></p>
+                    <p>Your friend can click your referral link and signup or enter the referral link during the signup. </p>
+                    
+                    <p><b>15. How will I know if I have successfully referred someone?</b></p>
+                    <p>You can track the status of your referrals by logging into your account. We’ll also keep you updated by email for referral-related events, such as when a referral logs in, becomes a member, or if you’ve reached a milestone. </p>
+                    
+                    <p><b>16. Does my referral link expire?</b></p>
+                    <p>Yes. The link is valid only for this program. </p>
+                  </div>
+                  
+                  <h3><b>‘Memberships’ </b></h3>
+                  <div class="pl-2 pr-2">
+                    
+                    <p><b>1.  Why do I need a membership?</b></p>
+                    <p>With Cleanlabel, you get access to our exclusive line of thoroughly vetted high-quality organic products at lesser than the market prices. Instead of keeping large profit margins, we give it to you at a minimal margin. </p>
+                    <p>Also, all our packaging is reusable. We deliver your products to your home and take back the packaging after use to clean, sterilize, and reuse and there is a cost to managing that. </p>
+                    <p>Instead of the increasing product price, we work through a membership model that allows us to operate with products that are better for you, better for your wallet and better for the planet.</p>
+                    
+                    
+                    <p><b>2.  What are the benefits of a membership?</b></p>
+                    <p>Besides getting exclusive access to our premium products: </p>
+                    <p>
+                    <ul>
+                      <li>You can earn products for life by inviting friends and family </li>
+                      <li>One delivery in a month is always free  </li>
+                      <li>Free delivery for orders above ₹800 ( ₹1500 for non-members)</li>
+                      <li>There is no cleaning charges (₹5/ container for non-members)</li>
+                      <li>You can get discounts through subscriptions</li>
+                      <li>Cashback options</li>
+                      <li>We cancel out the carbon on your behalf by planting trees</li>
+                    </ul>
+                    </p>
+                    
+                    <p><b>3.  What’s the cost of memberships? </b></p>
+                    <p>Annual membership is ₹1400. For the prelaunch, we are giving away discounts and products worth more than the fee, so you get the most out of your membership now. </p>
+                    <p>If you are from Bengaluru, annual membership is discounted to ₹999 (1440) and you will get products worth ₹1000. Half-yearly membership is discounted to ₹350 (700) and you get a product worth ₹200. </p>
+                    <p>If you are from Mumbai, Pune, Chennai, Hyderabad, Gurugram, annual membership is discounted to ₹750 (1440) and you will get products worth ₹1200. Half-yearly membership is discounted to ₹350 (700) and you get a product worth ₹200. </p>
+                    <p>The price is locked for life for an annual membership, so you get the most out of your membership now. </p>
+                    <p>You get all the rewards and none of the risk. </p>
+                    
+                    <p><b>4.  Why is the membership price different for Bengaluru and other cities? </b></p>
+                    <p>For the residents of other cities (Mumbai, Pune, Chennai, Hyderabad & Gurugram), the delivery is going to take place in 2021. In response to the token of trust, we are giving them bigger discounts than Bengaluru. </p>
+                    
+                    <p><b>5.  How do I become a member? </b></p>
+                    <p>Step 1: Choose the membership of your choice	</br>
+                    Step 2: Log in with your phone/ email address</br>
+                    Step 3: Pay and complete transaction</p>
+                    <p>You will have a membership. </p>
+                    
+                    <p><b>6.  Can I cancel the membership?</b></p>
+                    <p>Yes, you can cancel your membership anytime before you receive the welcome kit. But once you receive the welcome kit, you may not be able to cancel your membership.</p>
+                    
+                  </div>
+                </div>
+              </div>					
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <!-- FAQ Us close -->
+        
+        <div class="cont_2">
+          <div class="container">
+            <div class="col-xs-12">
+              <h1><strong>now it’s easy to save our planet and your wallet, by just eating healthy</strong></h1>
+              
+              <a class="btn hlink" href="#" onclick="scrollMembershipView()">Get your membership <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- FAQ Us open -->
+        <div class="modal modalsOP" id="productPrice">
+          <div class="modal-dialog modal_opens" style="max-width: 100%">
+          <div class="modal-content modlOpen">
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><img src="img/close.png" /></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body" style="margin: auto;">
+            <div class="about-container container">
+              <div class="left-section section">
+                <div class="content">
+                  <h4><b>Edible Oil</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Sunflower Oil</td>
+                        <td>750ml</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Mustard Oil</td>
+                        <td>750ml</td>
+                        <td>₹240</td>
+                      </tr>
+                      <tr>
+                        <td>Groundnut Oil</td>
+                        <td>750ml</td>
+                        <td>₹250</td>
+                      </tr>
+                      <tr>
+                        <td>Sesame Oil</td>
+                        <td>500ml</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Rice Bran Oil</td>
+                        <td>500ml</td>
+                        <td>₹250</td>
+                      </tr>
+                      <tr>
+                        <td>Coconut Oil</td>
+                        <td>400ml</td>
+                        <td>₹240</td>
+                      </tr>
+                      <tr>
+                        <td>Virgin Coconut Oil</td>
+                        <td>300ml</td>
+                        <td>₹250</td>
+                      </tr>
+                      <tr>
+                        <td>Castor Oil</td>
+                        <td>250ml</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Avacado Oil</td>
+                        <td>250ml</td>
+                        <td>₹650</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Rice</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Sona Masoori White</td>
+                        <td>2.25kg</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Sona Masoori Hand pounded</td>
+                        <td>2kg</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Sona Masoori Brown</td>
+                        <td>2kg</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Basmati</td>
+                        <td>1kg</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Black Rice</td>
+                        <td>800g</td>
+                        <td>₹250</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Pulses</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Tur Dal</td>
+                        <td>1kg</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Chana Dal</td>
+                        <td>1kg</td>
+                        <td>₹180</td>
+                      </tr>
+                      <tr>
+                        <td>Horse gram / Kulthi</td>
+                        <td>500g</td>
+                        <td>₹90</td>
+                      </tr>
+                      <tr>
+                        <td>Soya Beans Whole</td>
+                        <td>500g</td>
+                        <td>₹85</td>
+                      </tr>
+                      <tr>
+                        <td>Brown Chana</td>
+                        <td>500g</td>
+                        <td>₹80</td>
+                      </tr>
+                      <tr>
+                        <td>Green Moong Whole</td>
+                        <td>500g</td>
+                        <td>₹95</td>
+                      </tr>
+                      <tr>
+                        <td>Green Moong Dal Split</td>
+                        <td>500g</td>
+                        <td>₹100</td>
+                      </tr>
+                      <tr>
+                        <td>Moong Dal</td>
+                        <td>500g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Urad Whole</td>
+                        <td>500g</td>
+                        <td>₹95</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>Urad Dal Whole/Skinless</td>
+                        <td>500g</td>
+                        <td>₹100</td>
+                      </tr>
+                      <tr>
+                        <td>Urad Dal Split</td>
+                        <td>500g</td>
+                        <td>₹100</td>
+                      </tr>
+                      <tr>
+                        <td>Urad Dal</td>
+                        <td>500g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Masoor Whole</td>
+                        <td>500g</td>
+                        <td>₹85</td>
+                      </tr>
+                      <tr>
+                        <td>Masoor Dal (Whole)</td>
+                        <td>500g</td>
+                        <td>₹85</td>
+                      </tr>
+                      <tr>
+                        <td>Masoor Dal Split</td>
+                        <td>500g</td>
+                        <td>₹90</td>
+                      </tr>
+                      <tr>
+                        <td>Rajma Chitra</td>
+                        <td>500g</td>
+                        <td>₹110</td>
+                      </tr>
+                      <tr>
+                        <td>Rajma Red</td>
+                        <td>500g</td>
+                        <td>₹115</td>
+                      </tr>
+                      <tr>
+                        <td>White Lobia</td>
+                        <td>500g</td>
+                        <td>₹100</td>
+                      </tr>
+                      <tr>
+                        <td>Red Lobia/ Rajma Jammu</td>
+                        <td>500g</td>
+                        <td>₹100</td>
+                      </tr>
+                      <tr>
+                        <td>Kabuli Channa</td>
+                        <td>500g</td>
+                        <td>₹110</td>
+                      </tr>
+                      <tr>
+                        <td>Mixed dal</td>
+                        <td>500g</td>
+                        <td>₹110</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Sweeteners</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Jaggery Powder</td>
+                        <td>600g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Jaggery Syrup</td>
+                        <td>300g</td>
+                        <td>₹150</td>
+                      </tr>
+                      <tr>
+                        <td>Brown Sugar</td>
+                        <td>550g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Honey</td>
+                        <td>400g</td>
+                        <td>₹250</td>
+                      </tr>
+                      <tr>
+                        <td>Coconut Sugar</td>
+                        <td>250g</td>
+                        <td>₹250</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Dry Fruits</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Raisins</td>
+                        <td>300g</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Almonds</td>
+                        <td>150g</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Cashew Nuts</td>
+                        <td>125g</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Walnuts</td>
+                        <td>100g</td>
+                        <td>₹240</td>
+                      </tr>
+                      <tr>
+                        <td>Pistachio</td>
+                        <td>100g</td>
+                        <td>₹300</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Beverage</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Filter Coffee With Chicory</td>
+                        <td>150g</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Filter Coffee Without Chicory</td>
+                        <td>150g</td>
+                        <td>₹210</td>
+                      </tr>
+                      <tr>
+                        <td>Classic Chai</td>
+                        <td>125g</td>
+                        <td>₹240</td>
+                      </tr>
+                      <tr>
+                        <td>Masala Chai</td>
+                        <td>100g</td>
+                        <td>₹240</td>
+                      </tr>
+                      <tr>
+                        <td>Green Tea</td>
+                        <td>75g</td>
+                        <td>₹240</td>
+                      </tr>
+                      <tr>
+                        <td>Matcha</td>
+                        <td>30g</td>
+                        <td>₹650</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Breakfast</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Pasta Penne</td>
+                        <td>250g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Pasta Fusulli</td>
+                        <td>250g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Muesli</td>
+                        <td>400g</td>
+                        <td>₹299</td>
+                      </tr>
+                      <tr>
+                        <td>Sooji</td>
+                        <td>1.25kg</td>
+                        <td>₹105</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Superfoods</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Peanut butter</td>
+                        <td>200g</td>
+                        <td>₹250</td>
+                      </tr>
+                      <tr>
+                        <td>Almond butter</td>
+                        <td>200g</td>
+                        <td>₹450</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Dairy</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Ghee</td>
+                        <td>500g</td>
+                        <td>₹450</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Lifestyle</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Pocket Keychain bag</td>
+                        <td>1</td>
+                        <td>₹200</td>
+                      </tr>
+                      <tr>
+                        <td>Baby Towel</td>
+                        <td>1</td>
+                        <td>₹200</td>
+                      </tr>
+                      <tr>
+                        <td>Baby Towel</td>
+                        <td>3</td>
+                        <td>₹500</td>
+                      </tr>
+                      <tr>
+                        <td>Fridge bags</td>
+                        <td></td>
+                        <td>₹400</td>
+                      </tr>
+                      <tr>
+                        <td>HandKerchief (Pack of 3)</td>
+                        <td></td>
+                        <td>₹250</td>
+                      </tr>
+                      <tr>
+                        <td>Turtle bag</td>
+                        <td></td>
+                        <td>₹300</td>
+                      </tr>
+                      <tr>
+                        <td>Coconut Bowl</td>
+                        <td>1</td>
+                        <td>₹150</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Spices</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Turmeric</td>
+                        <td>200g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Mustard Seeds (Small)</td>
+                        <td>350g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Mustard Seeds (Big)</td>
+                        <td>100g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Pepper (Powder)</td>
+                        <td>100g</td>
+                        <td>₹150</td>
+                      </tr>
+                      <tr>
+                        <td>Pepper Whole</td>
+                        <td>100g</td>
+                        <td>₹160</td>
+                      </tr>
+                      <tr>
+                        <td>Corriander Powder</td>
+                        <td>100g</td>
+                        <td>₹60</td>
+                      </tr>
+                      <tr>
+                        <td>Cumin Whole (Jeera)</td>
+                        <td>150g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Cumin Powder</td>
+                        <td>100g</td>
+                        <td>₹90</td>
+                      </tr>
+                      <tr>
+                        <td>Chilli Powder</td>
+                        <td>200g</td>
+                        <td>₹105</td>
+                      </tr>
+                      <tr>
+                        <td>Garam Masala</td>
+                        <td>150g</td>
+                        <td>₹105</td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+                  <h4><b>Salt</b></h4>
+                  <div class="pl-2 pr-2">
+                    <table>
+                      <tr>
+                        <td>Himalayan Pink Salt</td>
+                        <td>500g</td>
+                        <td>₹105</td>
+                      </tr>
+                    </table>
+                  </div>	
+                  </br></br>
+                  <div class="pl-2 pr-2">
+                    <table style="border: none">
+                      <tr>
+                        <td style="border: none">
+                          Much more coming soon...
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="pl-0 pr-0 pb-3">
+                    <table style="border: none">
+                      <tr>
+                        <td style="border: none">
+                          While we aim to give to you at the displayed prices, in effect of the COVID 19, prices are fluctuating and may change
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>					
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <!-- FAQ Us close -->
+        
+        <!-- login open -->
+        <!-- Modal -->
+        <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="modal-content form-elegant" id="loginRegister">
+            <!--Header-->
+              <div class="modal-header text-center">
+                <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Register or login with</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!--Body-->
+              <div class="modal-body mx-4" style="padding: 0rem 6%;">
+                
+                  <!--Body-->
+                  
+                  <div class="md-form" style="text-align: center;">
+                      <form id="sign-in-form" action="#">
+                        <input class="form-control input_st mr-sm-2" id="phoneNumber" type="phone"
+                        required placeholder="+91  Enter your phone number" aria-label="+91 Enter your phone number" name="Phone">
+                        <button id="sign-in-button" class="btn regis-btn mt-3" onclick="submitMob()">Continue</button>
+                      </form>
+                  </div>
+                  
+                  <p class="dark-grey-text text-right d-flex justify-content-center"> or </p>
+                  
+                  <div class="social-login-btn socials col-md-12">
+                    <button type="button" class="btn btn-white btn-gle btn-rounded z-depth-1a col-md-6 mr-2" onclick="javascript:auth_popup('Google');"><img src="img/google.png" alt="G+" style="padding-right: 10px; width: auto;"/>Google</button>
+                    <button type="button" class="btn btn-white btn-fb btn-rounded mr-md-3 z-depth-1a col-md-6" onclick="javascript:auth_popup('Facebook');"><i class="fa fa-facebook text-center"></i>Facebook</button>
+                  </div>
+    
+                  
+                  
+                  <div class="text-center md-form">
+                    <p>By continuing you agree to the Terms of Services and <b>Privacy policy</b></p>
+                  </div>
+                  
+                  <div class="text-center md-form">
+                    <button type="button" class="btn regis-btn" data-toggle="modal" data-target="#refferal-modal">I HAVE A REFERRAL LINK</button>
+                  </div>
+                  
+              </div>
+            </div>
+          <!--/.Content-->
+          
+          <!--OTP Content-->
+            <div class="modal-content form-elegant" id="otpConfirm" style="display: none;">
+            <!--Header-->
+              <div class="modal-header text-center">
+                <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel">
+                  <strong>Enter OTP sent to your mobile number</strong>
+                  <spsan class="phone-number-title"></span>
+                </h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!--Body-->
+              <div class="modal-body mx-4" style="padding: 0rem 6%;">
+                <div class="input-group mt-3" style="width: fit-content;">
+                <!-- <input id="verification-code" type="tel" value="967896541" class="form-control border-0 pl-0" placeholder="your phone number"
+                  aria-label="your phone number" aria-describedby="edit-number"> -->
+                <div class="input-group-append">
+                  <button class="btn btn-link" type="button" id="edit-number"><i class=" fa fa-pencil-alt"></i></button>
+                </div>
+                </div>
+    
+                <form id="verification-code-form" class="otp-form my-5">
+                  <input id="codeBox1" type="number" maxlength="1" onkeyup="onKeyUpEvent(1, event)" onfocus="onFocusEvent(1)">
+                  <input id="codeBox2" type="number" maxlength="1" onkeyup="onKeyUpEvent(2, event)" onfocus="onFocusEvent(2)">
+                  <input id="codeBox3" type="number" maxlength="1" onkeyup="onKeyUpEvent(3, event)" onfocus="onFocusEvent(3)">
+                  <input id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)">
+                  <input id="codeBox5" type="number" maxlength="1" onkeyup="onKeyUpEvent(5, event)" onfocus="onFocusEvent(5)">
+                  <input id="codeBox6" type="number" maxlength="1" onkeyup="onKeyUpEvent(6, event)" onfocus="onFocusEvent(6)">
+      
+                  <small class="form-text text-danger pt-1">
+                    Please enter a valid OTP
+                  </small>
+                  </br>
+                  <button id="cancel-verify-code-button" type="button" class="backBtn btn">Back</button>
+                  <button type="submit" id="verify-code-button" type="button" class="confirmBtn btn">Confirm</button>
+                  </br>
+                  <button class="btn btn-link mt-3 pl-0">Resend OTP</button>
+                </form>
+              </div>
+            </div>
+          <!--/OTP.Content-->
+          
+          <!--OTP Content-->
+            <div class="modal-content form-elegant" id="otpverified" style="display: none;">
+            <!--Header-->
+              <div class="modal-header text-center" style="display: none;">
+                <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Enter OTP sent to your mobile number</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!--Body-->
+              <div class="modal-body mx-4 mt-5" style="padding: 1rem 6%;">
+                <div class="bs-stepper">
+                  <div class="bs-stepper-header" role="tablist">
+                    <!-- your steps here -->
+                    <div class="row">
+                      <div class="step col-md-6 col-xs-12" data-target="#logins-part">
+                      <div class="step-trigger pb-0" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+                        <div class="bs-stepper-circle bg-success"><i class="fa fa-check"></i></div>
+                      </div>
+                      <span class="d-block">Phone verfied</span>
+                      </div>
+                      <div class="step col-md-6 col-xs-12" data-target="#logins-part">
+                      <div class="step-trigger pb-0" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+                        <div class="bs-stepper-circle border border-dark text-dark bg-white">2</i></div>
+                      </div>
+                      <span class="d-block">Name & Email</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-4">
+                    <p class="my-5">Just one more step. Please confirm your
+                    name and email</p>
+    
+                   
+                    <div class="form-group">
+                      <label for="fullname" class="sr-only">Email address</label>
+                      <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                      placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email" class="sr-only">Email</label>
+                      <input type="text" class="form-control" id="email" placeholder="Your email">
+                    </div>
+                    <button id="continue-successful" class="btn btn-success btn-block btnclr">Continue</button>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!--/OTP.Content-->
+          
+          
+          </div>
+        </div>
+        <!-- Modal -->
+        
+        <!-- Modal -->
+        <div class="modal fade" id="joinMembers" tabindex="-1" role="dialog" aria-labelledby="joinMembers" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="modal-content form-elegant" id="joinMembers-2">
+            <!--Header-->
+              <div class="modal-header text-center" style="border-bottom: 1px solid #ccc;">
+                <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="joinMemberss">
+                  <strong style="color: #808080;">Your Membership Plan</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!--Body-->
+              <div class="modal-body mx-4" style="padding: 0rem 6%;">
+                <div class="membership-content text-center">
+                  <h3 class="mt-3"><b>Early Bird Memebership</b></h3>
+                  <h6 style="color: #616060; margin-bottom: 15px;">Bengaluru</h6>
+                  <p class="text-center bagClrBlue"> <b>Annual</b></p>
+                  </br>
+                  <div class="join-memb mb-3 yearly2">
+                    <p>₹ 750 <span><b>(₹ 1400)</b></span></p>
+                    <p class="saves">(save 47%)</p>
+                  </div>
+                  </br>
+                  <div class="text-center">
+                    <button class="btn btn-grenen">Proceed to Pay</button>
+                  </div>
+                  </br></br>
+                  <p style="font-size: 14px; color: #616060;">
+                    By continuing you agree to the <a style="color: #007bff;" href="termsandcondition.html">Terms of Services</a> and <a style="color: #007bff;" href="privacyPolicy.html">Privacy policy</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <!--/.Content-->
+          </div>
+        </div>
+        <!-- Modal -->
+          <div class="modal fade border-0" id="refferal-modal" tabindex="-1" role="dialog"
+            aria-labelledby="refferal-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body p-5 mt-5">
+              <label for="referral-link" class="sr-only sr-only-focusable">Paste the referral link here</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="validationServerUsername"
+                placeholder="Paste the referral link here" required>
+                <div class="input-group-append">
+                <button class="btn btn-dark">Apply</button>
+                </div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        <!-- Modal -->
+        
+        <!-- Modal -->
+        <div class="modal fade" id="OTPModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            
+          </div>
+        </div>
+        <!-- Modal -->
+    
+        <!-- login close -->
+        
+      </main>
+      
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 footerSplid pt-4 pb-3 borderRemover" style="border-right: 1px solid #ccc;">
+              <div class="pt-4 pb-4 foot_content">
+                <p>we are on a mission to make ‘people more healthy’ and ‘world less trashy’</p>
+              </div>
+              <div class="forms_regis">											
+                <a class="btn footer-btn-mob text-left pl-0 pr-0 hlink" href="#" onclick="scrollMembershipView()">Join us</a>
+              </div>
+              <div class="pt-3 pb-3 instaBorder">
+                <a href="https://www.instagram.com/cleanlabellife/" target="_blank"><img alt="Instagram" src="img/instagram.png" /></a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 footerSplid pt-4 pb-3" style="border-right: 0px solid #ccc;">
+              <div class="row pt-4 pb-4">
+                <div class="col-lg-6 col-md-6 col-xs-12 listBorder">
+                  <ul class="list-group">
+                    <li class="lists"><a href="about.html">About</a></li>
+                    <li class="lists"><a href="faq.html">FAQ</a></li>
+                    <li class="lists"><a href="carbonNeutral.html">Carbon neutral</a></li>
+                    <li class="lists"><a href="influencer.html">Influencer</a></li>								
+                    <li class="lists"><a href="career.html">Career</a></li>
+                    <li class="lists"><a href="contact.html">Contact us</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                  <ul class="list-group">
+                    <li class="lists"><a href="cancelation.html">Refund & Cancellation</a></li>
+                    <li class="lists"><a href="termsandcondition.html">Terms & conditions</a></li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="copyWrite">
+        <div class="container">
+          <div class="row">
+            <div style="width: 50%">
+              <p>© Cleanlabel 2020</p>
+            </div>
+            <div style="width: 50%">
+              <p class="PPlink"><a href="privacyPolicy.html">Privacy Policy</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <%- include('components/navbar.ejs'); -%>
     <br><br><br><br>
 
@@ -25,10 +2117,155 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   <%- include('components/firebaseScripts.ejs'); -%>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
   <script src="login.js"></script>
   <script src="index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="utils/sm.js"></script>
+	<script>
+		$(document).ready(function(){			
+			$("#accordian-modal .card-header.collapseIcon").on("click", function(){
+				if($(this).find(".fa").hasClass("fa-plus")){
+					$("#accordian-modal").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+					$(this).find(".fa").removeClass("fa-plus").addClass("fa-minus");
+				}else{
+					$(this).find(".fa").removeClass("fa-minus").addClass("fa-plus");
+				}
+				
+			});
+			$(".navbar-on-togle").on("click", function(){
+				console.log('1');
+				if($(this).find(".iclose").hasClass("fa-bars")){
+					console.log('2');
+					$(".navbar-on-togle").find(".iclose").removeClass("fa-times").addClass("fa-bars");
+					$(this).find(".iclose").removeClass("fa-bars").addClass("fa-times");
+				}else{
+					console.log('3');
+					$(this).find(".iclose").removeClass("fa-times").addClass("fa-bars");
+				}
+				
+			});
+			
+			var w = $('.landing-slide').outerWidth(true);
+			var h = $('.landing-slide').outerHeight(true);
+			
+			console.log(w,h);
+			$(window).resize(function(){
+				// Init video
+				var w = $('.landing-slide').outerWidth(true);
+				var h = $('.landing-slide').outerHeight(true);
+				
+				var prod_w = $('.prod-main-content').outerWidth(true);
+				var prod_h = $('.prod-main-content').outerHeight(true);
+				
+				var categories_w = $('.categories').outerWidth(true);
+				var categories_h = $('.categories').outerHeight(true);
+								
+				$('.landing-slide img').width(w);
+				$('.landing-slide img').height(w);
+				
+				$('.prod-main-content').width(w);
+				$('.prod-main-content').height(w);
+				
+				//$('.categories').width(w);
+				$('.categories').height(w);
+				
+				//$('.mains_content2').width(w);
+				$('.mains_content2').height(w);
+			});
+		});
+	</script>
+	<script>
+		jQuery(function ($) {
+		$.fn.hScroll = function (amount) {
+			amount = amount || 1200;
+			$(this).bind("DOMMouseScroll mousewheel", function (event) {
+				var oEvent = event.originalEvent, 
+					direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+					position = $(this).scrollLeft();
+				position += direction > 0 ? -amount : amount;
+				$(this).scrollLeft(position);
+				event.preventDefault();
+			})
+		};
+	});
+
+	$(document).ready(function() {
+		$('#box').hScroll(250); // You can pass (optionally) scrolling amount
+	});
+	</script>
+	<script>
+        function auth_popup( provider ){
+            // replace 'path/to/hybridauth' with the real path to this script
+            var authWindow = window.open('http://cleanlabel.net/home/26/html/hybrid_social_login/callback.php?provider='+provider, 'authWindow', 'width=600,height=4000,scrollbars=yes');
+            return false;
+        }
+    </script>
+<script src="utils/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+	  slidesPerView: 3,
+	  spaceBetween: 6,
+	  slidesPerGroup: 1,
+	  loop: false,
+	  loopFillGroupWithBlank: true,
+	  pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	  },
+	  navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	  },
+	});
+  </script>
+  <script>
+    var swiper = new Swiper('.swiper-container2', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 </body>
 </html>

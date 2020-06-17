@@ -4,6 +4,7 @@ window.onload = function() {
     var userData = JSON.parse(localStorage.getItem('userData'));
     var userName = userData.name;
     var userEmail = userData.email;
+    var userPhone = userData.phone;
     var dataObj = {
       email: userEmail,
       name: userName,
@@ -18,9 +19,12 @@ window.onload = function() {
         saveSubscriber(dataObj);
     }
 
-    document.getElementById('pay-again').addEventListener('click', function() {
-      window.location.href = "/paywithpaytm?amount="+responseData.TXNAMOUNT;
-    });
+    document.querySelector('.phone').innerHTML = userPhone;
+    document.querySelector('.email').innerHTML = userEmail;
+
+    // document.getElementById('pay-again').addEventListener('click', function() {
+    //   window.location.href = "/paywithpaytm?amount="+responseData.TXNAMOUNT;
+    // });
 }
 
 

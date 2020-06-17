@@ -454,3 +454,72 @@ ReferenceError: xss is not defined
     at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
     at startup (internal/bootstrap/node.js:283:19)
     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3) | 
+Tue, 16 Jun 2020 19:14:39 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Tue, 16 Jun 2020 19:22:54 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Tue, 16 Jun 2020 19:26:06 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Tue, 16 Jun 2020 19:26:32 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 19:28:26 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Tue, 16 Jun 2020 19:28:43 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 19:28:44 GMT | INFO | app.log | Initiated payment gateway for amount  | 
+Tue, 16 Jun 2020 20:13:58 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Tue, 16 Jun 2020 20:14:11 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 20:14:11 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Tue, 16 Jun 2020 20:54:52 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Tue, 16 Jun 2020 20:55:02 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 20:55:02 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Tue, 16 Jun 2020 20:55:20 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 20:55:21 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 20:55:22 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:15:55 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:15:56 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:16:19 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:16:20 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:16:53 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:16:54 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:22:54 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:22:55 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:22:56 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:23:35 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:23:36 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:23:36 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:31:28 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:31:30 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:31:30 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:38:04 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:38:06 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:38:06 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:40:01 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:40:02 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:40:02 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:41:07 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:41:08 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:41:08 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:41:23 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:41:24 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 21:41:25 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:41:53 GMT | INFO | app.log | Transaction successful! Order ID: YIVv8cyRS | 
+Tue, 16 Jun 2020 21:41:54 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 21:41:55 GMT | INFO | app.log | PDF created successfully! YIVv8cyRS.pdf | 
+Tue, 16 Jun 2020 22:09:43 GMT | WARN | app.log | Customer not found with email null and/or phone  919108253213 | 
+Tue, 16 Jun 2020 22:09:55 GMT | WARN | app.log | Customer not found with email null and/or phone  919108253213 | 
+Tue, 16 Jun 2020 22:11:38 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 22:15:16 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 22:16:37 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Tue, 16 Jun 2020 22:16:55 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:29:02 GMT | WARN | app.log | Customer not found with email  and/or phone 9108253213 | 
+Wed, 17 Jun 2020 13:29:02 GMT | WARN | app.log | Customer not found with email null and/or phone 9108253213 | 
+Wed, 17 Jun 2020 13:29:10 GMT | INFO | app.log | Added new customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:29:12 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:32:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:39:39 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:54:15 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:55:21 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:56:18 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 13:57:49 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 14:57:58 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 14:57:58 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 14:57:59 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 14:59:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 14:59:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 14:59:47 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:01:49 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 

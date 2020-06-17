@@ -37,6 +37,7 @@ app.use(xss());
 app.use(mongoSanitize());
 app.use("/assets", express.static(__dirname + "/../assets"));
 app.use("/css", express.static(__dirname + "/../css"));
+app.use("/img", express.static(__dirname + "/../img/"));
 app.set("view engine", "ejs");
 
 
@@ -80,7 +81,7 @@ app.post("/paywithpaytmresponse", (req, res) => {
                 createInvoicePdf(response.ORDERID);
                 res
                 .status(200)
-                .render("response.ejs", {
+                .render("paymentSuccess.ejs", {
                     resultData: "true", 
                     responseData: response, 
                     baseUrl: process.env.BASE_URL,
