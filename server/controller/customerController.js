@@ -43,7 +43,7 @@ router.post('/save', (req, res) => {
             } else {
                 logger.info('Added new customer '+doc.value.email);
             }
-            res.status(200).send(doc); 
+            res.status(200).send(response); 
         }
         else {
             logger.error('Error during updating the record: ' + err);

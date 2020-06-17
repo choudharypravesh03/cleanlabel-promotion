@@ -42,11 +42,13 @@ var firebaseApp;
         $('.login-button-container').show();
         $('.account-button-container').hide();
         $('#myAccounts').hide();
+        $('.prod-Membership').show();
+        $('.getmembership-button-container').show();
 
       }
       updateSignInButtonUI();
       updateSignInFormUI();
-      updateSignOutButtonUI();
+      // updateSignOutButtonUI();
       updateSignedInUserStatusUI();
       updateVerificationCodeFormUI();
     });
@@ -82,8 +84,24 @@ var firebaseApp;
     isLoginFlow = false;
     let locationType = e.target.classList[1]
     if(locationType === 'blr') {
+      // Globals
       selectedCity = 'bangalore';
       selectedPackage = $('#bangalore-section .selected > p').attr('value');
+      //Private
+      var membershipType;
+      var membershipCostWithoutDiscount;
+      if(selectedPackage === '999') {
+        membershipType = 'Annual'
+        membershipCostWithoutDiscount = '1400';
+      } else {
+        membershipType = 'Half Yearly'
+        membershipCostWithoutDiscount = '750';
+      }
+      $('.membership-content .membership-early').html('Early Bird Membership');
+      $('.membership-content .membership-city').html('Bengaluru');
+      $('.membership-content .membership-type').html(membershipType);
+      $('.membership-content .membership-cost').html(selectedPackage);
+      $('.membership-content .membership-without-discount').html(membershipCostWithoutDiscount);
     } else {
       selectedCity = 'others';
       selectedPackage = $('#others-section .selected > p').attr('value');
@@ -185,8 +203,8 @@ function attachEventListeners() {
           // User not there. Enter phone number
           // trick to use phone verification code after social login
           firebase.auth().signOut();
-          document.querySelector('.oauth-container').style.display = 'none';
-          document.querySelector('.referral-container').style.display = 'none';
+          $('.oauth-container').hide();
+          $('.referral-container').hide();
         }
       } else {
         alert("There was an error saving your data. Please try again! Error: "+error);
@@ -356,15 +374,15 @@ function attachEventListeners() {
     }
   }
 
-  function updateSignOutButtonUI() {
-    if (firebase.auth().currentUser) {
-      document.getElementById('sign-out-button').style.display = 'block';
-      document.getElementById('login').style.display = 'none';
-    } else {
-      document.getElementById('sign-out-button').style.display = 'none';
-      document.getElementById('login').style.display = 'block';
-    }
-  }
+  // function updateSignOutButtonUI() {
+  //   if (firebase.auth().currentUser) {
+  //     document.getElementById('sign-out-button').style.display = 'block';
+  //     document.getElementById('login').style.display = 'none';
+  //   } else {
+  //     document.getElementById('sign-out-button').style.display = 'none';
+  //     document.getElementById('login').style.display = 'block';
+  //   }
+  // }
 
   function updateSignedInUserStatusUI() {
     var user = firebase.auth().currentUser;
@@ -463,6 +481,7 @@ function attachEventListeners() {
       setCookie('referralCode', c, 5);
       referralCode = c;
       alert('Congratulations! Your referral code applied. Please proceed to login/register');
+      $('#refferal-modal').removeClass('show').css('display', 'none');
       document.getElementById('referral-link').value = ""
     } else {
       alert("Enter a valid referral link");
@@ -478,19 +497,6 @@ function attachEventListeners() {
       setCookie('referralCode', mwr, 5);
     }
   }
-
-  // function isEmailInLocalStorage() {
-  //   var local = localStorage.getItem('userData');
-  //   var userData;
-  //   if(local) {
-  //     userData = JSON.parse(local);
-  //   } 
-  //   if(userData.email) {
-  //     return userData.email
-  //   } else {
-  //     return null
-  //   }
-  // }
 
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();

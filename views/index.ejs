@@ -1833,22 +1833,23 @@
                         <button id="sign-in-button" class="btn regis-btn mt-3" onclick="submitMob()">Continue</button>
                       </form>
                   </div>
+
+                  <p class="oauth-container dark-grey-text text-center"> or </p>
                   
-                  <p class="dark-grey-text text-right d-flex justify-content-center"> or </p>
-                  
-                  <div class="social-login-btn socials col-md-12">
-                    <button type="button" class="btn btn-white btn-gle btn-rounded z-depth-1a col-md-6 mr-2" onclick="javascript:auth_popup('Google');"><img src="img/google.png" alt="G+" style="padding-right: 10px; width: auto;"/>Google</button>
-                    <button type="button" class="btn btn-white btn-fb btn-rounded mr-md-3 z-depth-1a col-md-6" onclick="javascript:auth_popup('Facebook');"><i class="fa fa-facebook text-center"></i>Facebook</button>
+                  <div class="oauth-container social-login-btn socials col-md-12">
+                    <button id="quickstart-sign-in-google" type="button" class="btn btn-white btn-gle btn-rounded z-depth-1a col-md-6 mr-2"><img src="img/google.png" alt="G+" style="padding-right: 10px; width: auto;"/>Google</button>
+                    <button id="quickstart-sign-in-facebook" type="button" class="btn btn-white btn-fb btn-rounded mr-md-3 z-depth-1a col-md-6"><i class="fa fa-facebook text-center"></i>Facebook</button>
                   </div>
     
                   
-                  
-                  <div class="text-center md-form">
-                    <p>By continuing you agree to the Terms of Services and <b>Privacy policy</b></p>
-                  </div>
-                  
-                  <div class="text-center md-form">
-                    <button type="button" class="btn regis-btn" data-toggle="modal" data-target="#refferal-modal">I HAVE A REFERRAL LINK</button>
+                  <div class="referral-container">
+                      <div class="text-center md-form">
+                          <p>By continuing you agree to the Terms of Services and <b>Privacy policy</b></p>
+                        </div>
+                        
+                        <div class="text-center md-form">
+                          <button type="button" class="btn regis-btn" data-toggle="modal" data-target="#refferal-modal">I HAVE A REFERRAL LINK</button>
+                        </div>
                   </div>
                   
               </div>
@@ -1970,17 +1971,17 @@
               <!--Body-->
               <div class="modal-body mx-4" style="padding: 0rem 6%;">
                 <div class="membership-content text-center">
-                  <h3 class="mt-3"><b>Early Bird Memebership</b></h3>
-                  <h6 style="color: #616060; margin-bottom: 15px;">Bengaluru</h6>
-                  <p class="text-center bagClrBlue"> <b>Annual</b></p>
+                  <h3 class="mt-3 membership-early">Early Bird Memebership</h3>
+                  <h6 class="membership-city" style="color: #616060; margin-bottom: 15px;">Bengaluru</h6>
+                  <p class="membership-type text-center bagClrBlue"> <b>Annual</b></p>
                   </br>
                   <div class="join-memb mb-3 yearly2">
-                    <p>₹ 750 <span><b>(₹ 1400)</b></span></p>
+                    <p>₹ <span class="membership-cost">750</span> <span><b>(₹ <span class="membership-without-discount">1400</span>)</b></span></p>
                     <p class="saves">(save 47%)</p>
                   </div>
                   </br>
                   <div class="text-center">
-                    <button class="btn btn-grenen">Proceed to Pay</button>
+                    <button id="pay-now" class="btn btn-grenen">Proceed to Pay</button>
                   </div>
                   </br></br>
                   <p style="font-size: 14px; color: #616060;">
@@ -2000,10 +2001,10 @@
               <div class="modal-body p-5 mt-5">
               <label for="referral-link" class="sr-only sr-only-focusable">Paste the referral link here</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="validationServerUsername"
+                <input type="text" class="form-control" id="referral-link"
                 placeholder="Paste the referral link here" required>
                 <div class="input-group-append">
-                <button class="btn btn-dark">Apply</button>
+                <button id="apply-referral" class="btn btn-dark">Apply</button>
                 </div>
               </div>
               </div>
@@ -2104,7 +2105,7 @@
     <%- include('components/navbar.ejs'); -%>
     <br><br><br><br>
 
-    <button id="join-membership">Join Membership</button>
+    <!-- <button id="join-membership">Join Membership</button>
 
     <div id="pay-now-modal" class="modal">
       <div class="modal-content">
@@ -2116,7 +2117,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 

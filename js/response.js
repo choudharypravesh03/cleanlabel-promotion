@@ -49,7 +49,7 @@ function saveSubscriber(obj) {
             order_id: obj.orderId,
             amount: obj.transactionAmount,
             transactionStatus: obj.status,
-            membership: obj.transactionAmount ? 'yearly' : 'monthly',
+            membership: obj.transactionAmount ? 'yearly' : 'halfyearly',
             referred_by: subResponse.referred_by.email ? subResponse.referred_by.email : ""
           }
           saveUserData(userObj);

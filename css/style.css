@@ -1523,14 +1523,14 @@ header .navbar-brand{
     font-weight: 600;
     padding: 8px;
 }
-.bagClrBlue b{
+.membership-content .bagClrBlue {
 	background: #333570;
 	padding: 6px 4rem;
 	border: 1px solid #333570;
 	border-radius: 20px;
 	color: #fff;
 }
-.join-memb p span{
+.join-memb p .membership-without-discount{
 	text-decoration: line-through;
 	padding-left: 5px;
 }

@@ -523,3 +523,49 @@ Wed, 17 Jun 2020 14:59:45 GMT | INFO | app.log | Successfully fetched the custom
 Wed, 17 Jun 2020 14:59:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
 Wed, 17 Jun 2020 14:59:47 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
 Wed, 17 Jun 2020 15:01:49 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:15:49 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:15:49 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:33:49 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:33:49 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:37:39 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:37:39 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:45:59 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:45:59 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:51:47 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:51:47 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 15:51:50 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:01:46 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:17:12 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:18:23 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:21:06 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:22:45 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:24:00 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:24:05 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:25:18 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:26:32 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:26:50 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 16:26:50 GMT | INFO | app.log | Initiated payment gateway for amount 999 | 
+Wed, 17 Jun 2020 16:27:07 GMT | INFO | app.log | Transaction successful! Order ID: Yd_upZD-f | 
+Wed, 17 Jun 2020 16:27:08 GMT | INFO | app.log | PDF created successfully! Yd_upZD-f.pdf | 
+Wed, 17 Jun 2020 16:27:10 GMT | INFO | app.log | Successfully updated the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 17:58:06 GMT | INFO | app.log | Successfully fetched the customer choudharypravesh03@gmail.com | 
+Wed, 17 Jun 2020 19:25:59 GMT | INFO | app.log | Added new customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:25:59 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:26:29 GMT | INFO | app.log | Successfully updated the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:26:29 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:26:29 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:26:29 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:26:29 GMT | INFO | app.log | Initiated payment gateway for amount 350 | 
+Wed, 17 Jun 2020 19:26:29 GMT | INFO | app.log | Initiated payment gateway for amount 350 | 
+Wed, 17 Jun 2020 19:26:50 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:45:07 GMT | INFO | app.log | Successfully updated the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:45:07 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:45:09 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:47:48 GMT | INFO | app.log | Successfully updated the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:47:48 GMT | INFO | app.log | Initiated payment gateway for amount 350 | 
+Wed, 17 Jun 2020 19:48:00 GMT | INFO | app.log | Transaction successful! Order ID: -jx-UdeWh | 
+Wed, 17 Jun 2020 19:48:02 GMT | INFO | app.log | PDF created successfully! -jx-UdeWh.pdf | 
+Wed, 17 Jun 2020 19:48:02 GMT | INFO | app.log | Successfully updated the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:48:57 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:51:25 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
+Wed, 17 Jun 2020 19:51:30 GMT | INFO | app.log | Successfully fetched the customer pravesh03choudhary@gmail.com | 
