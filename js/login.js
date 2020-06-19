@@ -134,7 +134,6 @@ var firebaseApp;
 function attachEventListeners() {
   document.getElementById('quickstart-sign-in-google').addEventListener('click', toggleGoogleSignIn, false);
   document.getElementById('quickstart-sign-in-facebook').addEventListener('click', toggleFacebookSignIn, false);
-  document.getElementById('sign-out-button').addEventListener('click', onSignOutClick);
   document.getElementById('phoneNumber').addEventListener('keyup', updateSignInButtonUI);
   document.getElementById('phoneNumber').addEventListener('change', updateSignInButtonUI);
   document.getElementById('codeBox6').addEventListener('keyup', updateVerifyCodeButtonUI);
@@ -216,6 +215,7 @@ function attachEventListeners() {
     sessionStorage.removeItem('userData');
     localStorage.clear();
     firebase.auth().signOut();
+    window.location.reload();
   }
 
   function payNowForLoggedInUser() {

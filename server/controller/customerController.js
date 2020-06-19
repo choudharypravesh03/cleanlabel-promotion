@@ -115,15 +115,6 @@ router.get('/:id', (req, res) => {
     });
 });
 
-//Router Controller for DELETE request
-// router.get('/delete/:id', (req, res) => {
-//     Customer.findByIdAndRemove(req.params.id, (err, doc) => {
-//         if (!err) {
-//             res.redirect('/customer/list');
-//         }
-//         else { console.log('Failed to Delete Customer Details: ' + err); }
-//     });
-// });
 
 
 

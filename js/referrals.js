@@ -1,15 +1,34 @@
 
 window.onload = function() {
+
+    var user = {};
+
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+          console.log(user);
+          var email = user.email;
+          var phoneNumber = user.phoneNumber && user.phoneNumber.substr(3, 10);
+          getUserData({phone: phoneNumber, email: email}, (response) => {
+              var user = response.data;
+              $('.username').html(user.name);
+              if(user && user.membership !== 'none') {
+                  
+              }
+            })
+      } else {
+          console.log("no user");
+          window.location.href="/";
+      }
+  });
+
+
     
     // Initialize the tags input field
     var emailField = document.querySelector('[name="tags"]')
     tagger(emailField, {
         
       });
-
-    var userData = JSON.parse(sessionStorage.getItem('userData'));
-    getUserData();
-    var userFromMongo = {};
 
     // use custom css for cloudsponge widgets
     cloudsponge.init({
@@ -79,7 +98,7 @@ window.onload = function() {
     }
 
     function saveCustomerEmailData(emails, currentUserEmail) {
-        var previousEmails = userFromMongo.sentEmails;
+        var previousEmails = user.sentEmails;
         var totalEmails = previousEmails + ', ' + emails;
         var obj = {
             email: currentUserEmail,
@@ -94,17 +113,17 @@ window.onload = function() {
           })
       }
 
-    function getUserData() {
-        axios.get('/customer/get?email='+userData.email)
+      function getUserData(obj, callback) {
+        var url = `/customer/get?phone=${obj.phone}&email=${obj.email}`;
+        axios.get(url)
           .then(response => {
-            console.log("SUCCESS RESPONSE", JSON.stringify(response));
-            userFromMongo = response.data;
+            callback(response);
           })
           .catch(error => {
-            console.log("Failed to store data", JSON.stringify(error));
-            return error;
+            console.log("Cannot get customer: ", JSON.stringify(error));
+            callback(error);
           })
-    }
+      }
     
     function trackInvites() {
       axios.get('/customer/trackinvites?email='+userData.email)

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+  <%- include('components/common_meta.ejs'); -%>
+  <title>clean label</title>
+  <%- include('components/common_css.ejs'); -%>
+</head>
+
+<body>
+  <%- include('components/account_header.ejs'); -%>
+
+  <main class=" subscription">
+    <div class="">
+      <div class="row pt-5 m-0">
+	  <div class="col-md-9 col-xs-12">
+			<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+				  <h1 class="sr-only">Subscription</h1>
+          <p class="font-weight-bold">Dear <span class="username"></span>,</p>
+          <p>Thank you for joining the sustainability movement.</p>
+
+          <p>Your have an active membership & the number is <span class="order_id"></span>. Now you can take
+            advantage of the membership perks:
+          </p>
+
+          <div class="card bg-brown text-white border-0 w-75 rounded-0 shadow">
+            <div class="card-body">
+              <p class="mb-0 font-weight-bold"><strong><span class="membership_type"></span> membership</strong></p>
+              <small><span class="order_id"></span></small>
+            </div>
+          </div>
+
+          <div class="action-btn mt-4">
+            <button class="btn btn btn-outline-dark rounded-0 my-1 my-sm-0"><a href="8.html">Update membership</a></button>
+            <button class="btn btn btn-outline-dark rounded-0 my-1 my-sm-0">Cancel membership</button>
+          </div>
+          <div class="note mt-4">
+            <ul class="pl-3">
+              <li>The term of membership is for <span class="membership_term"></span> months</li>
+              <li>Membership will begin from the date of the launch in your location.</li>
+              <li>Memberships are not transferable to another person.</li>
+              <li>You will receive a surprise gift</li>
+            </ul>
+          </div>
+
+				</div>
+			 </div>
+			</div>
+		</div>
+		<div class="col-md-3 col-xs-12 mobileViewss">
+			<ul class="navbar-nav sidenav ml-md-auto bg-light pl-md-4 pt-4 pt-md-0 border-left" id="navAccordion">				
+				<li class="nav-item pt-3 pb-2 referral-link">
+					<a class="nav-link" href="/m_membership" style="color: #000;">Membership</a>
+				</li>
+				<li class="nav-item pt-3 pb-2 referral-link">
+					<a class="nav-link" href="/referrals" style="color: #000;">Your Referrals</a>
+				</li>
+				<li class="nav-item pt-2">
+					<a class="nav-link" href="19.html">Profile</a>
+				</li>
+				<!-- <li class="nav-item">
+					<a class="nav-link" href="#">Settings</a>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link" href="help.html">Help</a>
+				</li>
+				<li class="nav-item w-75 mt-5">
+					<a class="logout btn-sm btn-block btn btn-outline-dark" href="#">Logout</a>
+				</li>
+			</ul>
+		</div>
+	  </div>
+    </div>
+  </main>
+  
+
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="text-center">
+        &copy; 2020 All rights reserved
+      </div>
+    </div>
+	</footer>
+	
+	<div id="firebase-auth-data" style="display: none"><%= JSON.stringify(authData) %></div>
+
+  <!-- build:js scripts/vendor.js -->
+  <script type="text/javascript" src="utils/jquery.min.js"></script>
+	<script type="text/javascript" src="utils/bootstrap.min.js"></script>
+  <!-- endbuild -->
+	<!-- build:js scripts/main.js -->
+	
+	<%- include('components/firebaseScripts.ejs'); -%>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+	<script src="member_membership.js"></script>
+  <script src="main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

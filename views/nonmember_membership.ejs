@@ -1,0 +1,327 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+<%- include('components/common_meta.ejs'); -%>
+  <title>clean label</title>
+  <%- include('components/common_css.ejs'); -%>
+  
+  <script>
+	function paymentSuccess(){
+		$('#paymentSuccess').show();
+		$('#paymentOpt').hide();		
+	}
+	function hamburgerClose() {
+		$('#hamburgerMenu').click();
+	}
+  </script>
+</head>
+
+<body>
+  <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <header>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light  bg_white">
+			<a class="navbar-brand" href="http://cleanlabel.net/home/26/html/">
+				<img class="img-on-head" src="../img/logo.png" />
+				<img class="img-on-scroll" style="display:none;" src="../img/CL_LOGO_v2.2.png" />
+			</a>
+			<button class="navbar-toggler navbar-on-togle collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" onclick="on_click_toggle()">
+				<i class="iclose fa fa-bars" aria-hidden="true"></i>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarText" data-aos="zoom-in-left">	
+				<div class="register-btn nav-on-head desktopViewOnly nav-on-scroll">
+					<span class="form_inputs dektopviews"><a href="app/8.html">Get membership</a></span>
+					<p class="form_inputs dektopviews" style="padding: 10px !important; border-right: none; width: 182px;">
+						<!--<button class="btn header-btn my-2 my-sm-0" data-toggle="modal" data-target="#elegantModalRegister" type="button">Login - Register<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>-->
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img src="img/avatar.jpg" style="width: 40px !important;" />  Giridharan 
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Membership</a>
+							<a class="dropdown-item" href="#">Your Rewards</a>
+							<a class="dropdown-item" href="app/19.html">Profile</a>
+							<a class="dropdown-item" href="#">Help</a>
+						</div>
+					</p>
+					<p class="splitViewbtn mb-0" style="display: none;">
+						<span class="form_inputs dektopviewsbtn">
+							<!--<button class="btn header-btn my-2 my-sm-0" data-toggle="modal" data-target="#elegantModalRegister" type="button">Login - Register<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>-->
+							<a href="#" data-toggle="modal" data-target="#elegantModalForm">Login <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+						</span>
+					</p>
+					
+				</div>	
+					
+			</div>
+            <%- include('components/hamburger.ejs'); -%>
+		</nav>
+		
+	</header>
+
+  <main class=" subscription">
+    <div class="">
+      <div class="row pt-5 m-0">
+	  <div class="col-md-9 col-xs-12">
+			<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+				  <h1 class="h6 mb-4">If you are from Bengaluru</h1>
+				  <label>
+					<a data-toggle="modal" data-target="#paymentConfirmation">
+					<input type="radio" name="demo" class="card-input-element d-none">
+					
+						<div class="card card-body d-flex flex-row justify-content-between align-items-center shadow">
+							<div>
+								<p class="mb-0">Yearly mebership at <span class="text-dark"><strong>Rs.999
+								<s>(Rs.1400)</s></strong></span></p>
+								<small>Welcome kit - 5 Most popular products (worth Rs. 1000)</small>
+							</div>
+						
+						</div>
+					</a>
+				  </label>
+				</div>
+				<div class="col-md-6">
+					<h1 class="h6 mb-4"></h1>
+				  <label class=" mt-3">
+					 <a data-toggle="modal" data-target="#paymentConfirmation">
+						<input type="radio" name="demo" class="card-input-element d-none">
+						
+							<div class="card card-body d-flex flex-row justify-content-between align-items-center shadow">				
+								<div>
+									<p class="mb-0">Yearly mebership at <span class="text-dark"><strong>Rs.350
+									  <s>(Rs.750)</s></strong></span></p>
+									<small>Surprise Gift</small>
+								</div>
+							</div>
+						</a>
+					</label>
+				</div>
+				<div class="col-md-12">
+			  <small class="text-secondary" >Estimated order delivery is July 31st</small>
+			  <hr>
+			  </div>
+			  
+			  <div class="col-md-6">
+				  <h4 class="h6 my-4">If you are from Mumbai, Pune, Chennai, Hyderabad, Gurugram</h4>
+				  <label>
+					<a data-toggle="modal" data-target="#paymentConfirmation">
+					<input type="radio" name="demo" class="card-input-element d-none">
+					
+						<div class="card card-body d-flex flex-row justify-content-between align-items-center shadow">
+						
+							<div>
+								<p class="mb-0">Yearly mebership at <span class="text-dark"><strong>Rs.999
+									  <s>(Rs.1400)</s></strong></span></p>
+								<small>Welcome kit - 5 Most popular products (worth Rs. 1000)</small>
+							</div>				
+						</div>
+					</a>
+					<p class="pt-3 text-secondary">
+					  <small>Tote Bag delivery July 31st<br>
+						Estimated Order delivery Jan - Mar, 2021</small>
+					</p>
+				  </label>
+
+				</div>
+			 </div>
+			</div>
+		</div>
+		<div class="col-md-3 col-xs-12 mobileViewss">
+			<ul class="navbar-nav sidenav ml-md-auto bg-light pl-md-4 pt-4 pt-md-0 border-left" id="navAccordion">				
+				<li class="nav-item pt-3 pb-2 referral-link">
+					<a class="nav-link" href="8.html" style="color: #000;">Membership</a>
+				</li>
+				<li class="nav-item pt-3 pb-2 referral-link">
+					<a class="nav-link" href="11.html" style="color: #000;">Your Referrals</a>
+				</li>
+				<li class="nav-item pt-2">
+					<a class="nav-link" href="19.html">Profile</a>
+				</li>
+				<!-- <li class="nav-item">
+					<a class="nav-link" href="#">Settings</a>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link" href="help.html">Help</a>
+				</li>
+				<li class="nav-item w-75 mt-5">
+					<a class="btn-sm btn-block btn btn-outline-dark" href="#">Logout</a>
+				</li>
+			</ul>
+		</div>
+	  </div>
+    </div>
+  </main>
+  
+  <!-- payment open -->
+		<!-- Modal -->
+		<div class="modal fade" id="paymentConfirmation" tabindex="-1" role="dialog" aria-labelledby="myModalRegister"
+		aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<!--OTP Content-->
+				<div class="modal-content form-elegant" id="paymentOpt" >
+				<!--Header-->
+					<div class="modal-header text-center">
+						<h3 class="modal-title w-100 dark-grey-text font-weight-bold" id="myModalLabel">
+							<strong>Payment Option</strong>
+						</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!--Body-->
+					<div class="modal-body mx-4 mt-2 mb-3 modalYearly" style="padding: 0rem 6%;">
+						<div class="row">
+							<div class="col-md-6 col-xs-12">
+								<p class="mb-0">Yearly membership</p>
+								<p>Bengaluru</p>
+							</div>
+							<div class="col-md-6 col-xs-12">
+								<p>₹ 999 (<span class="amt">₹ 1400</span>)</p>
+							</div>
+						</div>
+						<div class="">
+							<div class="pay_list">
+								<a href="paymentSuccess.html">
+									<img src="../img/paytm.png" alt="paytm"/>
+									<span class="pl-2"> Link Account </span>
+								</a>								
+							</div>
+							<div class="pay_list">
+								<a href="paymentSuccess.html">
+									<img src="../img/credit-card.png" alt="credit-card"/>
+									<span class="pl-2"> Credit / Debit Card </span>
+								</a>								
+							</div>
+							<div class="pay_list">
+								<a href="paymentSuccess.html">
+									<img src="../img/phone-pe.png" alt="phone-pe"/>
+									<span class="pl-2"> PhonePe / BHIM UPI </span>
+								</a>								
+							</div>
+							<div class="pay_list">
+								<a href="paymentSuccess.html">
+									<img src="../img/paypal.png" alt="paypal"/>
+									<span class="pl-2"> PayPal </span>
+								</a>								
+							</div>
+							<div class="pay_list">
+								<a href="paymentSuccess.html">
+									<img src="../img/museum.png" alt="Net Banking"/>
+									<span class="pl-2"> Net Banking </span>
+								</a>								
+							</div>
+						</div>
+					</div>
+				</div>
+			<!--/OTP.Content-->
+			
+			<!--payment success Content-->
+				<div class="modal-content form-elegant" id="paymentSuccess" style="display:none;">
+				<!--Header-->
+					<div class="modal-header text-center">
+						<h3 class="modal-title w-100 dark-grey-text font-weight-bold" id="myModalLabel">
+							<strong style="color: #63ca79">Payment Successfull!</strong>
+						</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!--Body-->
+					<div class="modal-body mx-4 mt-2 mb-3 modalYearly" style="padding: 0rem 6%;">
+						<div class="row text-center mt-2">
+							<img src="../img/success.png" style="margin: auto;"/>
+						</div>
+						</br>
+						<div class="row">
+							<div class="pay_ment col-md-6 col-xs-6">
+								<p class="mb-2">Payment type</p>							
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6 text-right">
+								<p class="mb-2"><b>Net banking</b></p>						
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6">
+								<p class="mb-2">Bank</p>									
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6 text-right">
+								<p class="mb-2"><b>HDFC</b></p>						
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6">
+								<p class="mb-2">Mobile</p>									
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6 text-right">
+								<p class="mb-2"><b>966765345</b></p>						
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6">
+								<p class="mb-2">Email</p>									
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6 text-right">
+								<p class="mb-2"><b>test@gmail.com</b></p>						
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6">
+								<p class="mb-2">Amount paid</p>									
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6 text-right">
+								<p class="mb-2"><b>500.00</b></p>						
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6">
+								<p>Transaction id</p>									
+							</div>
+							<div class="pay_ment col-md-6 col-xs-6 text-right">
+								<p><b>123557799</b></p>						
+							</div>							
+						</div>
+						<div class="text-center">
+							<button class="btn regis-btn mt-3" ><a href="9.html">Close</a></button>
+						</div>
+					</div>
+				</div>
+			<!--/payment success.Content-->
+			
+			<!--payment success Content-->
+				<div class="modal-content form-elegant" id="paymentfailed" style="display:none;">
+				<!--Header-->
+					<div class="modal-header text-center" style="display: none;">
+						<h3 class="modal-title w-100 dark-grey-text font-weight-bold" id="myModalLabel">
+							<strong style="color: #63ca79">Payment Successfull!</strong>
+						</h3>
+					</div>
+					<!--Body-->
+					<div class="modal-body mx-4 mt-2 mb-3 modalYearly" style="padding: 0rem 6%;">
+						<div class="row text-center mt-2">
+							<img src="../img/alert.png" style="margin: auto;"/>
+						</div>
+						</br>
+						<h3 class="text-center"><b>Your payment failed</b></h3>
+						<p class="text-center" style="color: #868080;">Please try again</p>
+					</div>
+				</div>
+			<!--/payment failed.Content-->
+			</div>
+		</div>
+		<!-- Modal -->
+
+		<!-- Register close -->	
+
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="text-center">
+        &copy; 2020 All rights reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- build:js scripts/vendor.js -->
+  <script type="text/javascript" src="utils/jquery.min.js"></script>
+  <script type="text/javascript" src="utils/bootstrap.min.js"></script>
+  <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

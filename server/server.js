@@ -41,6 +41,16 @@ app.use("/img", express.static(__dirname + "/../img/"));
 app.set("view engine", "ejs");
 
 
+
+
+app.get("/membership", (req, res) => {res.render("membership.ejs", { authData: process.env});});
+app.get("/", (req, res) => {res.render("index.ejs", { authData: process.env});});
+app.get("/referrals", (req, res) => {res.render("referrals.ejs", { authData: process.env});});
+app.get("/account", (req, res) => {res.render('account.ejs', {authData: process.env});})
+app.get("/nm_membership", (req, res) => {res.render('nonmember_membership.ejs', {authData: process.env});})
+app.get("/m_membership", (req, res) => {res.render('member_membership.ejs', {authData: process.env});})
+app.get("/referrals_temp", (req, res) => {res.render('referrals_temp.ejs', {authData: process.env});})
+
 app.get("/paywithpaytm", (req, res) => {
     initPayment(req.query.amount).then(
         success => {
@@ -56,22 +66,6 @@ app.get("/paywithpaytm", (req, res) => {
         }
     );
 });
-
-app.get("/membership", (req, res) => {
-    res.render("membership.ejs", { authData: process.env});
-});
-
-app.get("/", (req, res) => {
-    res.render("index.ejs", { authData: process.env});
-});
-
-app.get("/referrals", (req, res) => {
-    res.render("referrals.ejs", { authData: process.env});
-});
-
-app.get("/account", (req, res) => {
-    res.render('account.ejs', {authData: process.env});
-})
 
 app.post("/paywithpaytmresponse", (req, res) => {
     responsePayment(req.body).then(

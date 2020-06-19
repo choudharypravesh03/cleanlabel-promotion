@@ -1,0 +1,233 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <%- include('components/common_meta.ejs'); -%>
+    <title>clean label</title>
+    <%- include('components/common_css.ejs'); -%>
+    <link href="/css/utils/tagger.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/referrals.css">
+	<script>
+		function myFunction() {
+		  var copyText = document.getElementById("myInput");
+		  copyText.select();
+		  copyText.setSelectionRange(0, 99999)
+		  document.execCommand("copy");
+		}
+	</script>
+</head>
+
+<body>
+  <%- include('components/account_header.ejs'); -%>
+
+  
+  <main class=" subscription">
+    <div class="">
+      <div class="row pt-5 m-0">
+		<div class="col-md-9 col-xs-12 p-4">
+			<div class="col-md-12">
+				<div class="p-0">
+					<h2 class="my-4 h4">Products earned</h2>
+				  <div class="row text-center">
+
+					<div class="col-md-3 border rounded pt-4 pt-md-0 m-2 mr-0 ml-md-0">
+					  <a href="#" class="text-muted">
+						<img src="img/bangalore.png" class="img-responsive w-100" alt="Mumbai">
+						<small>Welcome kit</small>
+					  </a>
+					</div>
+
+					<div class="col-md-3 bg-light rounded mt-4 py-3 m-2 mt-md-0">
+					  <span style="font-size: 2rem;">
+						<i class="fa fa-lock"></i>
+					  </span>
+					  <p class="mb-0"><small> Unlock this when 5 friends join</small></p>
+					</div>
+					<div class="col-md-3 bg-light rounded mt-4 py-3 m-2 mt-md-0">
+					  <span style="font-size: 2rem;">
+						<i class="fa fa-lock"></i>
+					  </span>
+					  <p class="mb-0"><small> Unlock this when 10 friends join</small></p>
+					</div>
+				  </div>
+				  </br>
+				  <h1 class="sr-only">Invites</h1>
+				  <div class="card">
+					<div class="card-body">
+					  <div class="row align-items-center">
+						<div class="col-md-4 text-center">
+						  <div class="circle bg-success rounded-circle mx-auto my-auto">
+							<p class="text-white">0</p>
+						  </div>
+						  <p class="pt-4">Number of friends joined</p>
+						</div>
+						<div class="col-md-8 text-center">
+						  <p class="text-muted font-sm">You haven't invited anybody.</p>
+						  <button id="track-invites" class="btn btn-outline-dark">Track your invites</button>
+						</div>
+					  </div>
+					</div>
+                </div> 
+                
+                <input style="display: none" type="textarea" class="cloudsponge-contacts"/>
+					
+				<div class="py-3 mt-5">
+					<hr></hr>
+				</div>
+				  
+				  <h3 class="my-3 my-md-4">Invite Friends. Earn Products.</h3>
+				  <p class="text-muted">
+					<small>Share your unique link with your neighbors, friends & families. You earn products based on the number
+					  of people who join us using your link.</small>
+				  </p>
+				  <p>
+					<small><strong>Open your WhatsApp & send :</strong></small><br>
+					<a class="btn btn-link px-0 pt-0" href="whatsapp://send?text=Hey there! 
+                        I have found this amazing grocery store and I would like you to check it out! please click here: 
+                        http://localhost:5000/referrals?mwr=pravesh-5bb0" style="font-size: 2rem">
+                        <img src="../img/WhatsappIcon.png" alt="Share on WhatsApp" width="30px" />
+                    </a>
+				  </p>
+				</div>
+			</hr>
+			</div>
+			<div class="col-md-12 mt-3">
+			  <h1 class="sr-only">Subscription</h1>
+			  <form>
+				<div class="form-row">
+				  <div class="form-group col-md-10">
+					<label for="email" class="text-secondary font-sm font-weight-bold">Enter as many email address as you
+					  would like!</label>
+                    <!-- <input type="email" class="form-control rounded-0" id="email"> -->
+                    <input class="form-control rounded-0" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" type="text" name="tags" />
+				  </div>
+				  <div class="form-group col-md-2 my-auto pt-3">
+					<button id="send-invites" type="submit" class="btn btn-dark rounded-0">Send Invites</button>
+				  </div>
+				</div>
+			  </form>
+
+			  <div class="invites mt-4">
+				<p class="text-secondary font-sm font-weight-bold">
+				  Or connect your address book and send it with selected friends
+				</p>
+                <a class="cloudsponge-launch btn mr-2" data-cloudsponge-source="gmail" style="background-color: #fff;border: 1px solid #ddd;" data-toggle="modal">
+                    <img src="../img/google.png" style="padding-right: 5px;" /> Google</a>
+                <a class="cloudsponge-launch btn text-white mr-2" data-cloudsponge-source="yahoo" style="background-color: #7b0099;"><img src="../img/YahooIcon.png"
+                        style="padding-right: 5px;" width="23px" />
+                    Yahoo</a>
+                <a  class="cloudsponge-launch btn mr-2" data-cloudsponge-source="windowslive" style="background-color: #fff;border: 1px solid #ddd;"><img
+                        src="../img/outlook.png" style="padding-right: 5px;" />
+                    Outlook</a>
+			  </div>
+			  <div class="pt-2 pb-2 mt-5">
+				<hr></hr>
+			  </div>
+			  <div class="invites mt-4">
+				<p class="text-secondary font-sm font-weight-bold">
+				  Or share your unique invite link:
+				</p>
+				<form>
+				<div class="form-row">
+				  <div class="form-group col-md-8">
+                    <!-- <input type="text" class="form-control rounded-0" id="myInput" value="https://vrlps.co/PlW40ne/cp" /> -->
+                    <h3 id="my-referral-link">http://localhost:5000/referrals?mwr=pravesh-5bb0</h3>
+				  </div>
+				  <div class="form-group col-md-4">
+					<button id="copy-text" type="button" class="btn btn-dark rounded-0">Copy Link</button>
+				  </div>
+				</div>
+			  </form>
+				<a class="btn btn-link px-0 pt-0" href="whatsapp://send?text=Hey there! 
+                I have found this amazing grocery store and I would like you to check it out! please click here: 
+                http://localhost:5000/referrals?mwr=pravesh-5bb0" style="font-size: 2rem">
+				  <img src="../img/WhatsappIcon.png" alt="Share on WhatsApp" width="30px" />
+                </a>
+                <button class="fb-share-button btn btn-link px-0 pt-0 ml-2" 
+                    style="font-size: 2rem"
+                    data-href="https://cleanlabel-42b88.web.app/earn_rewards.html" 
+                    data-layout="button"
+                    data-size="small"
+                >
+                  <a target="_blank"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcleanlabel-42b88.web.app%2Fearn_rewards.html&amp;src=sdkpreparse"
+                        class="fb-xfbml-parse-ignore">
+                        <img src="../img/FacebookIcon.png" alt="Share on Facebook" width="30px" />
+                    </a>
+                </button>
+                <a  class="twitter-share-button" 
+                    href="https://twitter.com/intent/tweet?text=Hey there! 
+                    I have found this amazing grocery store and I would like you to check it out! please click here: 
+                    http://localhost:5000/referrals?mwr=pravesh-5bb0">
+                        <img src="https://app.acadium.com/images/page-referral/icon-twitter.svg" />
+                </a>
+
+			  </div>
+			</div>
+			
+			<div class="col-md-12">
+			  <h1 class="sr-only">Subscription</h1>
+			  <h3 class="my-3 my-md-4">How it works.</h3>
+
+			  <div class="steps font-sm mb-4">
+				<p class="mb-2"><b>Step 1: </b>Share your unique link with friends through any/ all of the channels</p>
+				<p class="mb-2"><b>Step 2:</b> We will let you know once your friend becomes a member</p>
+				<p class="mb-2"><b>Step 3:</b> Unlock your products based on the number of friends who join</p>
+			  </div>
+			  
+			</div>
+			
+		</div>
+		<div class="col-md-3 col-xs-12 mobileViewss">
+			<ul class="navbar-nav sidenav ml-md-auto bg-light pl-md-4 pt-4 pt-md-0 border-left" id="navAccordion">				
+				<li class="nav-item pt-3 pb-2 referral-link">
+					<a class="nav-link" href="8.html" style="color: #000;">Membership</a>
+				</li>
+				<li class="nav-item pt-3 pb-2 referral-link">
+					<a class="nav-link" href="11.html" style="color: #000;">Your Referrals</a>
+				</li>
+				<li class="nav-item pt-2">
+					<a class="nav-link" href="19.html">Profile</a>
+				</li>
+				<!-- <li class="nav-item">
+					<a class="nav-link" href="#">Settings</a>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link" href="help.html">Help</a>
+				</li>
+				<li class="nav-item w-75 mt-5">
+					<a class="btn-sm btn-block btn btn-outline-dark" href="#">Logout</a>
+				</li>
+			</ul>
+		</div>
+	  </div>
+    </div>
+	
+  </main>
+
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="text-center">
+        &copy; 2020 All rights reserved
+      </div>
+    </div>
+  </footer>
+
+  <div id="firebase-auth-data" style="display: none"><%= JSON.stringify(authData) %></div>
+
+  <!-- build:js scripts/vendor.js -->
+  <script type="text/javascript" src="utils/jquery.min.js"></script>
+	<script type="text/javascript" src="utils/bootstrap.min.js"></script>
+  <!-- endbuild -->
+	<!-- build:js scripts/main.js -->
+    
+    <script src="https://api.cloudsponge.com/widget/-nNA1mSHS9vlJy97qBiKxg.js"></script>    
+    <script src="utils/tagger.js"></script>
+	<%- include('components/firebaseScripts.ejs'); -%>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+	<script src="referrals.js"></script>
+    <script src="main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
